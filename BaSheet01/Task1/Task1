@@ -10,3 +10,4 @@ and the other method
  The division operation (rand()/RANDMAX) does (int small / int big) and
  should result in a double, but with no cast it will be floored to 0. 
  4) double gsl_ran_gaussian_pdf(const gsl_rng * r, double sigma)
+ command
