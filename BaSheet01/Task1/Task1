@@ -1,0 +1,12 @@
+1) What does it do?
+it prints two not sufficiently seeded "random" variables.
+2) The difference between the methods is that rand() returns a random number 
+and the other method  
+ - rand() returns a random integer between 0 and RANDMAX
+ - gsl_rng_mt19937 is a generator that generates random numbers. 
+ In the code the generator is passed to a (Distribution)function that uses this generator 
+ to evaluate a random number depending on the Distribution specified in the function.
+ 3) What happens if you remove the expression (double)
+ The division operation (rand()/RANDMAX) does (int small / int big) and
+ should result in a double, but with no cast it will be floored to 0. 
+ 4) double gsl_ran_gaussian_pdf(const gsl_rng * r, double sigma)
