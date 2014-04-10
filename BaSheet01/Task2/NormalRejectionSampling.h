@@ -9,11 +9,17 @@
 #define NORMALREJECTIONSAMPLING_H_
 
 #include "INormalDist.h"
+#include "IUniformDist.h"
 
 class NormalRejectionSampling: public INormalDistribution {
 public:
-  NormalRejectionSampling();
+  NormalRejectionSampling(IUniformDist & UniformDice);
   ~NormalRejectionSampling();
+
+  double roll();
+
+private:
+  IUniformDist & UnifDice;
 };
 
 #endif /* NORMALREJECTIONSAMPLING_H_ */

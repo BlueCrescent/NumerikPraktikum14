@@ -7,12 +7,15 @@
 
 #include "NormalRejectionSampling.h"
 
-NormalRejectionSampling::NormalRejectionSampling() {
-  // TODO Auto-generated constructor stub
-
+NormalRejectionSampling::NormalRejectionSampling(IUniformDist & UnifDice) :
+  UnifDice(UnifDice)
+{
 }
 
 NormalRejectionSampling::~NormalRejectionSampling() {
   // TODO Auto-generated destructor stub
 }
 
+double NormalRejectionSampling::roll() {
+
+}
