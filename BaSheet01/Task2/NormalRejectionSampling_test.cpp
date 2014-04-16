@@ -7,3 +7,8 @@
 
 #include "NormalRejectionSampling.h"
 
+#include "gtest/gtest.h"
+
+TEST(RejectionSamplingTest, Nothing) {
+  ASSERT_EQ(1, 1);
+}

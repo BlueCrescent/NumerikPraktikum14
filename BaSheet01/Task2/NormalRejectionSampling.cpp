@@ -17,5 +17,5 @@ NormalRejectionSampling::~NormalRejectionSampling() {
 }
 
 double NormalRejectionSampling::roll() {
-
+  return 0.;
 }
