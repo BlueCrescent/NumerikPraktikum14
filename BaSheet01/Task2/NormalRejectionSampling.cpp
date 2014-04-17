@@ -27,7 +27,7 @@ double NormalRejectionSampling::roll() {
     x = UnifDice.roll();
     UnifDice.setBounds(0, MaxNormalDensity);
     y = UnifDice.roll();
-  } while (y <= NormalDensity(x));
+  } while (y > NormalDensity(x));
   return x;
 }
 
