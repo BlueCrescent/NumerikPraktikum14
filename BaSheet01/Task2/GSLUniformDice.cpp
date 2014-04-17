@@ -15,7 +15,7 @@ GSLUniformDice::GSLUniformDice() :
   RandomGenerator(gsl_rng_alloc(gsl_rng_mt19937))
 {
   if (RandomGenerator == NULL)
-    throw std::bad_alloc;
+    throw new std::bad_alloc();
 }
 
 GSLUniformDice::~GSLUniformDice() {
