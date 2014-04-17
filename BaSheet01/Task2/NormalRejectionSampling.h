@@ -13,10 +13,17 @@
 
 class NormalRejectionSampling: public INormalDistribution {
 public:
+  static const double MaxNormalDensity;
+  static const double lower;
+  static const double upper;
+
   NormalRejectionSampling(IUniformDist & UniformDice);
+
   ~NormalRejectionSampling();
 
   double roll();
+
+  double NormalDensity(double x);
 
 private:
   IUniformDist & UnifDice;
