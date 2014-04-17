@@ -9,7 +9,7 @@
 #include <cstdio>
 #include <gsl/gsl_rng.h>
 
-int main() {
+int main1() {
   printf("%lf\n", (double)rand() / RAND_MAX);   // *
 
   gsl_rng* r;

@@ -1,8 +1,11 @@
 #include "Cpp11UniformDice.h"
 #include <ctime>
 
-Cpp11UniformDice::Cpp11UniformDice() {
-    this->generator.seed(time_t(NULL));
+Cpp11UniformDice::Cpp11UniformDice() :
+  Lower(0),
+  Upper(1)
+{
+  this->generator.seed(time_t(NULL));
 }
 
 

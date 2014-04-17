@@ -12,9 +12,10 @@
 #include <vector>
 #include <algorithm>
 
-std::vector<double> generateVectorWithRandomUniformValues(double lower, double upper) {
+std::vector<double> getUniformlyRandomVector(double lower, double upper) {
   std::vector<double> values;
   Cpp11UniformDice dice;
+  dice.setBounds(lower,upper);
   for (unsigned int i = 0; i < 10000; ++i) {
     values.push_back(dice.roll());
   }
@@ -24,7 +25,17 @@ std::vector<double> generateVectorWithRandomUniformValues(double lower, double u
 TEST(Cpp11UniformDistributionTest, IsIn01Boundaries)
 {
   const double upper = 1., lower = 0.;
-  std::vector<double> values = generateVectorWithRandomUniformValues(lower, upper);
+  std::vector<double> values = getUniformlyRandomVector(lower, upper);
+  const double max = *std::max_element(values.begin(), values.end());
+  const double min = *std::min_element(values.begin(), values.end());
+  ASSERT_LE(lower, min);
+  ASSERT_GE(upper, max);
+}
+
+TEST(Cpp11UniformDistributionTest, IsIn12Boundaries)
+{
+  const double upper = 2., lower = 1.;
+  std::vector<double> values = getUniformlyRandomVector(lower, upper);
   const double max = *std::max_element(values.begin(), values.end());
   const double min = *std::min_element(values.begin(), values.end());
   ASSERT_LE(lower, min);

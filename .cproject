@@ -75,6 +75,9 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.1748226783.792845276" name="NormalRejectionSampling_test.cpp" rcbsApplicability="disable" resourcePath="BaSheet01/Task2/NormalRejectionSampling_test.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1045117847.486513261">
+						<tool command="g++ " commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1045117847.486513261" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1045117847"/>
+					</fileInfo>
 					<folderInfo id="cdt.managedbuild.config.gnu.exe.debug.1748226783.1754181937" name="/" resourcePath="External">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.exe.debug.1904954729" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.exe.debug" unusedChildren="">
 							<targetPlatform id="cdt.managedbuild.target.gnu.platform.exe.debug" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.exe.debug"/>
@@ -96,7 +99,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="Tests/test_main.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="BaSheet01/Task2/NormalRejectionSampling_test.cpp|BaSheet01/Task2/Cpp11UniformDice_test.cpp|BaSheet01/Task2/GSLUniformDice_test.cpp|Tests/test_main.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -144,8 +147,11 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.release.1537049396.1046431826" name="NormalRejectionSampling_test.cpp" rcbsApplicability="disable" resourcePath="BaSheet01/Task2/NormalRejectionSampling_test.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.1221971438.804850153">
+						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.1221971438.804850153" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.1221971438"/>
+					</fileInfo>
 					<sourceEntries>
-						<entry excluding="Tests/test_main.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="BaSheet01/Task2/NormalRejectionSampling_test.cpp|BaSheet01/Task2/Cpp11UniformDice_test.cpp|BaSheet01/Task2/GSLUniformDice_test.cpp|Tests/test_main.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -220,6 +226,11 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
+					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.1748226783.636689526.914321918" name="main.cpp" rcbsApplicability="disable" resourcePath="BaSheet01/Task 3/main.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1898406210.1582485502">
+						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1898406210.1582485502" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1898406210">
+							<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1572257782" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+						</tool>
+					</fileInfo>
 					<folderInfo id="cdt.managedbuild.config.gnu.exe.debug.1748226783.636689526.External" name="/" resourcePath="External">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.exe.debug.1331334736" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.exe.debug" unusedChildren="">
 							<targetPlatform id="cdt.managedbuild.target.gnu.platform.exe.debug.1286560686" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.exe.debug"/>
@@ -241,7 +252,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="BaSheet01/Task1" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="BaSheet01/Task 3/main.cpp|BaSheet01/Task1" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -285,4 +296,5 @@
 		</scannerConfigBuildInfo>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 </cproject>
