@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+<?fileVersion 4.0.0?>
+
+<cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
 	<storageModule moduleId="org.eclipse.cdt.core.settings">
 		<cconfiguration id="cdt.managedbuild.config.gnu.exe.debug.1748226783">
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.exe.debug.1748226783" moduleId="org.eclipse.cdt.core.settings" name="Debug">
 				<externalSettings/>
 				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
@@ -81,9 +83,27 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.1748226783.1923767167" name="BoxMullerDice_test.cpp" rcbsApplicability="disable" resourcePath="BaSheet01/Task6/BoxMullerDice_test.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1045117847.1262037476">
-						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1045117847.1262037476" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1045117847"/>
-					</fileInfo>
+					<folderInfo id="cdt.managedbuild.config.gnu.exe.debug.1748226783.1289567008" name="/" resourcePath="BaSheet01/Task6">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.exe.debug.2118113892" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.exe.debug" unusedChildren="">
+							<targetPlatform id="cdt.managedbuild.target.gnu.platform.exe.debug" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.exe.debug"/>
+							<tool id="cdt.managedbuild.tool.gnu.archiver.base.1310253417" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base.423124901"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1011361664" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1045117847">
+								<option id="gnu.cpp.compiler.option.include.paths.1576058635" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/BaSheet01/Task2}&quot;"/>
+								</option>
+								<option id="gnu.cpp.compiler.option.include.files.1006886151" name="Include files (-include)" superClass="gnu.cpp.compiler.option.include.files" valueType="includeFiles"/>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.372899085" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.2023268256" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.2064054913">
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.40823257" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.linker.exe.debug.1138925203" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.debug.928177094"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug.164074872" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug.1353858334"/>
+							<tool id="cdt.managedbuild.tool.gnu.assembler.exe.debug.778044632" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.exe.debug.1961446401">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1015128265" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
 					<folderInfo id="cdt.managedbuild.config.gnu.exe.debug.1748226783.1754181937" name="/" resourcePath="External">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.exe.debug.1904954729" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.exe.debug" unusedChildren="">
 							<targetPlatform id="cdt.managedbuild.target.gnu.platform.exe.debug" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.exe.debug"/>
@@ -111,7 +131,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="BaSheet01/Task4/CDFNormalDice_test.cpp|BaSheet01/Task6/BoxMullerDice_test.cpp|BaSheet01/Task2/NormalRejectionSampling_test.cpp|Tests/test_main.cpp|BaSheet01/Task2/GSLUniformDice_test.cpp|BaSheet01/Task2/Cpp11UniformDice_test.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="External|BaSheet01/Task4/CDFNormalDice_test.cpp|BaSheet01/Task6/BoxMullerDice_test.cpp|BaSheet01/Task2/NormalRejectionSampling_test.cpp|Tests/test_main.cpp|BaSheet01/Task2/GSLUniformDice_test.cpp|BaSheet01/Task2/Cpp11UniformDice_test.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -121,12 +141,12 @@
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.exe.release.1537049396" moduleId="org.eclipse.cdt.core.settings" name="Release">
 				<externalSettings/>
 				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
@@ -159,11 +179,28 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<fileInfo id="cdt.managedbuild.config.gnu.exe.release.1537049396.269798973" name="BoxMullerDice_test.cpp" rcbsApplicability="disable" resourcePath="BaSheet01/Task6/BoxMullerDice_test.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.1221971438.1709488334">
-						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.1221971438.1709488334" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.1221971438"/>
-					</fileInfo>
+					<folderInfo id="cdt.managedbuild.config.gnu.exe.release.1537049396.648149531" name="/" resourcePath="BaSheet01/Task6">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.exe.release.742404976" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.exe.release" unusedChildren="">
+							<targetPlatform id="cdt.managedbuild.target.gnu.platform.exe.release" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.exe.release"/>
+							<tool id="cdt.managedbuild.tool.gnu.archiver.base.154856818" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base.871593150"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.1166598454" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.1221971438">
+								<option id="gnu.cpp.compiler.option.include.paths.437578530" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/BaSheet01/Task2}&quot;"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.217350540" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.release.2128214228" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.release.760231272">
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.978210602" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.linker.exe.release.1780454697" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.release.1822174457"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.exe.release.1324865772" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.release.64347368"/>
+							<tool id="cdt.managedbuild.tool.gnu.assembler.exe.release.645668149" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.exe.release.2103463099">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.160932394" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
 					<sourceEntries>
-						<entry excluding="BaSheet01/Task4/CDFNormalDice_test.cpp|BaSheet01/Task6/BoxMullerDice_test.cpp|BaSheet01/Task2/NormalRejectionSampling_test.cpp|Tests/test_main.cpp|BaSheet01/Task2/GSLUniformDice_test.cpp|BaSheet01/Task2/Cpp11UniformDice_test.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="External|BaSheet01/Task4/CDFNormalDice_test.cpp|BaSheet01/Task6/BoxMullerDice_test.cpp|BaSheet01/Task2/NormalRejectionSampling_test.cpp|Tests/test_main.cpp|BaSheet01/Task2/GSLUniformDice_test.cpp|BaSheet01/Task2/Cpp11UniformDice_test.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -173,12 +210,12 @@
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.exe.debug.1748226783.636689526" moduleId="org.eclipse.cdt.core.settings" name="GTest">
 				<externalSettings/>
 				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
