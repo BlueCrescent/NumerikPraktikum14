@@ -1,5 +1,5 @@
 /*
- * IDice.h
+ * INormalDist.h
  *
  *  Created on: 10.04.2014
  *      Author: boris
