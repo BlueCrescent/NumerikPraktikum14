@@ -1,4 +1,4 @@
-fid = fopen('data', 'r');
+fid = fopen('data3', 'r');
 data = fscanf(fid, '%f');
 fclose( fid );
 [ vals, bins ] = hist(data, 100);
