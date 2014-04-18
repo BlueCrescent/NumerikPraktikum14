@@ -18,7 +18,13 @@
 					<folderInfo id="cdt.managedbuild.config.gnu.exe.debug.1748226783." name="/" resourcePath="">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.exe.debug.590196841" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.exe.debug">
 							<targetPlatform id="cdt.managedbuild.target.gnu.platform.exe.debug.1917557753" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.exe.debug"/>
-							<builder buildPath="${workspace_loc:/NumerikPraktikum14}/Debug" id="cdt.managedbuild.target.gnu.builder.exe.debug.1802665011" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="cdt.managedbuild.target.gnu.builder.exe.debug"/>
+							<builder buildPath="${workspace_loc:/NumerikPraktikum14}/Debug" id="cdt.managedbuild.target.gnu.builder.exe.debug.1802665011" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Gnu Make Builder" superClass="cdt.managedbuild.target.gnu.builder.exe.debug">
+								<outputEntries>
+									<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name="Debug"/>
+									<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name="Release"/>
+									<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name="GTest"/>
+								</outputEntries>
+							</builder>
 							<tool id="cdt.managedbuild.tool.gnu.archiver.base.423124901" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
 							<tool command="g++ " id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1045117847" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug">
 								<option id="gnu.cpp.compiler.exe.debug.option.optimization.level.1630715670" name="Optimization Level" superClass="gnu.cpp.compiler.exe.debug.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
@@ -34,14 +40,8 @@
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.exe.debug.928177094" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.debug"/>
 							<tool command="g++" id="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug.1353858334" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug">
-								<option id="gnu.cpp.link.option.libs.1537108174" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
-									<listOptionValue builtIn="false" value="gsl"/>
-									<listOptionValue builtIn="false" value="pthread"/>
-									<listOptionValue builtIn="false" value="gslcblas"/>
-								</option>
-								<option id="gnu.cpp.link.option.paths.2029931304" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/BaSheet01}&quot;"/>
-								</option>
+								<option id="gnu.cpp.link.option.libs.1537108174" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs"/>
+								<option id="gnu.cpp.link.option.paths.2029931304" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.356543473" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
@@ -58,17 +58,25 @@
 							<tool id="cdt.managedbuild.tool.gnu.archiver.base.1303343861" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base.423124901"/>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1221714187" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1045117847">
 								<option id="gnu.cpp.compiler.option.include.paths.1219056974" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/External}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/BaSheet01}&quot;"/>
+									<listOptionValue builtIn="false" value="/home/timm/Dokumente/WorkspaceSS14/NumerikPraktikum14/NumerikPraktikum14/NumerikPraktikum14/External"/>
+									<listOptionValue builtIn="false" value="/home/timm/Dokumente/WorkspaceSS14/NumerikPraktikum14/NumerikPraktikum14/NumerikPraktikum14/BaSheet01"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1216791324" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.821005721" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.2064054913">
+								<option id="gnu.c.compiler.option.include.paths.1129210144" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/home/timm/Dokumente/WorkspaceSS14/NumerikPraktikum14/NumerikPraktikum14/NumerikPraktikum14/External"/>
+									<listOptionValue builtIn="false" value="/home/timm/Dokumente/WorkspaceSS14/NumerikPraktikum14/NumerikPraktikum14/NumerikPraktikum14/BaSheet01"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.753697614" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.exe.debug.140311755" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.debug.928177094"/>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug.808541907" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug.1353858334"/>
 							<tool id="cdt.managedbuild.tool.gnu.assembler.exe.debug.477098478" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.exe.debug.1961446401">
+								<option id="gnu.both.asm.option.include.paths.1774118279" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/home/timm/Dokumente/WorkspaceSS14/NumerikPraktikum14/NumerikPraktikum14/NumerikPraktikum14/External"/>
+									<listOptionValue builtIn="false" value="/home/timm/Dokumente/WorkspaceSS14/NumerikPraktikum14/NumerikPraktikum14/NumerikPraktikum14/BaSheet01"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1961693816" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
 						</toolChain>
@@ -79,16 +87,22 @@
 							<tool id="cdt.managedbuild.tool.gnu.archiver.base.1900437369" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base.423124901"/>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.268273734" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1045117847">
 								<option id="gnu.cpp.compiler.option.include.paths.624818569" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/External}&quot;"/>
+									<listOptionValue builtIn="false" value="/home/timm/Dokumente/WorkspaceSS14/NumerikPraktikum14/NumerikPraktikum14/NumerikPraktikum14/External"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.2059529093" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1962667707" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.2064054913">
+								<option id="gnu.c.compiler.option.include.paths.1709933648" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/home/timm/Dokumente/WorkspaceSS14/NumerikPraktikum14/NumerikPraktikum14/NumerikPraktikum14/External"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.2122390096" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.exe.debug.70710538" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.debug.928177094"/>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug.1568339701" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug.1353858334"/>
 							<tool id="cdt.managedbuild.tool.gnu.assembler.exe.debug.1748197892" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.exe.debug.1961446401">
+								<option id="gnu.both.asm.option.include.paths.1710272893" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/home/timm/Dokumente/WorkspaceSS14/NumerikPraktikum14/NumerikPraktikum14/NumerikPraktikum14/External"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.578101598" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
 						</toolChain>
@@ -293,12 +307,14 @@
 			<resource resourceType="PROJECT" workspacePath="/NumerikPraktikum14"/>
 		</configuration>
 	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.1748226783.636689526;cdt.managedbuild.config.gnu.exe.debug.1748226783.636689526.;cdt.managedbuild.tool.gnu.c.compiler.exe.debug.50973018;cdt.managedbuild.tool.gnu.c.compiler.input.545444517">
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.1748226783;cdt.managedbuild.config.gnu.exe.debug.1748226783.;cdt.managedbuild.tool.gnu.c.compiler.exe.debug.2064054913;cdt.managedbuild.tool.gnu.c.compiler.input.116895503">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.1748226783;cdt.managedbuild.config.gnu.exe.debug.1748226783.;cdt.managedbuild.tool.gnu.c.compiler.exe.debug.2064054913;cdt.managedbuild.tool.gnu.c.compiler.input.116895503">
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.1748226783.636689526;cdt.managedbuild.config.gnu.exe.debug.1748226783.636689526.;cdt.managedbuild.tool.gnu.c.compiler.exe.debug.50973018;cdt.managedbuild.tool.gnu.c.compiler.input.545444517">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.release.1537049396;cdt.managedbuild.config.gnu.exe.release.1537049396.;cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.1221971438;cdt.managedbuild.tool.gnu.cpp.compiler.input.576484897">
@@ -314,6 +330,4 @@
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
 	</storageModule>
-	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
-	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 </cproject>

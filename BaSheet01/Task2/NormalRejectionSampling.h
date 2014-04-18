@@ -23,7 +23,7 @@ public:
 
   double roll();
 
-  double NormalDensity(double x);
+  static double NormalDensity(double x);
 
 private:
   IUniformDist & UnifDice;
