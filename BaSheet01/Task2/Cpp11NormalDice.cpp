@@ -16,7 +16,7 @@ Cpp11NormalDice::Cpp11NormalDice() {
 Cpp11NormalDice::~Cpp11NormalDice() {
 }
 
-double Cpp11UniformDice::roll() {
-  std::normal_distribution<double> distribution();
+double Cpp11NormalDice::roll() {
+  std::normal_distribution<double> distribution;
   return distribution(generator);
 }

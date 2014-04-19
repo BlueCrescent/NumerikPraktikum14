@@ -6,6 +6,7 @@
  */
 
 #include <algorithm>
+#include <iostream>
 
 #include <cmath>
 
@@ -29,7 +30,7 @@ double naive_variance_estimator(const double * values, const unsigned int size) 
 }
 
 
-inline void variance_est_step(const double * values, const unsigned int i, const double & alpha, const double & beta) {
+inline void variance_est_step(const double * values, const unsigned int i, double & alpha, double & beta) {
   const double gamma = values[i] - alpha;
   alpha = alpha + gamma / (i + 1);
   beta = beta + gamma * gamma * i / (i + 1);
@@ -45,10 +46,10 @@ double variance_estimator(const double * values, const unsigned int size) {
 }
 
 inline double estimation_error(const double sigma, const double beta, const unsigned int i) {
-  return abs(sigma - sqrt(beta / i));
+  return fabs(sigma - sqrt(beta / i));
 }
 
-double variance_estimator_stream_error(const double * values, const unsigned int size, const double sigma, std::ostream & out) {
+double stream_variance_estimator_error(const double * values, const unsigned int size, const double sigma, std::ostream & out) {
   double alpha = values[0];
   double beta = 0;
   for (unsigned int i = 1; i < size; ++i) {

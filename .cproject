@@ -42,7 +42,10 @@
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.exe.debug.928177094" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.debug"/>
 							<tool command="g++" id="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug.1353858334" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug">
-								<option id="gnu.cpp.link.option.libs.1537108174" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs"/>
+								<option id="gnu.cpp.link.option.libs.1537108174" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="gsl"/>
+									<listOptionValue builtIn="false" value="gslcblas"/>
+								</option>
 								<option id="gnu.cpp.link.option.paths.2029931304" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.356543473" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
@@ -89,7 +92,7 @@
 							<tool id="cdt.managedbuild.tool.gnu.archiver.base.1310253417" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base.423124901"/>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1011361664" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1045117847">
 								<option id="gnu.cpp.compiler.option.include.paths.1576058635" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/NumerikPraktikum14/NumerikPraktikum14/BaSheet01/Task2}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/BaSheet01/Task2}&quot;"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.include.files.1006886151" name="Include files (-include)" superClass="gnu.cpp.compiler.option.include.files"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.372899085" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
@@ -132,16 +135,13 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.1748226783.1528601734" name="Cpp11NormalDice_test.cpp" rcbsApplicability="disable" resourcePath="BaSheet01/Task2/Cpp11NormalDice_test.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1045117847.410796724">
-						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1045117847.410796724" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1045117847"/>
-					</fileInfo>
 					<folderInfo id="cdt.managedbuild.config.gnu.exe.debug.1748226783.1742940724" name="/" resourcePath="BaSheet01/Task4">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.exe.debug.919802449" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.exe.debug" unusedChildren="">
 							<targetPlatform id="cdt.managedbuild.target.gnu.platform.exe.debug" name="Debug Platform" superClass="cdt.managedbuild.target.gnu.platform.exe.debug"/>
 							<tool id="cdt.managedbuild.tool.gnu.archiver.base.298411832" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base.423124901"/>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1751318358" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1045117847">
 								<option id="gnu.cpp.compiler.option.include.paths.1168779102" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/NumerikPraktikum14/NumerikPraktikum14/BaSheet01/Task2}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/BaSheet01/Task2}&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.662682360" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
@@ -226,6 +226,10 @@
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.exe.release.1822174457" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.release"/>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.exe.release.64347368" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.release">
+								<option id="gnu.cpp.link.option.libs.340697828" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="gsl"/>
+									<listOptionValue builtIn="false" value="gslcblas"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.562917384" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
@@ -278,9 +282,25 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<fileInfo id="cdt.managedbuild.config.gnu.exe.release.1537049396.1458182450" name="Cpp11NormalDice_test.cpp" rcbsApplicability="disable" resourcePath="BaSheet01/Task2/Cpp11NormalDice_test.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.1221971438.1152964963">
-						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.1221971438.1152964963" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.1221971438"/>
-					</fileInfo>
+					<folderInfo id="cdt.managedbuild.config.gnu.exe.release.1537049396.1814986307" name="/" resourcePath="BaSheet01/Task4">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.exe.release.1866944116" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.exe.release" unusedChildren="">
+							<tool id="cdt.managedbuild.tool.gnu.archiver.base.504093882" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base.871593150"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.284872653" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.1221971438">
+								<option id="gnu.cpp.compiler.option.include.paths.1739207950" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/BaSheet01/Task2}&quot;"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.2038007589" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.release.644937691" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.release.760231272">
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.762680080" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.c.linker.exe.release.607414066" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.release.1822174457"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.exe.release.394213358" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.release.64347368"/>
+							<tool id="cdt.managedbuild.tool.gnu.assembler.exe.release.814390060" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.exe.release.2103463099">
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.421647848" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
 					<sourceEntries>
 						<entry excluding="BaSheet01/Task2/Cpp11NormalDice_test.cpp|Task9|BaSheet01/Task8/estimator_test.cpp|External|BaSheet01/Task4/CDFNormalDice_test.cpp|BaSheet01/Task6/BoxMullerDice_test.cpp|BaSheet01/Task2/NormalRejectionSampling_test.cpp|Tests/test_main.cpp|BaSheet01/Task2/GSLUniformDice_test.cpp|BaSheet01/Task2/Cpp11UniformDice_test.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
@@ -406,7 +426,9 @@
 						</toolChain>
 					</folderInfo>
 					<fileInfo id="cdt.managedbuild.config.gnu.exe.debug.1748226783.636689526.90861764" name="Cpp11NormalDice_test.cpp" rcbsApplicability="disable" resourcePath="BaSheet01/Task2/Cpp11NormalDice_test.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1898406210.1196944633">
-						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1898406210.1196944633" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1898406210"/>
+						<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1898406210.1196944633" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1898406210">
+							<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1243291999" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+						</tool>
 					</fileInfo>
 					<folderInfo id="cdt.managedbuild.config.gnu.exe.debug.1748226783.636689526.611555823" name="/" resourcePath="BaSheet01/Task4">
 						<toolChain id="cdt.managedbuild.toolchain.gnu.exe.debug.465188593" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.exe.debug" unusedChildren="">
