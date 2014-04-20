@@ -22,6 +22,8 @@ public:
 
   void setBounds(double Lower, double Upper);
 
+  GSLUniformDice(const GSLUniformDice & other) = delete;
+  GSLUniformDice & operator= (const GSLUniformDice & other) = delete;
 private:
   double Lower, Upper;
   gsl_rng* RandomGenerator;

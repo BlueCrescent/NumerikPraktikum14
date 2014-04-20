@@ -19,7 +19,7 @@ public:
 
   NormalRejectionSampling(IUniformDist & UniformDice);
 
-  ~NormalRejectionSampling();
+  ~NormalRejectionSampling() = default;
 
   double roll();
 

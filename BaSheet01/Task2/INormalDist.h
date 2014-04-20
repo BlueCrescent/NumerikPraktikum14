@@ -12,6 +12,8 @@ class INormalDistribution {
 public:
   virtual ~INormalDistribution(){}
   virtual double roll() = 0;
+
+  INormalDistribution & operator= (const INormalDistribution & other) = delete;
 };
 
 #endif /* IDICE_H_ */

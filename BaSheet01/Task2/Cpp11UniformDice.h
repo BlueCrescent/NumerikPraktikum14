@@ -7,8 +7,9 @@
 class Cpp11UniformDice : public IUniformDist
 {
 public:
-    // Methods
     Cpp11UniformDice();
+
+    ~Cpp11UniformDice() = default;
 
     double roll();
 

@@ -15,6 +15,8 @@ public:
   virtual double roll() = 0;
 
   virtual void setBounds(double Lower, double Upper) = 0;
+
+  IUniformDist & operator= (const IUniformDist & other) = delete;
 };
 
 #endif /* IUNIFORMDIST_H_ */

@@ -15,7 +15,7 @@ class Cpp11NormalDice: public INormalDistribution {
 public:
   Cpp11NormalDice();
 
-  ~Cpp11NormalDice();
+  ~Cpp11NormalDice() = default;
 
   double roll();
 

@@ -14,10 +14,12 @@
 
 class BoxMullerDice : public INormalDistribution {
 public:
-  ~BoxMullerDice();
   BoxMullerDice(IUniformDist& UnifDice);
 
+  ~BoxMullerDice() = default;
+
   double roll();
+
   std::pair<double,double> rollPair();
 
   private:

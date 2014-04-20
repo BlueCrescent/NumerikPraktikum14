@@ -9,7 +9,7 @@
 
 #include "convergence_plot_data.h"
 
-void main9() {
+int main9() {
   Cpp11NormalDice dice;
   const unsigned int numSamples = 1e4;
   const double mu = 2;
@@ -22,6 +22,8 @@ void main9() {
 
   const double sigma3 = 10.;
   generate_convergence_data_with(mu, sigma3, numSamples, dice);
+
+  return 0;
 }
 
 

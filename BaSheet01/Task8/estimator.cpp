@@ -13,14 +13,14 @@
 inline double estimate_mean(const double* values, const unsigned int size) {
   double mean_estimate = 0;
   std::for_each(values, values + size,
-                [&](double val) {mean_estimate += val;});
+                [&](const double val) {mean_estimate += val;});
   return mean_estimate / size;
 }
 
 inline double estimate_variance(const double* values, const unsigned int size, const double mean) {
   double variance_estimate = 0;
   std::for_each(values, values + size,
-                [&](double val) {variance_estimate += (val - mean) * (val - mean);});
+                [&](const double val) {variance_estimate += (val - mean) * (val - mean);});
   return variance_estimate / (size - 1);
 }
 

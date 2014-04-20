@@ -13,9 +13,6 @@ Cpp11NormalDice::Cpp11NormalDice() {
   this->generator.seed(time_t(NULL));
 }
 
-Cpp11NormalDice::~Cpp11NormalDice() {
-}
-
 double Cpp11NormalDice::roll() {
   std::normal_distribution<double> distribution;
   return distribution(generator);

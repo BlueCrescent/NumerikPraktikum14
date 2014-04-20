@@ -8,7 +8,6 @@ Cpp11UniformDice::Cpp11UniformDice() :
   this->generator.seed(time_t(NULL));
 }
 
-
 double Cpp11UniformDice::roll() {
   std::uniform_real_distribution<double> distribution(Lower, Upper);
   return distribution(generator);

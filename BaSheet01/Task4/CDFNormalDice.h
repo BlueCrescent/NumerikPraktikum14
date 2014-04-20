@@ -15,7 +15,7 @@ class CDFNormalDice: public INormalDistribution {
 public:
   CDFNormalDice(IUniformDist & UniformDice);
 
-  ~CDFNormalDice();
+  ~CDFNormalDice() = default;
 
   double roll();
 
