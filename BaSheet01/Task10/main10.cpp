@@ -36,12 +36,12 @@ int main10() {
 const void create_files(const double delta_t, std::ofstream & sde_file, std::ofstream & wiener_file, const int nr) {
   sde_file.exceptions(std::ofstream::failbit | std::ofstream::badbit);
   std::stringstream filename_wiener;
-  filename_wiener << "data10_wiener_" << delta_t << "_nr" << nr;
+  filename_wiener << "data10_sde_" << delta_t << "_nr" << nr;
   sde_file.open(filename_wiener.str(), std::ofstream::trunc);
 
   wiener_file.exceptions(std::ofstream::failbit | std::ofstream::badbit);
   std::stringstream filename_sde;
-  filename_sde << "data10_sde_" << delta_t << "_nr" << nr;
+  filename_sde << "data10_wiener_" << delta_t << "_nr" << nr;
   wiener_file.open(filename_sde.str(), std::ofstream::trunc);
 }
 
