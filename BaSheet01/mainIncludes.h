@@ -8,9 +8,11 @@
 #ifndef MAININCLUDES_H_
 #define MAININCLUDES_H_
 
+int main1();
 int main3();
 int main6();
 int main9();
+int main10();
 
 
 #endif /* MAININCLUDES_H_ */
