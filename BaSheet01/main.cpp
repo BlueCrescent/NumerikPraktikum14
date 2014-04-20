@@ -10,7 +10,7 @@ int main(){
   std::cout << "Starting task 6..." << std::endl;
   std::async(std::launch::async, main6);
   std::cout << "Starting task 9..." << std::endl;
-  std::async(std::launch::async, main9);
+  main9();
   std::cout << "Over and out." << std::endl << std::endl;
   return 0;
 }

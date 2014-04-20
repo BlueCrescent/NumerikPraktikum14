@@ -12,6 +12,6 @@
 
 #include "INormalDist.h"
 
-void generate_convergence_data_with(double mu, double sigma, unsigned int size, INormalDistribution & dice);
+void generate_convergence_data_with(double mu, double sigma, long long unsigned int size, INormalDistribution & dice);
 
 #endif /* CONVERGENCE_PLOT_DATA_H_ */

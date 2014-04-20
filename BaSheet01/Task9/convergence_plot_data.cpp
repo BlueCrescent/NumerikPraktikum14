@@ -10,25 +10,19 @@
 #include "estimator.h"
 #include <sstream>
 
-inline void generateData(double * values, const unsigned int size,
-                         const double mu, const double sigma, INormalDistribution& dice) {
-  for (unsigned int i = 0; i < size; ++i)
-    values[i] = mu + sigma * dice.roll();
-}
-
-const void createFile(const double sigma, std::ofstream & dataFile) {
+const void create_file(const double sigma, std::ofstream & dataFile) {
+  dataFile.exceptions(std::ofstream::failbit | std::ofstream::badbit);
   std::stringstream filename;
   filename << "data9_" << sigma;
   dataFile.open(filename.str(), std::ofstream::trunc);
 }
 
-void generate_convergence_data_with(const double mu, const double sigma, const unsigned int size, INormalDistribution & dice) {
-  double values[size];
-  generateData(values, size, mu, sigma, dice);
+void generate_convergence_data_with(const double mu, const double sigma, long long unsigned int size, INormalDistribution & dice) {
+  ++size;
   std::ofstream dataFile;
-  createFile(sigma, dataFile);
+  create_file(sigma, dataFile);
 
-  stream_variance_estimator_error(values, size, sigma, dataFile);
+  stream_variance_estimator_error(dice, size, mu, sigma, dataFile);
 
   dataFile.close();
 }
