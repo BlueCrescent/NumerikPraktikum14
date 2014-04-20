@@ -6,3 +6,5 @@ plot(bins, vals / trapz(bins, vals), '*', bins, 1 / sqrt(2 * pi) * exp(-bins.^2 
 legend('rejection sampling', 'p(x)');
 xlabel('x');
 ylabel('density');
+
+print -deps -color  task3plot.eps
