@@ -8,7 +8,7 @@
 #include "convergence_plot_data.h"
 
 #include "estimator.h"
-#include <string>
+#include <sstream>
 
 inline void generateData(double * values, const unsigned int size,
                          const double mu, const double sigma, INormalDistribution& dice) {
@@ -17,8 +17,10 @@ inline void generateData(double * values, const unsigned int size,
 }
 
 const void createFile(const double sigma, std::ofstream & dataFile) {
-  std::string filename = std::string("data9_") + std::to_string(sigma);
-  dataFile.open(filename, std::ofstream::trunc);
+//  std::string filename = std::string("data9_") + std::to_string(sigma);
+  std::stringstream filename;
+  filename << "data9_" << sigma;
+  dataFile.open(filename.str(), std::ofstream::trunc);
 }
 
 void generate_convergence_data_with(const double mu, const double sigma, const unsigned int size, INormalDistribution & dice) {
