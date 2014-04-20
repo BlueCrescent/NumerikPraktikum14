@@ -17,9 +17,6 @@ NormalRejectionSampling::NormalRejectionSampling(IUniformDist & UnifDice) :
 {
 }
 
-NormalRejectionSampling::~NormalRejectionSampling() {
-}
-
 double NormalRejectionSampling::roll() {
   double x, y;
   do {

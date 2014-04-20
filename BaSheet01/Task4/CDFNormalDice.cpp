@@ -33,9 +33,6 @@ CDFNormalDice::CDFNormalDice(IUniformDist & _UniformDice) :
   UniformDice.setBounds(0., 1.);
 }
 
-CDFNormalDice::~CDFNormalDice() {
-}
-
 double CDFNormalDice::roll() {
   return NormalCDFInverse(UniformDice.roll());
 }

@@ -7,20 +7,13 @@
 class Cpp11UniformDice : public IUniformDist
 {
 public:
-    // Methods
     Cpp11UniformDice();
+
+    ~Cpp11UniformDice() = default;
 
     double roll();
 
     void setBounds(double Lower, double Upper);
-//
-//    double rollExpDist(double Lambda);
-//    double rollDiscrUnifDist(int);
-//    double rollContUnifDist(double);
-//
-//    // TESTING
-//    double computeAverage(int Loops);
-//    double rollExpDist();
 
 private:
     double Lower, Upper;
