@@ -24,7 +24,7 @@ plot "data9_0.1" using 1:2 with l title "sigma = 0.1", \
 "data9_10" using 1:2 with l title "sigma = 10.0", \
 f(x) title "N ^ (-1/2)"
 
-set term postscript eps color blacktext "Helvetica" 24
+set term postscript eps color blacktext "Helvetica" 14
 set output 'task9_convergence_plot.eps'
 
 plot "data9_0.1" using 1:2 with l title "sigma = 0.1", \
