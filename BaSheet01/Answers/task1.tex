@@ -30,8 +30,8 @@ and the other method
 
 \newpage
 \section{Task: 3} %//////////////////////////////////
-The Plot should simulate the occurencedensity of points of our 1.000.000 samples which are normally distributed. But the picture
-shows that all points are over the exact Plot of the density function what ist nearly impossible with so many samples. Therefor 
+The Plot should simulate the occurrence density of points of our 1 000 000 samples which are normally distributed. But the picture
+shows that all points are over the exact plot of the density function what is nearly impossible with so many samples. Therefore 
 we conclude that the plot was made with different parameters.
 \begin{figure}[h]
 	\centering
@@ -44,8 +44,8 @@ We can sample a uniformlly y in the intervall [0,1] and apply the inverse cdf to
 
 \newpage
 \section{Task: 5} %//////////////////////////////////
-The Algorithm uses a interpolation (see fig. 1) with maximal estimation error: $2*10^{-9}$ (see fig. 2) where the upper half of the Distributionfunction is devided into 2 sections in which interpolations where made. 
-If x is in the lower halft of the Distributionfunction, than 1-NomralCDF(-x) will be used to use the symmetric property.
+The Algorithm uses a interpolation (see fig. 1) with maximal estimation error: $2\cdot 10^{-9}$ (see fig. 2) where the upper half of the distribution function is divided into 2 sections in which interpolations where made. 
+If x is in the lower half of the distribution function, than 1-NomralCDF(-x) will be used to use the symmetric property.
 \begin{figure}[htbp]
 	\centering
 		\includegraphics[width=0.60\textwidth]{E:/pics/task5_interpolation_plot.eps}
@@ -74,7 +74,7 @@ If x is in the lower halft of the Distributionfunction, than 1-NomralCDF(-x) wil
 The algorithm need only one summation instead of two. The algorithm interates new samples to the total solution of the last step, so it could work better if we constantly give new sampels to the old ones because there is no need to run the hole calculation again. 
 
 \section{Task 9}
-We think that the error drops with the rate $\frac{1}{\sqrt{N}}$
+We think that the error drops with the rate $\frac{1}{\sqrt{N}}$.
 \begin{figure}[htbp]
 	\centering
 		\includegraphics[width=0.50\textwidth]{E:/pics/task9_convergence_plot.eps}
