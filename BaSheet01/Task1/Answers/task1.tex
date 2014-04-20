@@ -1,9 +1,10 @@
 \documentclass{article}
-\title{Task 1}
+\title{Answers}
 \author{Timm Ruland \& Boris Prochnau}
 \begin{document}
 \maketitle
 \begin{itemize}
+\section{Task: 1}	%///////////////////////////////////
 	\item What does it do? \\
 it prints two not sufficiently seeded "random" variables
 	\item The difference between the methods is that rand() returns a random number 
@@ -21,5 +22,10 @@ and the other method
 	\item Is there a direct function to generate normally distributed random variables?\\
 	double gsl\_ran\_gaussian\_pdf(const gsl\_rng * r, double sigma)
  command
+
+\section{Task: 3} %//////////////////////////////////
+The Plot should simulate the occurencedensity of points of our 1.000.000 samples which are normally distributed. But the picture
+shows that all points are over the exact Plot of the density function what ist nearly impossible with so many samples. Therefor 
+we conclude that the plot was made with different parameters.
 \end{itemize}
 \end{document}
