@@ -9,6 +9,7 @@
 
 #include "estimator.h"
 #include <sstream>
+#include <fstream>
 
 const void create_file(const double sigma, std::ofstream & dataFile) {
   dataFile.exceptions(std::ofstream::failbit | std::ofstream::badbit);
