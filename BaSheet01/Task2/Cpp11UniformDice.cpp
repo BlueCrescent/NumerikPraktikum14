@@ -5,7 +5,7 @@ Cpp11UniformDice::Cpp11UniformDice() :
   Lower(0),
   Upper(1)
 {
-  this->generator.seed(time_t(NULL));
+  this->generator.seed(time(NULL));
 }
 
 double Cpp11UniformDice::roll() {

@@ -10,7 +10,7 @@
 #include <ctime>
 
 Cpp11NormalDice::Cpp11NormalDice() {
-  this->generator.seed(time_t(NULL));
+  this->generator.seed(time(NULL));
 }
 
 double Cpp11NormalDice::roll() {
