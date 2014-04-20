@@ -9,7 +9,7 @@
 \maketitle
 
 \begin{itemize}
-\section{Task: 1}	%///////////////////////////////////
+\section*{Task: 1}	%///////////////////////////////////
 	\item What does it do? \\
 it prints two not sufficiently seeded "random" variables
 	\item The difference between the methods is that rand() returns a random number 
@@ -30,7 +30,7 @@ and the other method
 \end{itemize}
 
 \newpage
-\section{Task: 3} %//////////////////////////////////
+\section*{Task: 3} %//////////////////////////////////
 The Plot should simulate the occurrence density of points of our 1 000 000 samples which are normally distributed. But the picture
 shows that all points are over the exact plot of the density function what is nearly impossible with so many samples. Therefore 
 we conclude that the plot was made with different parameters.
@@ -40,11 +40,11 @@ we conclude that the plot was made with different parameters.
 	\label{fig:task3plot}
 \end{figure}
 
-\section{Task: 4} %//////////////////////////////////
+\section*{Task: 4} %//////////////////////////////////
 We can sample a uniformlly y in the intervall [0,1] and apply the inverse cdf to sample a normally distributed variable
 
 \newpage
-\section{Task: 5} %//////////////////////////////////
+\section*{Task: 5} %//////////////////////////////////
 The Algorithm uses a interpolation (see fig. 1) with maximal estimation error: $2\cdot 10^{-9}$ (see fig. 2) where the upper half of the distribution function is divided into 2 sections in which interpolations where made. 
 If x is in the lower half of the distribution function, than 1-NomralCDF(-x) will be used to use the symmetric property.
 \begin{figure}[htbp]
@@ -61,7 +61,7 @@ If x is in the lower half of the distribution function, than 1-NomralCDF(-x) wil
 \end{figure}
 
 \newpage
-\section{Task 6}
+\section*{Task 6}
 \begin{figure}[htbp]
 	\centering
 		\includegraphics[width=0.50\textwidth]{E:/pics/task6_plot.eps}
@@ -69,7 +69,7 @@ If x is in the lower half of the distribution function, than 1-NomralCDF(-x) wil
 	\label{fig:task6_plot}
 \end{figure}
 
-\section{Task 7}
+\section*{Task 7}
 Let $X, Y$ be two independent standard normally distributed random variables. The joint distribution of them is
 \[p(x,y) = p(x)p(y) = \frac{1}{\sqrt(2\pi)} e^{-\frac{x^2}{2}} \cdot \frac{1}{\sqrt(2\pi)} e^{-\frac{y^2}{2}} =  \frac{1}{2\pi} e^{-\frac{y^2 + x^2}{2}}\]
 We notice that with x,y being two Cartesian coordinates: $x^2 + y^2$ is equal to their radius $r^2$ on a polar circle and we can write:
@@ -102,11 +102,12 @@ But those are polar coordinates, so we need to transform them to Cartesian coord
 \end{itemize}
 with these we now got back to a sample from the joint gaussian r.v. what explains why they are normally distributed (with the first equation above).
 
-\section{Task 8}
+\section*{Task 8}
 The algorithm need only one summation instead of two. The algorithm interates new samples to the total solution of the last step, so it could work better if we constantly give new sampels to the old ones because there is no need to run the hole calculation again. 
 
-\section{Task 9}
-We think that the error drops with the rate $\frac{1}{\sqrt{N}}$.
+\newpage
+\section*{Task 9}
+We think that the error drops with rate order: $O\left(\frac{1}{\sqrt{N}}\right)$.
 \begin{figure}[htbp]
 	\centering
 		\includegraphics[width=0.70\textwidth]{E:/pics/task9_convergence_plot.eps}
