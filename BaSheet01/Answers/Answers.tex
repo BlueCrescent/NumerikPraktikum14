@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage{subfigure} 
 
 \title{Answers}
 \author{Timm Ruland \& Boris Prochnau}
@@ -47,18 +48,13 @@ We can sample a uniformlly y in the intervall [0,1] and apply the inverse cdf to
 \section*{Task: 5} %//////////////////////////////////
 The Algorithm uses a interpolation (see fig. 1) with maximal estimation error: $2\cdot 10^{-9}$ (see fig. 2) where the upper half of the distribution function is divided into 2 sections in which interpolations where made. 
 If x is in the lower half of the distribution function, than 1-NomralCDF(-x) will be used to use the symmetric property.
-\begin{figure}[htbp]
-	\centering
-		\includegraphics[width=0.60\textwidth]{E:/pics/task5_interpolation_plot.eps}
-		\caption{Plot of Approximation}
-	\label{fig:task5_interpolation_plot}
-\end{figure}
-\begin{figure}[htbp]
-	\centering
-		\includegraphics[width=0.60\textwidth]{E:/pics/task5_difference_plot.eps}
-	\caption{estimation error}
-	\label{fig:task5_difference_plot}
-\end{figure}
+
+\begin{figure} [htbp]
+    \subfigure[Plot of approximation]{\includegraphics[width=0.50\textwidth]{E:/pics/task5_interpolation_plot.eps}} 
+    \subfigure[Estimation error]{\includegraphics[width=0.50\textwidth]{E:/pics/task5_difference_plot.eps}} 
+\caption{Plots of Task 5} 
+\end{figure} 
+
 
 \newpage
 \section*{Task 6}
@@ -76,23 +72,23 @@ We notice that with x,y being two Cartesian coordinates: $x^2 + y^2$ is equal to
 \[ p(x,y) = \frac{1}{2\pi} e^{-\frac{r^2}{2}}\]
 which is the product of two density functions:
 \begin{itemize}
-	\item $r^2$ ~ Exp($\frac{1}{2}$) so $\lambda = 1/2$.
-	\item $\theta$ ~ Unif($0,2\pi$)
+	\item $r^2 \sim$ Exp($\frac{1}{2}$) so $\lambda = 1/2$.
+	\item $\theta \sim$ Unif($0,2\pi$)
 \end{itemize}
 By using the method of the inverse cdf before, we can now make some interesting computations:
 \begin{align*}
-y &= 1-\exp(-\lambda x) &|-1&\\
-y-1 &= -\exp(-\lambda x) &|\cdot(-1) |\log&\\
-log(1-y) &= -\lambda x &|: (-\lambda) &\\
+y &= 1-\exp(-\lambda x) &&|-1\\
+y-1 &= -\exp(-\lambda x) &&|\cdot(-1) |\log()\\
+log(1-y) &= -\lambda x &&|: (-\lambda) \\
 \frac{-log(1-y)}{\lambda} &= x &&
 \end{align*}
 Therefore we know that the inverse of the exponential distribution function is $F^{-1}(y) = \frac{-\log(1-y)}{\lambda}$. And now we can sample exponentially distributed r.v.'s with the inverse cdf method used before:
-\[Exp(\lambda) = \frac{-\log(1-y)}{\lambda} \]
+\[Exp(\lambda) = \frac{-\log(1-Unif(0,1))}{\lambda} \]
 and more important:
-\[r\text{~}\sqrt{-\log(Unif(0,1))}\]
+\[r \sim \sqrt{-\log(Unif(0,1))}\]
 with this knowledge we can now sample two uniform distributed r.v.'s $(u_1, u_2)$, one for  $r$ and the other for $\theta$:
 \begin{itemize}
-	\item $r\text{~}\sqrt{-\log(u_1)}$
+	\item $r = \sqrt{-\log(u_1)}$
 	\item $\theta = 2\pi u_2$
 \end{itemize}
 But those are polar coordinates, so we need to transform them to Cartesian coordinates first:
@@ -117,9 +113,16 @@ We think that the error drops with rate order: $O\left(\frac{1}{\sqrt{N}}\right)
 
 \section*{Task 10}
 Do the paths in principal look the same, independent of the time discretization?\\
-- We decided that the paths do not look the same because one makes partly rough movements while the other basicly moves with a rate of $\sqrt{t}$.\\
+- We decided that the paths do not look the same because one makes partly rough movements while the other basicly moves not very rough.\\
 Is the mean change of the price S(t) approximately 10\% /year?\\
-- This seems to be possible concerning our Plot listed below. We see that the mean change after 1 and 2 is near the expected 10% raise.
+- This seems to be possible concerning our Plot listed below. We see that the mean change after 1 and 2 is near the expected 10\% raise.
+
+\begin{figure} 
+    \subfigure[SDE]{\includegraphics[width=0.50\textwidth]{E:/pics/task10_process_plot.eps}} 
+    \subfigure[Wiener Process]{\includegraphics[width=0.50\textwidth]{E:/pics/task10_wiener_plot.eps}} 
+\caption{Titel unterm gesamten Bild} 
+\end{figure} 
+
 \begin{figure}[htbp]
 	\centering
 		\includegraphics[width=0.70\textwidth]{E:/pics/task10_process_plot.eps}
