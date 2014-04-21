@@ -1,8 +1,9 @@
 #include <iostream>
 #include <fstream>
-#include "../Task2/NormalRejectionSampling.h"
-#include "../Task2/Cpp11UniformDice.h"
-#include "../mainIncludes.h"
+
+#include "NormalRejectionSampling.h"
+#include "Cpp11UniformDice.h"
+
 using namespace std;
 
 void writeDataToFile3(NormalRejectionSampling& SamplingDice){
