@@ -13,6 +13,8 @@ int main(){
   main10();
   std::cout << "Starting sheet 2 task 1..." << std::endl;
   main_s2_01();
+  std::cout << "Starting sheet 2 task 2..." << std::endl;
+  main_s2_02();
   std::cout << "Over and out." << std::endl << std::endl;
   return 0;
 }
