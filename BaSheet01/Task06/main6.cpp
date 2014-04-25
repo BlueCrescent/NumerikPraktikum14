@@ -2,7 +2,6 @@
 #include <fstream>
 #include "BoxMullerDice.h"
 #include "Cpp11UniformDice.h"
-#include "../mainIncludes.h"
 using namespace std;
 
 void writeDataToFile6(BoxMullerDice& SamplingDice){

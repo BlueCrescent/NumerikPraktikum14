@@ -14,5 +14,7 @@ int main6();
 int main9();
 int main10();
 
+void main_s2_01();
+
 
 #endif /* MAININCLUDES_H_ */
