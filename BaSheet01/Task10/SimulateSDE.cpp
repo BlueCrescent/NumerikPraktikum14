@@ -20,6 +20,17 @@ SDE::SDE(const double _start_value, const double _mu, const double _sigma, const
 {
 }
 
+SDE::SDE(const SDEParameter params, INormalDistribution& _dice) :
+  dice(_dice),
+  start_value(params.start_value),
+  mu(params.mu),
+  sigma(params.sigma),
+  step_width(params.step_width),
+  current_time(0),
+  current_wiener_value(0)
+{
+}
+
 double SDE::compute_current_value() const {
   return start_value * exp((mu + 0.5 * sigma * sigma) * current_time + sigma * current_wiener_value);
 }
