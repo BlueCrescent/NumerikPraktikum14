@@ -22,14 +22,15 @@ void main_s2_02() {
   const double mu = 0.1;
   const double start_value = 10.;
   const double test_delta_ts[num_test_runs] = {0.2, 0.8, 1., 2.};
-  unsigned int strike = 10;
+  const double total_time = 2.;
+  const double strike = 10;
 
   double mean_estimates[num_test_runs];
   double var_estimates[num_test_runs];
 
   for (unsigned int i = 0; i < num_test_runs; ++i) {
     SDEParameter params = {start_value, mu, sigma, test_delta_ts[i]};
-    const OnlineEstimator estimation = SDEsimulation_estimates(simulation_size, strike, params);
+    const OnlineEstimator estimation = SDEsimulation_estimates(simulation_size, strike, total_time, params);
     mean_estimates[i] = estimation.get_current_mean();
     var_estimates[i] = estimation.get_current_variance();
   }

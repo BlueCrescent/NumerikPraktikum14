@@ -21,13 +21,14 @@ void main_s2_01() {
   const double mu = 0.1;
   const double start_value = 10.;
   const double delta_t = 0.2;
-  unsigned int strike = 10;
+  const double total_time = 2.;
+  const double strike = 10;
 
   double mean_estimates[num_test_runs];
 
   for (unsigned int i = 0; i < num_test_runs; ++i) {
     SDEParameter params = {start_value, mu, test_sigmas[i], delta_t};
-    mean_estimates[i] = SDEsimulation_estimates(simulation_size, strike, params).get_current_mean();
+    mean_estimates[i] = SDEsimulation_estimates(simulation_size, strike, total_time, params).get_current_mean();
   }
 
   print_results(test_sigmas, mean_estimates, num_test_runs);

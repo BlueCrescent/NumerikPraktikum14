@@ -12,6 +12,6 @@
 
 #include "OnlineEstimator.h"
 
-OnlineEstimator SDEsimulation_estimates(unsigned int num_sims, unsigned int strike, SDEParameter params);
+OnlineEstimator SDEsimulation_estimates(unsigned int num_sims, double time, double strike, SDEParameter params);
 
 #endif /* SAMPLE_PATH_SIMULATION_H_ */
