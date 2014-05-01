@@ -22,5 +22,5 @@ void main02_09(){
   ClenshawIntegrator Integrator1;
   Solution = Integrator1.integrate(20, &exampleFunction);
   GaussLegendreIntegrator Integrator2;
-  //Solution = Integrator2.integrate(20, &exampleFunction);
+  Solution = Integrator2.integrate(20, &exampleFunction);
 }
