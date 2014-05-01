@@ -25,9 +25,9 @@ public:
     };
 
   template<typename T>
-  double integrate(int level, T function);
+  double integrate(int level, T function) const;
 
-  virtual NodesAndWeights getNodesAndWeights(int amount) = 0;
+  virtual NodesAndWeights getNodesAndWeights(int amount) const = 0;
 
   virtual ~NumericalIntegrator(){};
 

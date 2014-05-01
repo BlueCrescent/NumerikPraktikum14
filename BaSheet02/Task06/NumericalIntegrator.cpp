@@ -9,7 +9,7 @@
 #include <cmath>
 
 template<typename T>
-double NumericalIntegrator::integrate(int level, T function){
+double NumericalIntegrator::integrate(int level, T function) const{
   const int amount = pow(2,level) - 1;
   const NodesAndWeights Parameters = getNodesAndWeights(amount);
 
