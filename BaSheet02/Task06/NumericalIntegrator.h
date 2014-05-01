@@ -30,8 +30,6 @@ public:
   virtual NodesAndWeights getNodesAndWeights(int amount) const = 0;
 
   virtual ~NumericalIntegrator(){};
-
-
 };
 
 
