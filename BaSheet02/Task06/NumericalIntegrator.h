@@ -29,10 +29,6 @@ public:
   virtual NodesAndWeights getNodesAndWeights(int amount) const = 0;
 
   virtual ~NumericalIntegrator(){};
-<<<<<<< HEAD
-
-=======
->>>>>>> branch 'master' of https://github.com/ChaseN7/NumerikPraktikum14.git
 };
 
 inline int NumericalIntegrator::NodesAndWeights::getSize() const {
