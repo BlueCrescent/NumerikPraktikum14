@@ -10,7 +10,7 @@
 
 #include "NumericalIntegrator.h"
 
-class GaussLegendreIntegrator : NumericalIntegrator {
+class GaussLegendreIntegrator : public NumericalIntegrator {
 public:
 
   NodesAndWeights getNodesAndWeights(int amount) const;
