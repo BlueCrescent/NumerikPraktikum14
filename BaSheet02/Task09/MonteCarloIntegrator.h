@@ -10,7 +10,7 @@
 
 #include "NumericalIntegrator.h"
 
-class MonteCarloIntegrator : NumericalIntegrator{
+class MonteCarloIntegrator : public NumericalIntegrator{
   NodesAndWeights getNodesAndWeights(int amount) const;
 };
 
