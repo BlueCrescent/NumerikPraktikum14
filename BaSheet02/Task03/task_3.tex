@@ -1,0 +1,36 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+
+%opening
+\title{}
+\author{}
+
+\usepackage{amsmath,amssymb,amsfonts,amsthm,mathtools} % Mathematik
+
+\usepackage{color}
+
+\begin{document}
+
+\section*{Task 3}
+
+\noindent We have:
+\begin{align*}
+ \mathbb{E}[V_{\text{call}}(S_T,0)] =& \frac{1}{\sqrt{2 \pi}} \int_{\chi}^\infty f_{\text{call}}(s)e^{-\frac{s^2}{2}}ds\\
+  =&\frac{1}{\sqrt{2 \pi}} \int_{\chi}^\infty \left( S(0)e^{(\mu-\frac{1}{2}\sigma^2)\cdot T+\sigma\sqrt{T}s}-K\right)e^{-\frac{s^2}{2}}ds
+\end{align*}
+With:
+\begin{align*}
+ \chi = \frac{1}{\sigma \sqrt{T}}\left(\log\left(\frac{K}{S_0}\right)-\left(\mu-\frac{\sigma^2}{2}\right)T\right)
+\end{align*}
+It follows:
+\begin{align*}
+ \mathbb{E}[V_{\text{call}}(S_T,0)] =&\frac{1}{\sqrt{2 \pi}} \int_{\infty}^{-\chi} S(0)e^((\mu-\frac{1}{2}\sigma^2)\cdot T-\sigma\sqrt{T}s)e^{-\frac{s^2}{2}}ds\\
+      & - \frac{K}{\sqrt{2 \pi}} \int_{\infty}^{-\chi} e^{-\frac{s^2}{2}}ds\\
+      =&S(0) e^{(\mu-\frac{1}{2}\sigma^2)\cdot T}\frac{1}{\sqrt{2 \pi}} \int_{\infty}^{-\chi} e^{-\frac{s^2}{2}-\sigma\sqrt{T}s}ds - K \Phi(-\chi)\\
+      =&S(0) e^{\mu T}\textcolor{red}{e^{-\frac{1}{2}\sigma^2 T}}\frac{1}{\sqrt{2 \pi}} \int_{\infty}^{-\chi} e^{-\frac{1}{2}(s+\sigma\sqrt{T})^2\textcolor{red}{+\frac{1}{2}\sigma^2 T}}ds - K \Phi(-\chi)\\
+      =&S(0) e^{\mu T} \Phi(\sigma \sqrt{T} - \chi) - K \Phi(-\chi)
+\end{align*}
+\flushright{$\qed$}
+
+
+\end{document}

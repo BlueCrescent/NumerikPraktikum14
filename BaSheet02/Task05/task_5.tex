@@ -1,0 +1,30 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+
+%opening
+\title{}
+\author{}
+
+\usepackage{amsmath,amssymb,amsfonts,amsthm,mathtools} % Mathematik
+
+\usepackage{color}
+
+\begin{document}
+
+\section*{Task 5}
+
+\noindent To proof:
+\begin{align*}
+ \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^\infty f(s)e^{-\frac{s^2}{2}}ds =& \int_{0}^1 f(\Phi^{-1}(t))dt
+\end{align*}
+Proof:
+\begin{align*}
+ \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^\infty f(s)e^{-\frac{s^2}{2}}ds =& \lim_{a\rightarrow \infty}\int_{-a}^a f(s) \phi '(s)ds\\
+  =& \lim_{a\rightarrow \infty}\int_{\Phi(-a)}^{\Phi(a)} f(\Phi^{-1}(t)) dt\\
+  =& \int_{0}^{1} f(\Phi^{-1}(t)) dt
+\end{align*}
+With substitution $s\rightarrow \Phi^{-1}(t)$.
+\flushright{$\qed$}
+
+
+\end{document}
