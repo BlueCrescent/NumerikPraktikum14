@@ -18,12 +18,12 @@ void ClenshawIntegrator::generateNodes(int amount, NodesAndWeights& params) cons
 
 void ClenshawIntegrator::generateWeights(int amount, NodesAndWeights& params) const {
   double weight;
-  double factor = 2 / amount;
+  double factor = 2. / amount;
   amount++; // we only use amount + 1
-  for (int i = 0; i < amount; ++i) {
+  for (int i = 0; i < amount - 1; ++i) {
     weight = 0;
     for (int j = 1; j < amount / 2; ++j) {
-      weight += 1 / (2 * j - 1) * sin((2*j - 1) * M_PI * i / amount);
+      weight += 1. / (2. * j - 1) * sin((2.*j - 1) * M_PI * i / amount);
     }
     weight *= sin(M_PI * i / amount) * factor;
     params.Weights.push_back(weight);
