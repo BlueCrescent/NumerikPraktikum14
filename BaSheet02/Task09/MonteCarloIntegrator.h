@@ -11,6 +11,8 @@
 #include "NumericalIntegrator.h"
 
 class MonteCarloIntegrator : public NumericalIntegrator{
+public:
+
   NodesAndWeights getNodesAndWeights(int amount) const;
 };
 

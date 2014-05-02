@@ -5,11 +5,17 @@
  *      Author: boris
  */
 
-#include <Task09/MonteCarloIntegrator.h>
+#include "MonteCarloIntegrator.h"
+
+inline void generateNodes(const int amount, MonteCarloIntegrator::NodesAndWeights & params) {
+  const double step = 1. / amount;
+  for (double nodeVal = step / 2.; nodeVal < 1.; nodeVal += step)
+    params.Nodes.push_back(nodeVal);
+}
 
 MonteCarloIntegrator::NodesAndWeights MonteCarloIntegrator::getNodesAndWeights(int amount) const {
   NodesAndWeights params;
-  params.Nodes.assign(amount,1);
-  params.Weights.assign(amount,1);
+  generateNodes(amount, params);
+  params.Weights.assign(amount, 1. / amount);
   return params;
 }
