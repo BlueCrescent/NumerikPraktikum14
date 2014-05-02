@@ -37,10 +37,19 @@ void main_s2_10(){
   writeIntegrationDataToFile(MonteCarloIntegrator(),    maxLevel, "data_callF_MonteCarlo_K=0",    0.);
 }
 
-inline double callFunction(double x, double K){
+inline double callFunction(double x, double K) {
   const double S0 = 10., mu = 0.1, sigma = 0.2, T = 2.;
   const double value = S0 * exp((mu - 0.5 * sigma * sigma) * T + sigma * sqrt(T) * x);
   return value > K ? value - K : 0.;
+}
+
+inline double exactExpectationForCallOptionValue(double K) {
+  const double S0 = 10., mu = 0.1, sigma = 0.2, T = 2.;
+  if (K == 0.)
+    return S0 * exp(mu * T);
+  const double X = 1. / (sigma * sqrt(T)) * (log(K / S0) - (mu - sigma * sigma / 2) * T);
+  const double expectation = S0 * exp(mu * T) * NormalCDFInverse(sigma * sqrt(T) - X) - K * NormalCDFInverse(- X);
+  return expectation;
 }
 
 inline void openOutputFile(ofstream& myfile, const char * filename) {
@@ -52,8 +61,11 @@ inline void openOutputFile(ofstream& myfile, const char * filename) {
 
 inline void generateOutputDataWithCallFunc(int maxLevel, ostream & myfile, const NumericalIntegrator & Integrator, double K) {
   auto callOptionIntegrandTransformed = [=](double x){return callFunction(NormalCDFInverse(x), K);};
+  const double exactValue = exactExpectationForCallOptionValue(K);
+
   for (int l = 1; l <= maxLevel; ++l) {
-    myfile << l << " " << Integrator.integrate(l, callOptionIntegrandTransformed) << "\n";
+    const double numericalIntegrationValue = Integrator.integrate(l, callOptionIntegrandTransformed);
+    myfile << l << " " << abs(exactValue - numericalIntegrationValue) / exactValue << "\n";
   }
 }
 
