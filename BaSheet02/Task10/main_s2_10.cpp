@@ -16,7 +16,7 @@
 #include "GaussLegendreIntegrator.h"
 #include "MonteCarloIntegrator.h"
 
-#include "CDFNormalDice.h"
+#include "NormalCDFInverse.h"
 
 using namespace std;
 
@@ -51,9 +51,9 @@ inline void openOutputFile(ofstream& myfile, const char * filename) {
 }
 
 inline void generateOutputDataWithCallFunc(int maxLevel, ostream & myfile, const NumericalIntegrator & Integrator, double K) {
-  auto call_option_integrand = [](double x){return callFunction(CDFNormalDice::NormalCDFInverse(x), K);};
+  auto callOptionIntegrandTransformed = [=](double x){return callFunction(NormalCDFInverse(x), K);};
   for (int l = 1; l <= maxLevel; ++l) {
-    myfile << l << " " << Integrator.integrate(l, call_option_integrand) << "\n";
+    myfile << l << " " << Integrator.integrate(l, callOptionIntegrandTransformed) << "\n";
   }
 }
 
