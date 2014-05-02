@@ -18,10 +18,9 @@
 using namespace std;
 
 double callFunction(double x){
-  double S0 = 10., mu = 0.1, sigma = 0.2, T = 2, step = 2., K = 10., solution;
-  solution = exp((mu - 0.5*sigma*sigma)*T + sigma*sqrt(T)*x);
-  solution = abs(solution - K);
-  return solution;
+  const double S0 = 10., mu = 0.1, sigma = 0.2, T = 2., K = 10.;
+  const double value = exp(S0 * (mu - 0.5 * sigma * sigma) * T + sigma * sqrt(T) * x);
+  return value > K ? value - K : 0.;
 }
 
 void writeDataToFileTrapezodial(int level){
