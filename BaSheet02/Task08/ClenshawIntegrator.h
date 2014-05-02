@@ -8,7 +8,7 @@
 #ifndef CLENSHAWINTEGRATOR_H_
 #define CLENSHAWINTEGRATOR_H_
 
-#include <Task06/NumericalIntegrator.h>
+#include "NumericalIntegrator.h"
 
 class ClenshawIntegrator: public NumericalIntegrator {
 public:
