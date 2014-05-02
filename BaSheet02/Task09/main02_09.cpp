@@ -28,7 +28,7 @@ void writeDataToFileTrapezodial(int level){
   myfile<<std::setprecision(20);
   cout<<"write data..."<<endl;
   for(int i = 1; i < level; ++i){
-    myfile<< i << " " << Integrator0.integrate(i, &exampleFunction) << "\n";
+    myfile<< i << " " << abs(Integrator0.integrate(i, &exampleFunction) -2.29744) / 2.29744 << "\n";
   }
   myfile.close();
 }
@@ -40,7 +40,7 @@ void writeDataToFileClenshaw(int level){
   myfile<<std::setprecision(20);
   cout<<"write data... "<<endl;
   for(int i = 1; i < level; ++i){
-    myfile<< i << " " << Integrator1.integrate(i, &exampleFunction) << "\n";
+    myfile<< i << " " << abs(Integrator1.integrate(i, &exampleFunction) -2.29744) / 2.29744<< "\n";
   }
   myfile.close();
 }
@@ -52,7 +52,7 @@ void writeDataToFileGaussLegendre(int level){
   myfile<<std::setprecision(20);
   cout<<"write data... "<<endl;
   for(int i = 1; i < level; ++i){
-    myfile<< i << " " << Integrator2.integrate(i, &exampleFunction) << "\n";
+    myfile<< i << " " << abs(Integrator2.integrate(i, &exampleFunction)-2.29744) / 2.29744 << "\n";
   }
   myfile.close();
 }
