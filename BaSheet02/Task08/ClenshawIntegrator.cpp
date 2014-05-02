@@ -9,24 +9,26 @@
 #include <cmath>
 
 inline void ClenshawIntegrator::generateNodes(const int amount, NodesAndWeights& params) const {
+  const double factor = M_PI / (amount + 1.);
   for (int i = 0; i < amount; ++i) {
-      const double node = 0.5*(1. - cos(M_PI * i / (amount + 1.)));
+      const double node = 0.5 * (1. - cos(i * factor));
       params.Nodes.push_back(node);
   }
 }
 
-inline double weightsInnerSum(const int sumUpper, const  int i, const double factor) {
-  double weight_add = 0;
-  for (int j = 1; j < sumUpper; ++j) {
-    weight_add += 1. / (2. * j - 1.) * sin((2. * j - 1.) * M_PI * i * factor);
+inline double weightInnerSum(const int sumUpper, const double piFactor) {
+  double weightAdd = 0.;
+  for (int j = 1; j <= sumUpper; ++j) {
+    weightAdd += 1. / (2. * j - 1.) * sin((2. * j - 1.) * piFactor);
   }
-  return weight_add;
+  return weightAdd;
 }
 
 inline void ClenshawIntegrator::generateWeights(const int amount, NodesAndWeights& params) const {
-  const double factor = 1. / (amount + 1);
+  const double factor = 1. / (amount + 1.);
   for (int i = 0; i < amount; ++i) {
-    const double weight = 2 * factor * sin(M_PI * i * factor) + weightsInnerSum((amount + 1) / 2, i, factor);
+    const double piFactor = M_PI * i * factor;
+    const double weight = 2. * factor * sin(piFactor) + weightInnerSum((amount + 1) / 2, piFactor);
     params.Weights.push_back(weight);
   }
 }
