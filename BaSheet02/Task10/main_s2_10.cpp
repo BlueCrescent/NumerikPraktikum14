@@ -53,7 +53,7 @@ inline double exactExpectationForCallOptionValue(double K) {
 }
 
 inline void openOutputFile(ofstream& myfile, const char * filename) {
-  cout << "    opening " << filename << "... ";
+  cout << "    opening " << filename << "... " << endl;
   myfile.open(filename);
   myfile << std::setprecision(20);
   cout << "    writing data..." << endl;
