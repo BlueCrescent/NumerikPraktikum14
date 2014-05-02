@@ -13,6 +13,7 @@
 #include "TrapezoidalIntegrator.h"
 #include "ClenshawIntegrator.h"
 #include "GaussLegendreIntegrator.h"
+#include "MonteCarloIntegrator.h"
 
 using namespace std;
 
@@ -20,11 +21,11 @@ double exampleFunction(double x){
   return 1 + exp(0.5 * x);
 }
 
-void writeDataToFileTrapezodial(int level){
+void writeDataToFileTrapezodial2(int level){
   TrapezoidalIntegrator Integrator0;
   ofstream myfile;
-  cout<<"open data_integrate_Trapezodial... ";
-  myfile.open ("data_integrate_Trapezodial");
+  cout<<"open data_example_Trapezodial... ";
+  myfile.open ("data_example_Trapezodial");
   myfile<<std::setprecision(20);
   cout<<"write data..."<<endl;
   for(int i = 1; i < level; ++i){
@@ -32,11 +33,11 @@ void writeDataToFileTrapezodial(int level){
   }
   myfile.close();
 }
-void writeDataToFileClenshaw(int level){
+void writeDataToFileClenshaw2(int level){
   ClenshawIntegrator Integrator1;
   ofstream myfile;
-  cout<<"open data_integrate_Clenshaw... ";
-  myfile.open ("data_integrate_Clenshaw");
+  cout<<"open data_example_Clenshaw... ";
+  myfile.open ("data_example_Clenshaw");
   myfile<<std::setprecision(20);
   cout<<"write data... "<<endl;
   for(int i = 1; i < level; ++i){
@@ -44,11 +45,11 @@ void writeDataToFileClenshaw(int level){
   }
   myfile.close();
 }
-void writeDataToFileGaussLegendre(int level){
+void writeDataToFileGaussLegendre2(int level){
   GaussLegendreIntegrator Integrator2;
   ofstream myfile;
-  cout<<"open data_integrate_GaussLegendre... ";
-  myfile.open ("data_integrate_GaussLegendre");
+  cout<<"open data_example_GaussLegendre... ";
+  myfile.open ("data_example_GaussLegendre");
   myfile<<std::setprecision(20);
   cout<<"write data... "<<endl;
   for(int i = 1; i < level; ++i){
@@ -56,10 +57,23 @@ void writeDataToFileGaussLegendre(int level){
   }
   myfile.close();
 }
+void writeDataToFileMonteCarlo2(int level){
+  MonteCarloIntegrator Integrator3;
+  ofstream myfile;
+  cout<<"open data_example_MonteCarlo... ";
+  myfile.open ("data_example_MonteCarlo");
+  myfile<<std::setprecision(20);
+  cout<<"write data..."<<endl;
+  for(int i = 1; i < level; ++i){
+    myfile<< i << " " << abs(Integrator3.integrate(i, &exampleFunction) -2.29744) / 2.29744 << "\n";
+  }
+  myfile.close();
+}
 
 void main_s2_09(){
   int level = 12;
-  writeDataToFileTrapezodial(level);
-  writeDataToFileClenshaw(level);
-  writeDataToFileGaussLegendre(level);
+  writeDataToFileTrapezodial2(level);
+  writeDataToFileClenshaw2(level);
+  writeDataToFileGaussLegendre2(level);
+  writeDataToFileMonteCarlo2(level);
 }
