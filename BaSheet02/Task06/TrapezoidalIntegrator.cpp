@@ -17,7 +17,7 @@ void TrapezoidalIntegrator::generateWeights(NodesAndWeights& returnParam, const 
 
 void TrapezoidalIntegrator::generateNodes(NodesAndWeights& returnParam, double factor, int amount) const {
   returnParam.Nodes.push_back(factor);
-  for (int i = 1; i < amount - 1; ++i) {
+  for (int i = 2; i <= amount - 1; ++i) {
     returnParam.Nodes.push_back(factor*i);
   }
   returnParam.Nodes.push_back(factor*amount);
