@@ -17,6 +17,8 @@
 
 using namespace std;
 
+#define EXACT_INTEGRAL 2.29744254140025638832867116434
+
 double exampleFunction(double x){
   return 1 + exp(0.5 * x);
 }
@@ -29,7 +31,7 @@ void writeDataToFileTrapezodial2(int level){
   myfile<<std::setprecision(20);
   cout<<"    writing data..."<<endl;
   for(int i = 1; i < level; ++i){
-    myfile<< i << " " << abs(Integrator0.integrate(i, &exampleFunction) -2.29744) / 2.29744 << "\n";
+    myfile<< i << " " << abs(Integrator0.integrate(i, &exampleFunction) -EXACT_INTEGRAL) / EXACT_INTEGRAL << "\n";
   }
   myfile.close();
 }
@@ -41,7 +43,7 @@ void writeDataToFileClenshaw2(int level){
   myfile<<std::setprecision(20);
   cout<<"    writing data... "<<endl;
   for(int i = 1; i < level; ++i){
-    myfile<< i << " " << abs(Integrator1.integrate(i, &exampleFunction) -2.29744) / 2.29744<< "\n";
+    myfile<< i << " " << abs(Integrator1.integrate(i, &exampleFunction) -EXACT_INTEGRAL) / EXACT_INTEGRAL<< "\n";
   }
   myfile.close();
 }
@@ -53,7 +55,7 @@ void writeDataToFileGaussLegendre2(int level){
   myfile<<std::setprecision(20);
   cout<<"    writing data... "<<endl;
   for(int i = 1; i < level; ++i){
-    myfile<< i << " " << abs(Integrator2.integrate(i, &exampleFunction)-2.29744) / 2.29744 << "\n";
+    myfile<< i << " " << abs(Integrator2.integrate(i, &exampleFunction)-EXACT_INTEGRAL) / EXACT_INTEGRAL << "\n";
   }
   myfile.close();
 }
@@ -65,7 +67,7 @@ void writeDataToFileMonteCarlo2(int level){
   myfile<<std::setprecision(20);
   cout<<"    writing data..."<<endl;
   for(int i = 1; i < level; ++i){
-    myfile<< i << " " << abs(Integrator3.integrate(i, &exampleFunction) -2.29744) / 2.29744 << "\n";
+    myfile<< i << " " << abs(Integrator3.integrate(i, &exampleFunction) -EXACT_INTEGRAL) / EXACT_INTEGRAL << "\n";
   }
   myfile.close();
 }
