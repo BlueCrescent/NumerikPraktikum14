@@ -18,10 +18,10 @@ mv sh2_task2_variance_estimates_plot.eps ../sh2_task2_variance_estimates_plot.ep
 mv sh2_task4_plot.gif ../sh2_task4_plot.gif
 mv sh2_task4_plot.eps ../sh2_task4_plot.eps
 
-../../BaSheet02/Task04/tasks2_09convPlot.sh
+../../BaSheet02/Task09/tasks2_09convPlot.sh
 mv task9_convergence_plot.gif ../task9_convergence_plot.gif
 mv task9_convergence_plot.eps ../task9_convergence_plot.eps
 
-../../BaSheet02/Task04/tasks2_10convPlot.sh
+../../BaSheet02/Task10/tasks2_10convPlot.sh
 mv task10_convergence_plot.gif ../task10_convergence_plot.gif
 mv task10_convergence_plot.eps ../task10_convergence_plot.eps
