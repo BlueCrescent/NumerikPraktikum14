@@ -1,13 +1,40 @@
 /*
- * NormalCDFInverse.cpp
+ * NormalCDF.cpp
  *
  *  Created on: 02.05.2014
  *      Author: BlueCrescent
  */
 
-#include "NormalCDFInverse.h"
+#include "NormalCDF.h"
 
 #include <cmath>
+
+#define A0 0.398942270991
+#define A1 0.020133760596
+#define A2 0.002946756074
+#define B1 0.217134277847
+#define B2 0.018576112465
+#define B3 0.000643163695
+#define C0 1.398247031184
+#define C1 -0.360040248231
+#define C2 0.022719786588
+#define D0 1.460954518699
+#define D1 -0.305459640162
+#define D2 0.038611796258
+#define D3 -0.003787400686
+
+double NormalCDF(double x) {
+  if (x < 0.)
+    return 1. - NormalCDF(- x);
+  if (x <= 1.87) {
+    const double x2  = x * x;
+    return 0.5 + x * (A0 + (A1 + A2 * x2) * x2) / (1. + (B1 + (B2 + B3 * x2) * x2) * x2);
+  }
+  else if (x < 6.) {
+    return 1. - pow((C0 + (C1 + C2 * x) * x) / (D0 + (D1 + (D2 + D3 * x) * x) * x), 16.);
+  }
+  return 1.;
+}
 
 #define E0 2.50662823884
 #define E1 -18.61500062529

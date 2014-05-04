@@ -16,7 +16,7 @@
 #include "GaussLegendreIntegrator.h"
 #include "MonteCarloIntegrator.h"
 
-#include "NormalCDFInverse.h"
+#include "NormalCDF.h"
 
 using namespace std;
 
@@ -48,7 +48,7 @@ inline double exactExpectationForCallOptionValue(double K) {
   if (K == 0.)
     return S0 * exp(mu * T);
   const double X = 1. / (sigma * sqrt(T)) * (log(K / S0) - (mu - sigma * sigma / 2) * T);
-  const double expectation = S0 * exp(mu * T) * NormalCDFInverse(sigma * sqrt(T) - X) - K * NormalCDFInverse(- X);
+  const double expectation = S0 * exp(mu * T) * NormalCDF(sigma * sqrt(T) - X) - K * NormalCDF(- X);
   return expectation;
 }
 
