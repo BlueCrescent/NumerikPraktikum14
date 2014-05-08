@@ -6,11 +6,12 @@
  */
 
 #include "MonteCarloIntegrator.h"
+#include "Cpp11UniformDice.h"
 
 inline void generateNodes(const int amount, MonteCarloIntegrator::NodesAndWeights & params) {
-  const double step = 1. / amount;
-  for (double nodeVal = step / 2.; nodeVal < 1.; nodeVal += step)
-    params.Nodes.push_back(nodeVal);
+  Cpp11UniformDice Dice;
+  for (int i = 0; i < amount; ++i)
+    params.Nodes.push_back(Dice.roll());
 }
 
 MonteCarloIntegrator::NodesAndWeights MonteCarloIntegrator::getNodesAndWeights(int amount) const {

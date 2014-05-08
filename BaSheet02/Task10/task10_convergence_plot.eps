@@ -1,7 +1,7 @@
 %!PS-Adobe-2.0 EPSF-2.0
 %%Title: task10_convergence_plot.eps
-%%Creator: gnuplot 4.4 patchlevel 3
-%%CreationDate: Sun May  4 12:59:55 2014
+%%Creator: gnuplot 4.6 patchlevel 3
+%%CreationDate: Thu May  8 18:28:06 2014
 %%DocumentFonts: (atend)
 %%BoundingBox: 50 50 410 302
 %%EndComments
@@ -20,10 +20,12 @@ gnudict begin
 /Level1 false def
 /Rounded false def
 /ClipToBoundingBox false def
+/SuppressPDFMark false def
 /TransparentPatterns false def
 /gnulinewidth 5.000 def
 /userlinewidth gnulinewidth def
 /Gamma 1.0 def
+/BackgroundColor {-1.000 -1.000 -1.000} def
 %
 /vshift -46 def
 /dl1 {
@@ -38,22 +40,6 @@ gnudict begin
 /vpt_ 31.5 def
 /hpt hpt_ def
 /vpt vpt_ def
-Level1 {} {
-/SDict 10 dict def
-systemdict /pdfmark known not {
-  userdict /pdfmark systemdict /cleartomark get put
-} if
-SDict begin [
-  /Title (task10_convergence_plot.eps)
-  /Subject (gnuplot plot)
-  /Creator (gnuplot 4.4 patchlevel 3)
-  /Author (timm)
-%  /Producer (gnuplot)
-%  /Keywords ()
-  /CreationDate (Sun May  4 12:59:55 2014)
-  /DOCINFO pdfmark
-end
-} ifelse
 /doclip {
   ClipToBoundingBox {
     newpath 50 50 moveto 410 50 lineto 410 302 lineto 50 302 lineto closepath
@@ -61,7 +47,7 @@ end
   } if
 } def
 %
-% Gnuplot Prolog Version 4.4 (August 2010)
+% Gnuplot Prolog Version 4.6 (September 2012)
 %
 %/SuppressPDFMark true def
 %
@@ -328,7 +314,8 @@ end
 /PatternFill {gsave /PFa [ 9 2 roll ] def
   PFa 0 get PFa 2 get 2 div add PFa 1 get PFa 3 get 2 div add translate
   PFa 2 get -2 div PFa 3 get -2 div PFa 2 get PFa 3 get Rec
-  gsave 1 setgray fill grestore clip
+  TransparentPatterns {} {gsave 1 setgray fill grestore} ifelse
+  clip
   currentlinewidth 0.5 mul setlinewidth
   /PFs PFa 2 get dup mul PFa 3 get dup mul add sqrt def
   0 0 M PFa 5 get rotate PFs -2 div dup translate
@@ -433,8 +420,26 @@ Level1 {Level1PatternFill} {Level2PatternFill} ifelse
 /Symbol-Oblique /Symbol findfont [1 0 .167 1 0 0] makefont
 dup length dict begin {1 index /FID eq {pop pop} {def} ifelse} forall
 currentdict end definefont pop
+Level1 SuppressPDFMark or 
+{} {
+/SDict 10 dict def
+systemdict /pdfmark known not {
+  userdict /pdfmark systemdict /cleartomark get put
+} if
+SDict begin [
+  /Title (task10_convergence_plot.eps)
+  /Subject (gnuplot plot)
+  /Creator (gnuplot 4.6 patchlevel 3)
+  /Author (boris)
+%  /Producer (gnuplot)
+%  /Keywords ()
+  /CreationDate (Thu May  8 18:28:06 2014)
+  /DOCINFO pdfmark
+end
+} ifelse
 end
 %%EndProlog
+%%Page: 1 1
 gnudict begin
 gsave
 doclip
@@ -443,14 +448,18 @@ doclip
 0 setgray
 newpath
 (Helvetica) findfont 140 scalefont setfont
+BackgroundColor 0 lt 3 1 roll 0 lt exch 0 lt or or not {BackgroundColor C 1.000 0 0 7200.00 5040.00 BoxColFill} if
 1.000 UL
 LTb
+LCb setrgbcolor
 1.000 UL
 LTa
+LCa setrgbcolor
 938 448 M
 6009 0 V
 stroke
 LTb
+LCb setrgbcolor
 938 448 M
 63 0 V
 5946 0 R
@@ -459,16 +468,19 @@ LTb
 ( 1e-08) Rshow
 1.000 UL
 LTb
+LCb setrgbcolor
 938 827 M
 31 0 V
 5978 0 R
 -31 0 V
 stroke
 LTa
+LCa setrgbcolor
 938 1206 M
 6009 0 V
 stroke
 LTb
+LCb setrgbcolor
 938 1206 M
 63 0 V
 5946 0 R
@@ -477,16 +489,19 @@ LTb
 ( 1e-06) Rshow
 1.000 UL
 LTb
+LCb setrgbcolor
 938 1586 M
 31 0 V
 5978 0 R
 -31 0 V
 stroke
 LTa
+LCa setrgbcolor
 938 1965 M
 6009 0 V
 stroke
 LTb
+LCb setrgbcolor
 938 1965 M
 63 0 V
 5946 0 R
@@ -495,16 +510,19 @@ LTb
 ( 0.0001) Rshow
 1.000 UL
 LTb
+LCb setrgbcolor
 938 2344 M
 31 0 V
 5978 0 R
 -31 0 V
 stroke
 LTa
+LCa setrgbcolor
 938 2723 M
 6009 0 V
 stroke
 LTb
+LCb setrgbcolor
 938 2723 M
 63 0 V
 5946 0 R
@@ -513,18 +531,21 @@ LTb
 ( 0.01) Rshow
 1.000 UL
 LTb
+LCb setrgbcolor
 938 3102 M
 31 0 V
 5978 0 R
 -31 0 V
 stroke
 LTa
+LCa setrgbcolor
 938 3481 M
 3426 0 V
 2499 0 R
 84 0 V
 stroke
 LTb
+LCb setrgbcolor
 938 3481 M
 63 0 V
 5946 0 R
@@ -533,18 +554,21 @@ LTb
 ( 1) Rshow
 1.000 UL
 LTb
+LCb setrgbcolor
 938 3861 M
 31 0 V
 5978 0 R
 -31 0 V
 stroke
 LTa
+LCa setrgbcolor
 938 4240 M
 3426 0 V
 2499 0 R
 84 0 V
 stroke
 LTb
+LCb setrgbcolor
 938 4240 M
 63 0 V
 5946 0 R
@@ -553,16 +577,19 @@ LTb
 ( 100) Rshow
 1.000 UL
 LTb
+LCb setrgbcolor
 938 4619 M
 31 0 V
 5978 0 R
 -31 0 V
 stroke
 LTa
+LCa setrgbcolor
 1659 448 M
 0 4171 V
 stroke
 LTb
+LCb setrgbcolor
 1659 448 M
 0 63 V
 0 4108 R
@@ -571,12 +598,15 @@ LTb
 ( 2) Cshow
 1.000 UL
 LTb
+LCb setrgbcolor
 1.000 UL
 LTa
+LCa setrgbcolor
 2621 448 M
 0 4171 V
 stroke
 LTb
+LCb setrgbcolor
 2621 448 M
 0 63 V
 0 4108 R
@@ -585,12 +615,15 @@ LTb
 ( 4) Cshow
 1.000 UL
 LTb
+LCb setrgbcolor
 1.000 UL
 LTa
+LCa setrgbcolor
 3582 448 M
 0 4171 V
 stroke
 LTb
+LCb setrgbcolor
 3582 448 M
 0 63 V
 0 4108 R
@@ -599,14 +632,17 @@ LTb
 ( 6) Cshow
 1.000 UL
 LTb
+LCb setrgbcolor
 1.000 UL
 LTa
+LCa setrgbcolor
 4543 448 M
 0 2988 V
 0 1120 R
 0 63 V
 stroke
 LTb
+LCb setrgbcolor
 4543 448 M
 0 63 V
 0 4108 R
@@ -615,14 +651,17 @@ LTb
 ( 8) Cshow
 1.000 UL
 LTb
+LCb setrgbcolor
 1.000 UL
 LTa
+LCa setrgbcolor
 5505 448 M
 0 2988 V
 0 1120 R
 0 63 V
 stroke
 LTb
+LCb setrgbcolor
 5505 448 M
 0 63 V
 0 4108 R
@@ -631,14 +670,17 @@ LTb
 ( 10) Cshow
 1.000 UL
 LTb
+LCb setrgbcolor
 1.000 UL
 LTa
+LCa setrgbcolor
 6466 448 M
 0 2988 V
 0 1120 R
 0 63 V
 stroke
 LTb
+LCb setrgbcolor
 6466 448 M
 0 63 V
 0 4108 R
@@ -647,8 +689,10 @@ LTb
 ( 12) Cshow
 1.000 UL
 LTb
+LCb setrgbcolor
 1.000 UL
 LTb
+LCb setrgbcolor
 938 4619 N
 938 448 L
 6009 0 V
@@ -670,9 +714,11 @@ LTb
 1.000 UP
 1.000 UL
 LTb
+LCb setrgbcolor
 % Begin plot #1
 1.000 UL
 LT0
+LC0 setrgbcolor
 LCb setrgbcolor
 6296 4486 M
 (Trapezodial, K = 10) Rshow
@@ -694,6 +740,7 @@ LT0
 % Begin plot #2
 stroke
 LT1
+LC1 setrgbcolor
 LCb setrgbcolor
 6296 4346 M
 (Gauss Legendre, K = 10) Rshow
@@ -715,6 +762,7 @@ LT1
 % Begin plot #3
 stroke
 LT2
+LC2 setrgbcolor
 LCb setrgbcolor
 6296 4206 M
 (Clenshaw Curtis, K = 10) Rshow
@@ -736,27 +784,29 @@ LT2
 % Begin plot #4
 stroke
 LT3
+LC3 setrgbcolor
 LCb setrgbcolor
 6296 4066 M
 (Monte Carlo, K = 10) Rshow
 LT3
 6380 4066 M
 399 0 V
-1178 3307 M
-481 -205 V
-481 -139 V
-481 -119 V
-480 -122 V
-481 -117 V
-481 -115 V
-480 -114 V
-481 -114 V
-481 -113 V
-481 -113 V
+1178 3297 M
+481 -99 V
+481 179 V
+481 -243 V
+480 -97 V
+481 101 V
+481 -153 V
+480 -236 V
+481 277 V
+481 -238 V
+481 151 V
 % End plot #4
 % Begin plot #5
 stroke
 LT4
+LC4 setrgbcolor
 LCb setrgbcolor
 6296 3926 M
 (Trapezodial, K = 0) Rshow
@@ -778,6 +828,7 @@ LT4
 % Begin plot #6
 stroke
 LT5
+LC5 setrgbcolor
 LCb setrgbcolor
 6296 3786 M
 (Gauss Legendre, K = 0) Rshow
@@ -799,6 +850,7 @@ LT5
 % Begin plot #7
 stroke
 LT6
+LC6 setrgbcolor
 LCb setrgbcolor
 6296 3646 M
 (Clenshaw Curtis, K = 0) Rshow
@@ -820,26 +872,28 @@ LT6
 % Begin plot #8
 stroke
 LT7
+LC7 setrgbcolor
 LCb setrgbcolor
 6296 3506 M
 (Monte Carlo, K = 0) Rshow
 LT7
 6380 3506 M
 399 0 V
-1178 2948 M
-481 -157 V
-481 -129 V
-481 -118 V
-480 -113 V
-481 -112 V
-481 -111 V
-480 -111 V
-481 -110 V
-481 -111 V
-481 -111 V
+1178 3252 M
+481 -285 V
+481 -187 V
+481 106 V
+480 9 V
+481 -147 V
+481 46 V
+480 -14 V
+481 -400 V
+481 318 V
+481 -251 V
 % End plot #8
 stroke
 LTb
+LCb setrgbcolor
 938 4619 N
 938 448 L
 6009 0 V
@@ -849,6 +903,7 @@ Z stroke
 1.000 UP
 1.000 UL
 LTb
+LCb setrgbcolor
 stroke
 grestore
 end
