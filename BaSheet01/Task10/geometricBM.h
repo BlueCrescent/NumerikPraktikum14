@@ -1,5 +1,5 @@
 /*
- * SimulateSDE.h
+ * geometricBM.h
  *
  *  Created on: 20.04.2014
  *      Author: BlueCrescent
@@ -9,6 +9,7 @@
 #define SIMULATESDE_H_
 
 #include "INormalDist.h"
+#include <vector>
 
 struct geometricBMParameter {
   double start_value;
@@ -22,6 +23,8 @@ public:
   geometricBM(double start_value, double mu, double sigma, double step_width, INormalDistribution & dice);
 
   geometricBM(geometricBMParameter params, INormalDistribution & dice);
+
+  std::vector<double> compute_path_values(int M);
 
   double compute_current_value() const;
 

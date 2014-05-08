@@ -31,6 +31,15 @@ geometricBM::geometricBM(const geometricBMParameter params, INormalDistribution&
 {
 }
 
+std::vector<double> geometricBM::compute_path_values(int M) {
+  std::vector<double> values;
+  for(int i = 0; i < M; i++){
+    next_step();
+    values.push_back(compute_current_value());
+  }
+  return values;
+}
+
 double geometricBM::compute_current_value() const {
   return start_value * exp((mu + 0.5 * sigma * sigma) * current_time + sigma * current_wiener_value);
 }
