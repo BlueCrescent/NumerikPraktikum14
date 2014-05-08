@@ -7,7 +7,7 @@
 
 #include <fstream>
 
-#include "SimulateSDE.h"
+#include "geometricBM.h"
 #include "sample_path_simulation.h"
 
 void print_results(const double sigmas[], const double mean_estimates[], unsigned int size);
@@ -27,7 +27,7 @@ void main_s2_01() {
   double mean_estimates[num_test_runs];
 
   for (unsigned int i = 0; i < num_test_runs; ++i) {
-    SDEParameter params = {start_value, mu, test_sigmas[i], delta_t};
+    geometricBMParameter params = {start_value, mu, test_sigmas[i], delta_t};
     mean_estimates[i] = SDEsimulation_estimates(simulation_size, strike, total_time, params).get_current_mean();
   }
 

@@ -10,18 +10,18 @@
 
 #include "INormalDist.h"
 
-struct SDEParameter {
+struct geometricBMParameter {
   double start_value;
   double mu;
   double sigma;
   double step_width;
 };
 
-class SDE {
+class geometricBM {
 public:
-  SDE(double start_value, double mu, double sigma, double step_width, INormalDistribution & dice);
+  geometricBM(double start_value, double mu, double sigma, double step_width, INormalDistribution & dice);
 
-  SDE(SDEParameter params, INormalDistribution & dice);
+  geometricBM(geometricBMParameter params, INormalDistribution & dice);
 
   double compute_current_value() const;
 

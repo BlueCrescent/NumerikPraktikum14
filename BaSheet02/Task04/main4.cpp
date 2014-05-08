@@ -9,12 +9,12 @@
 #include <fstream>
 #include <sstream>
 
-#include "SimulateSDE.h"
+#include "geometricBM.h"
 #include "Cpp11NormalDice.h"
 
 #include "option_values.h"
 
-void run_and_print_results(SDEParameter params, double time, double strike, unsigned int run);
+void run_and_print_results(geometricBMParameter params, double time, double strike, unsigned int run);
 
 void main_s2_04() {
   const unsigned int num_test_runs = 5;
@@ -26,7 +26,7 @@ void main_s2_04() {
   const double total_time = 1.;
   const double strike = 10;
 
-  const SDEParameter params = {start_value, mu, sigma, delta_t};
+  const geometricBMParameter params = {start_value, mu, sigma, delta_t};
 
   for (unsigned int i = 1; i <= num_test_runs; ++i) {
     run_and_print_results(params, total_time, strike, i);
@@ -40,15 +40,15 @@ void create_file_2_4(std::ofstream & out_file, const unsigned int run) {
   out_file.open(filename.str(), std::ofstream::trunc);
 }
 
-inline double call_value_of_sim_SDE(const SDEParameter params, const double time,
+inline double call_value_of_sim_SDE(const geometricBMParameter params, const double time,
                                     const double strike, Cpp11NormalDice & dice) {
-  SDE sample_path(params, dice);
+  geometricBM sample_path(params, dice);
   while (sample_path.get_current_time() <= time)
     sample_path.next_step();
   return call_option_value(sample_path.compute_current_value(), strike);
 }
 
-void run_and_print_results(const SDEParameter params, const double time,
+void run_and_print_results(const geometricBMParameter params, const double time,
                            const double strike, const unsigned int run) {
   std::ofstream out_file;
   create_file_2_4(out_file, run);

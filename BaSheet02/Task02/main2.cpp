@@ -7,7 +7,7 @@
 
 #include <fstream>
 
-#include "SimulateSDE.h"
+#include "geometricBM.h"
 #include "sample_path_simulation.h"
 
 void print_results(const double dellts_ts[], const double mean_estimates[],
@@ -29,7 +29,7 @@ void main_s2_02() {
   double var_estimates[num_test_runs];
 
   for (unsigned int i = 0; i < num_test_runs; ++i) {
-    SDEParameter params = {start_value, mu, sigma, test_delta_ts[i]};
+    geometricBMParameter params = {start_value, mu, sigma, test_delta_ts[i]};
     const OnlineEstimator estimation = SDEsimulation_estimates(simulation_size, strike, total_time, params);
     mean_estimates[i] = estimation.get_current_mean();
     var_estimates[i] = estimation.get_current_variance();

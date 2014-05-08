@@ -5,7 +5,7 @@
  *      Author: BlueCrescent
  */
 
-#include "SimulateSDE.h"
+#include "geometricBM.h"
 
 #include "Cpp11NormalDice.h"
 
@@ -52,7 +52,7 @@ void simulate_and_print_SDEs(double T, double mu, double sigma, double start_val
     std::ofstream wiener_file;
     create_files(delta_t, sde_file, wiener_file, i);
 
-    SDE sde(start_value, mu, sigma, delta_t, normal_dice);
+    geometricBM sde(start_value, mu, sigma, delta_t, normal_dice);
     for (; sde.get_current_time() <= T; sde.next_step()) {
       sde_file << sde.get_current_time() << " " << sde.compute_current_value() << std::endl;
       wiener_file << sde.get_current_time() << " " << sde.get_current_wiener_value() << std::endl;
