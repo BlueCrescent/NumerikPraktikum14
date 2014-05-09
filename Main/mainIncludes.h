@@ -20,4 +20,6 @@ void main_s2_04();
 void main_s2_09();
 void main_s2_10();
 
+void main_s3_03();
+
 #endif /* MAININCLUDES_H_ */

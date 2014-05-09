@@ -21,6 +21,8 @@ int main(){
   main_s2_09();
   std::cout << "Starting sheet 2 task 10..." << std::endl;
   main_s2_10();
+  std::cout << "Starting sheet 3 task 3..." << std::endl;
+  main_s3_03();
   std::cout << "Over and out." << std::endl << std::endl << std::endl;
   return 0;
 }
