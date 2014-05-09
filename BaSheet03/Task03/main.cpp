@@ -18,25 +18,25 @@ void main_s3_03() {
   std::ofstream myfile;
 
   myfile.open("data_s3_03_M10");
-  const double expectedPayoff = calc_discrete_geometric_fairP(start_value,r,sigma,strike,T,M1);
+  const double expectedPayoff1 = calc_discrete_geometric_fairP(start_value,r,sigma,strike,T,M1);
   double sum = 0;
   for(int i = 1; i < 100; i++){
     geometricBM Path(Parameters, Dice);
     const std::vector<double> values = Path.compute_path_values(M1);
     sum += evaluate_discr_geometric_payoff(values, strike);
-    myfile << i << " " << (sum/i - expectedPayoff)/expectedPayoff;
+    myfile << i << " " << (sum/i - expectedPayoff1)/expectedPayoff1;
   }
   myfile.close();
 
   myfile.open("data_s3_03_M200");
   Parameters.step_width = delta2;
-  const double expectedPayoff = calc_discrete_geometric_fairP(start_value,r,sigma,strike,T,M2);
+  const double expectedPayoff2 = calc_discrete_geometric_fairP(start_value,r,sigma,strike,T,M2);
   sum = 0;
   for(int i = 1; i < 100; i++){
     geometricBM Path(Parameters, Dice);
     const std::vector<double> values = Path.compute_path_values(M2);
     sum += evaluate_discr_geometric_payoff(values, strike);
-    myfile << i << " " << (sum/i - expectedPayoff)/expectedPayoff;
+    myfile << i << " " << (sum/i - expectedPayoff2)/expectedPayoff2;
   }
   myfile.close();
 

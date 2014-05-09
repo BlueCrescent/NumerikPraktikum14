@@ -30,7 +30,7 @@ double calc_continious_geometric_fairP(double start_value, double r, double sigm
 
 double evaluate_discr_geometric_payoff(const std::vector<double>& PathValues, double strike) {
   double product = 1;
-  for(int i = 0; i < PathValues.size(); i++){
+  for(unsigned int i = 0; i < PathValues.size(); i++){
     product *= PathValues[i];
   }
   const double average = pow(product,1./PathValues.size())- strike;
