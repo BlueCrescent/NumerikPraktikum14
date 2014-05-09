@@ -36,3 +36,12 @@ double evaluate_discr_geometric_payoff(const std::vector<double>& PathValues, do
   const double average = pow(product,1./PathValues.size())- strike;
   return average > 0 ? average : 0;
 }
+
+double evaluate_discr_arithmetic_payoff(const std::vector<double>& PathValues, double strike) {
+  double sum = 0;
+  for(unsigned int i = 0; i < PathValues.size(); i++){
+    sum += PathValues[i];
+  }
+  const double average = sum/PathValues.size() - strike;
+  return average > 0 ? average : 0;
+}

@@ -16,5 +16,6 @@ double calc_continious_geometric_fairP(double start_value, double r, double sigm
 
 double evaluate_discr_geometric_payoff(const std::vector<double>& PathValues, double strike);
 
+double evaluate_discr_arithmetic_payoff(const std::vector<double>& PathValues, double strike);
 
 #endif /* ASIAN_FAIR_PRICES_H_ */
