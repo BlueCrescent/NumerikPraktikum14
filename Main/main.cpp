@@ -29,6 +29,8 @@ int main(){
 //  main_s3_05();
   std::cout << "Starting sheet 3 task 7..." << std::endl;
   main_s3_07();
+  std::cout << "Starting sheet 3 task 9..." << std::endl;
+  main_s3_09();
   std::cout << "Over and out." << std::endl << std::endl << std::endl;
   return 0;
 }

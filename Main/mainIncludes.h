@@ -24,6 +24,7 @@ void main_s3_03();
 void main_s3_04();
 void main_s3_05();
 void main_s3_07();
+void main_s3_09();
 
 
 #endif /* MAININCLUDES_H_ */
