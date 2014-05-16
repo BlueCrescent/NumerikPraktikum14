@@ -35,7 +35,7 @@ inline void genMultiWeightAndNode(const NumericalIntegrator::NodesAndWeights & O
 
   for(int j = 0; j < d; ++j) {
     weight *= OneDimVal.Weights[k[j]];
-    node[j] = OneDimVal.Nodes[k[j]];
+    node.push_back(OneDimVal.Nodes[k[j]]);
   }
 
   MultiDimVal.Weights.push_back(weight);
