@@ -12,7 +12,7 @@ ProductIntegrator::ProductIntegrator(const NumericalIntegrator& _UniVariateInteg
 {
 }
 
-inline bool incrementIndex(const std::vector<int>& k, int N_l, int d) const {
+inline bool incrementIndex(std::vector<int>& k, int N_l, int d) {
   for (int j = 0; j < d; ++j) {
     k[j]++;
     if (k[j] > N_l) {
