@@ -31,6 +31,11 @@ public:
   virtual ~NumericalIntegrator(){};
 };
 
+class HierarchicalIntegrator : public NumericalIntegrator {
+public:
+  virtual NodesAndWeights iterateLevel(const NodesAndWeights& old, int level) const = 0;
+};
+
 inline int NumericalIntegrator::NodesAndWeights::getSize() const {
   assert(Weights.size() == Nodes.size());
   return Weights.size();
