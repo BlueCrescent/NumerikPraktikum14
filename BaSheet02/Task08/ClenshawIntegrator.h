@@ -10,10 +10,11 @@
 
 #include "NumericalIntegrator.h"
 
-class ClenshawIntegrator: public NumericalIntegrator {
+class ClenshawIntegrator: public HierarchicalIntegrator {
 public:
   NodesAndWeights getNodesAndWeights(int amount) const;
 
+  NodesAndWeights iterateLevel(const NodesAndWeights& old) const;
 private:
   void generateNodes(int amount, NodesAndWeights& params) const;
   void generateWeights(int amount, NodesAndWeights& params) const;

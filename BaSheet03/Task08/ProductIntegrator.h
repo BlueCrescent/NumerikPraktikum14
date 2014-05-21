@@ -15,7 +15,7 @@ class ProductIntegrator : public MultiVariateIntegrator {
 public:
   ProductIntegrator(const NumericalIntegrator& UniVariateIntegrator);
 
-  NodesAndWeights getNodesAndWeights(int N_l, int d) const;
+  NodesAndWeights getNodesAndWeights(int l, int d) const;
 
 private:
   const NumericalIntegrator& UniVariateIntegrator;

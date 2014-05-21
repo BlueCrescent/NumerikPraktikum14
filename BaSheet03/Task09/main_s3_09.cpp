@@ -19,8 +19,7 @@
 #include <cmath>
 
 void computeAndPrint(const int l, std::ostream& output, const ProductIntegrator& integrator) {
-  const int N_l = pow(2, l) - 1;
-  const std::vector<std::vector<double> > nodes(std::move(integrator.getNodesAndWeights(N_l, 2).Nodes));
+  const std::vector<std::vector<double> > nodes(std::move(integrator.getNodesAndWeights(l, 2).Nodes));
 //  const MultiVariateIntegrator::NodesAndWeights nW = integrator.getNodesAndWeights(N_l, 2);
 //  const std::vector<std::vector<double> > nodes(integrator.getNodesAndWeights(N_l, 2).Nodes);
   for (unsigned int i = 0; i < nodes.size(); ++i) {

@@ -24,6 +24,24 @@ inline double weightInnerSum(const int sumUpper, const double piFactor) {
   return weightSum;
 }
 
+ClenshawIntegrator::NodesAndWeights ClenshawIntegrator::iterateLevel(const NodesAndWeights& old) const {
+  const int amount = old.getSize()*2 + 1;
+  const double factor = 1. / (amount + 1.);
+  NodesAndWeights params;
+  for (int i = 1; i <= amount; ++i) {
+    if(i % 2 == 0){
+      params.Nodes.push_back(old.Nodes[i / 2]);
+    } else{
+      const double node = 0.5 * (1. - cos(i * factor));
+      params.Nodes.push_back(node);
+    }
+    const double piFactor = M_PI * i * factor;
+    const double weight = 2. * factor * sin(piFactor) * weightInnerSum((amount + 1) / 2, piFactor);
+    params.Weights.push_back(weight);
+  }
+  return params;
+}
+
 inline void ClenshawIntegrator::generateWeights(const int amount, NodesAndWeights& params) const {
   const double factor = 1. / (amount + 1.);
   for (int i = 1; i <= amount; ++i) {

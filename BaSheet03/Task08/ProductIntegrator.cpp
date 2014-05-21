@@ -7,6 +7,8 @@
 
 #include "ProductIntegrator.h"
 
+#include <cassert>
+
 ProductIntegrator::ProductIntegrator(const NumericalIntegrator& _UniVariateIntegrator) :
     UniVariateIntegrator(_UniVariateIntegrator)
 {
@@ -34,15 +36,17 @@ inline void genMultiWeightAndNode(const NumericalIntegrator::NodesAndWeights & O
   double weight = 1;
 
   for(int j = 0; j < d; ++j) {
-    weight *= OneDimVal.Weights[k[j]];
-    node.push_back(OneDimVal.Nodes[k[j]]);
+    assert(0 <= k[j] - 1 && k[j] - 1 < OneDimVal.getSize());
+    weight *= OneDimVal.Weights[k[j] - 1];
+    node.push_back(OneDimVal.Nodes[k[j] - 1]);
   }
 
   MultiDimVal.Weights.push_back(weight);
   MultiDimVal.Nodes.push_back(node);
 }
 
-MultiVariateIntegrator::NodesAndWeights ProductIntegrator::getNodesAndWeights(int N_l, int d) const {
+MultiVariateIntegrator::NodesAndWeights ProductIntegrator::getNodesAndWeights(int l, int d) const {
+  const int N_l = pow(2, l) - 1;
   const NumericalIntegrator::NodesAndWeights OneDimVal = UniVariateIntegrator.getNodesAndWeights(N_l);
   MultiVariateIntegrator::NodesAndWeights MultiDimVal(pow(N_l, d));
   std::vector<int> k(d, 1);
