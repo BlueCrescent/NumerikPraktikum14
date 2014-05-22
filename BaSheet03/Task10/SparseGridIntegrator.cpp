@@ -90,7 +90,6 @@ inline void genMultiWeightAndNode(const std::vector<NodesAndWeights1D> OneDimVal
 }
 
 NodesAndWeights SparseGridIntegrator::getNodesAndWeights(int l, int d) const {
-  const int N_l = pow(2, l) - 1;
   const std::vector<NodesAndWeights1D> OneDimVals = generateOneDimValues(l); // FIXME Use move semantic here.
   NodesAndWeights MultiDimVal; // FIXME With required size.
 
@@ -99,7 +98,7 @@ NodesAndWeights SparseGridIntegrator::getNodesAndWeights(int l, int d) const {
 
   do {
     genMultiWeightAndNode(OneDimVals, MultiDimVal, d, kMax);
-  } while (incrementMaxIndex(kMax, sumK, N_l, d));
+  } while (incrementMaxIndex(kMax, sumK, l, d));
 
   return MultiDimVal;
 }
