@@ -115,6 +115,7 @@
 							<tool command="g++ " commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1744415556" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1045117847">
 								<option id="gnu.cpp.compiler.option.include.paths.562249343" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/BaSheet02/Task10}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/BaSheet03/Task10}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/BaSheet02/Task07}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/BaSheet02/Task08}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/BaSheet03/Task08}&quot;"/>
@@ -462,7 +463,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="BaSheet02/Task06/TrapezoidalIntegrator_test.cpp|BaSheet02/Task07/GaussLegendreIntegrator_test.cpp|BaSheet01/Task08/OnlineEstimator_test.cpp|BaSheet01/Task08/estimator_test.cpp|BaSheet01/Task06/BoxMullerDice_test.cpp|BaSheet01/Task04/CDFNormalDice_test.cpp|BaSheet01/Task02/NormalRejectionSampling_test.cpp|BaSheet01/Task02/Cpp11UniformDice_test.cpp|BaSheet01/Task02/GSLUniformDice_test.cpp|BaSheet01/Task02/Cpp11NormalDice_test.cpp|BaSheet01/Task2/Cpp11NormalDice_test.cpp|BaSheet01/Task2/NormalRejectionSampling_test.cpp|BaSheet01/Task8/estimator_test.cpp|Tests/test_main.cpp|BaSheet01/Task4/CDFNormalDice_test.cpp|Task09|External|BaSheet01/Task2/GSLUniformDice_test.cpp|BaSheet01/Task2/Cpp11UniformDice_test.cpp|BaSheet01/Task10/WienerProcess_test.cpp|BaSheet01/Task6/BoxMullerDice_test.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="BaSheet01/Task2/Cpp11NormalDice_test.cpp|BaSheet01/Task04/CDFNormalDice_test.cpp|BaSheet01/Task2/NormalRejectionSampling_test.cpp|BaSheet02/Task06/TrapezoidalIntegrator_test.cpp|BaSheet01/Task08/estimator_test.cpp|BaSheet01/Task2/GSLUniformDice_test.cpp|BaSheet01/Task2/Cpp11UniformDice_test.cpp|BaSheet01/Task10/WienerProcess_test.cpp|BaSheet01/Task08/OnlineEstimator_test.cpp|BaSheet01/Task06/BoxMullerDice_test.cpp|BaSheet01/Task02/Cpp11NormalDice_test.cpp|BaSheet01/Task8/estimator_test.cpp|Task09|BaSheet01/Task4/CDFNormalDice_test.cpp|Tests/test_main.cpp|BaSheet02/Task07/GaussLegendreIntegrator_test.cpp|BaSheet01/Task02/Cpp11UniformDice_test.cpp|External|BaSheet01/Task02/GSLUniformDice_test.cpp|BaSheet01/Task6/BoxMullerDice_test.cpp|BaSheet01/Task02/NormalRejectionSampling_test.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -543,6 +544,7 @@
 							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.173527023" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.1221971438">
 								<option id="gnu.cpp.compiler.option.include.paths.1641001120" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/BaSheet02/Task10}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/BaSheet03/Task10}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/BaSheet02/Task07}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/BaSheet02/Task08}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/BaSheet03/Task08}&quot;"/>
@@ -852,7 +854,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="BaSheet02/Task06/TrapezoidalIntegrator_test.cpp|BaSheet02/Task07/GaussLegendreIntegrator_test.cpp|BaSheet01/Task08/OnlineEstimator_test.cpp|BaSheet01/Task08/estimator_test.cpp|BaSheet01/Task06/BoxMullerDice_test.cpp|BaSheet01/Task04/CDFNormalDice_test.cpp|BaSheet01/Task02/NormalRejectionSampling_test.cpp|BaSheet01/Task02/Cpp11UniformDice_test.cpp|BaSheet01/Task02/GSLUniformDice_test.cpp|BaSheet01/Task02/Cpp11NormalDice_test.cpp|BaSheet01/Task2/Cpp11NormalDice_test.cpp|BaSheet01/Task2/NormalRejectionSampling_test.cpp|BaSheet01/Task8/estimator_test.cpp|BaSheet01/Task4/CDFNormalDice_test.cpp|Tests/test_main.cpp|Task09|External|BaSheet01/Task2/GSLUniformDice_test.cpp|BaSheet01/Task2/Cpp11UniformDice_test.cpp|BaSheet01/Task10/WienerProcess_test.cpp|BaSheet01/Task6/BoxMullerDice_test.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="BaSheet01/Task2/Cpp11NormalDice_test.cpp|BaSheet01/Task04/CDFNormalDice_test.cpp|BaSheet01/Task2/NormalRejectionSampling_test.cpp|BaSheet02/Task06/TrapezoidalIntegrator_test.cpp|BaSheet01/Task08/estimator_test.cpp|BaSheet01/Task2/GSLUniformDice_test.cpp|BaSheet01/Task2/Cpp11UniformDice_test.cpp|BaSheet01/Task10/WienerProcess_test.cpp|BaSheet01/Task08/OnlineEstimator_test.cpp|BaSheet01/Task06/BoxMullerDice_test.cpp|BaSheet01/Task02/Cpp11NormalDice_test.cpp|BaSheet01/Task8/estimator_test.cpp|Task09|Tests/test_main.cpp|BaSheet01/Task4/CDFNormalDice_test.cpp|BaSheet02/Task07/GaussLegendreIntegrator_test.cpp|BaSheet01/Task02/Cpp11UniformDice_test.cpp|External|BaSheet01/Task02/GSLUniformDice_test.cpp|BaSheet01/Task6/BoxMullerDice_test.cpp|BaSheet01/Task02/NormalRejectionSampling_test.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -935,6 +937,7 @@
 							<tool command="g++" commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1706011898" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.242862130">
 								<option id="gnu.cpp.compiler.option.include.paths.1617633560" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/BaSheet02/Task10}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/BaSheet03/Task10}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/BaSheet02/Task07}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/BaSheet02/Task08}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/BaSheet03/Task08}&quot;"/>
@@ -1285,7 +1288,7 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="Main|BaSheet01/Task1|BaSheet01/Task9|BaSheet01/Task3/main.cpp|Task09|BaSheet01/main.cpp|BaSheet01/Task 3/main.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="BaSheet01/Task1|BaSheet01/Task9|BaSheet01/Task3/main.cpp|Task09|BaSheet01/main.cpp|Main|BaSheet01/Task 3/main.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
