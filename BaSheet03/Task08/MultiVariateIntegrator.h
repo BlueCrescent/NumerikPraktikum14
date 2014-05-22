@@ -19,7 +19,7 @@ public:
       std::vector<double> Weights;
       std::vector<std::vector<double>> Nodes;
 
-      NodesAndWeights(int reserveSize);
+      NodesAndWeights(int reserveSize = 0);
 
       inline int getSize() const;
   };
