@@ -1,0 +1,60 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+
+%opening
+\title{}
+\author{}
+
+\usepackage{amsmath,amssymb,amsfonts,amsthm,mathtools} % Mathematik
+
+\usepackage{color}
+
+\begin{document}
+
+\section*{Task 1}
+
+\noindent {\textit{To prove}}:
+\begin{align*}
+  e^{-r T}\cdot \mathbb{E}\left[ V\left(S,T\right)\right] &=S(0)\cdot A \cdot \Phi\left(d+\sigma \sqrt{T_1}\right)-K e^{-r T} \Phi(d)
+\end{align*}
+with
+\begin{align*}
+  A &=e^{-r\left(T-T_2\right)-\sigma^2\left(T_2-T_1\right)/2}\\
+  d &=\frac{\log\left(S(0)/K\right)+\left(r-\frac{1}{2}\sigma^2\right)T_2}{\sigma \sqrt{T_1}}\\
+  T_1&=T-\frac{M\left(M-1\right)\left(4M+1\right)}{6M^2}\Delta t\\
+  T_2&=T-\frac{\left(M-1\right)}{2}\Delta t=\frac{M+1}{2}\Delta t\\
+\end{align*}
+{\textit{Proof:}}\\
+First transform the payoff function so that it only depends on one variable:
+\begin{align*}
+ V\left(S,T\right)=& \max \left\{\left(\prod_{i=1}^M S\left(t_i\right)\right)^{1/M}-K,0\right\}\\
+  =& \max \left\{\left(\prod_{i=1}^M  S\left(0\right) e^{\left(r-\frac{1}{2}\sigma^2\right)t_i+\sigma W\left(t_i\right)}  \right)^{1/M}-K,0\right\}\\
+  =& \max \left\{\left(S\left(0\right)^M e^{\sum_{i=1}^M\left(r-\frac{1}{2}\sigma^2\right)t_i+\sigma W\left(t_i\right)}  \right)^{1/M}-K,0\right\}\\
+  =& \max \left\{S\left(0\right)\left( e^{\left(r-\frac{1}{2}\sigma^2\right)\sum_{i=1}^M \Delta t \cdot i+\sigma \sum_{i=1}^M W\left(t_i\right)}  \right)^{1/M}-K,0\right\}\\
+  =& \max \left\{S\left(0\right) e^{\frac{1}{M}\left(\left(r-\frac{1}{2}\sigma^2\right) \Delta t \frac{M\left(M+1\right)}{2}+\sigma \sum_{i=1}^M W\left(t_i\right)\right)} -K,0\right\}
+% =& \max \left\{\left(\prod_{i=1}^M  S\left(0\right) e^{\left(r-\frac{1}{2}\sigma^2\right)t_i+\sigma W\left(t_i\right)}  \right)^{1/M}-K,0\right\}
+\end{align*}
+Since $W(t_i)$ are normal distributed and the increments of the Winer process are independent, it holds:
+\begin{align*}
+ \sum_{i=1}^{M}W\left(t_i\right)=&\sum_{i=1}^{M}\left(M-i+1\right)\left(W\left(t_i\right)-W\left(t_{i-1}\right)\right)&&\text{ $ $ $ $ $ $ $ $ with $t_0=0$}\\
+ \sim  & \mathcal{N}\left(0, \sum_{i=1}^{M} \left(M-i+1\right) \left(t_i - t_{i-1}\right)\right)&&= \mathcal{N}\left(0, \sum_{i=1}^{M} \left(M-i+1\right) \Delta t\right)\\
+ =& \mathcal{N}\left(0, \Delta t\left( M^2+M-\frac{M^2+M}{2}\right) \right)&&=\mathcal{N}\left(0, \Delta t\cdot\frac{M^2+M}{2} \right)\\
+\end{align*}
+With this we get the following univariate integrand for $\mathbb{E}\left[ V\left(S,T\right)\right]$:
+\begin{align*}
+ f_{geom}^{disc}\left(s\right):=&\left(S(0) exp\left(\left(r-\frac{1}{2}\sigma^2\right) \Delta t \cdot\frac{M+1}{2}+\frac{\sigma}{M}\sqrt{\Delta t\cdot\frac{M^2+M}{2}}s\right)-K\right)^+
+\end{align*}
+Now compute:
+\begin{align*}
+ &f\left(\chi\right)=0\\
+ \Leftrightarrow& \left(r-\frac{1}{2}\sigma^2\right) \Delta t \cdot\frac{M+1}{2}+\frac{\sigma}{M}\sqrt{\Delta t\cdot\frac{M^2+M}{2}} \chi = \log \left(\frac{K}{S(0)}\right)\\
+ \Leftrightarrow&  \sigma\sqrt{\Delta t\cdot\frac{M^2+M}{2M^2}} \chi = \log \left(\frac{K}{S(0)}\right)-\left(r-\frac{1}{2}\sigma^2\right)T_1
+\end{align*}
+
+
+...
+
+\flushright{$\qed$}
+
+
+\end{document}
