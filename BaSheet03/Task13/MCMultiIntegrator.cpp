@@ -28,7 +28,7 @@ std::vector<double> MCMultiIntegrator::generateRandomNode(const int d) const {
 }
 
 MCMultiIntegrator::NodesAndWeights MCMultiIntegrator::getNodesAndWeights(int l, int d) const {
-  const int amount = pow(2, l) - 1;
+  const int amount = pow(pow(2, l) - 1,d);
   MCMultiIntegrator::NodesAndWeights nodesAndWeights(amount);
   for (int i = 0; i < amount; ++i) {
     nodesAndWeights.Weights.push_back(1. / amount);

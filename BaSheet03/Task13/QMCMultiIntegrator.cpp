@@ -20,7 +20,7 @@ std::vector<double> generateWeights(const int amount) {
 }
 
 QMCMultiIntegrator::NodesAndWeights QMCMultiIntegrator::getNodesAndWeights(int l, int d) const {
-  const int amount = pow(2, l) - 1;
+  const int amount = pow(pow(2, l) - 1,d);
   QMCMultiIntegrator::NodesAndWeights nodesAndWeights;
 
   nodesAndWeights.Nodes = std::move(generateHaltonSequence(d, amount));
