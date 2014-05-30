@@ -35,7 +35,7 @@ void simulateAndPrintRelativeError(double delta_t, int M, std::ostream& outStrea
     geometricBM Path(Parameters, Dice);
     const std::vector<double> values = Path.compute_path_values(M);
     sum += evaluate_discr_geometric_payoff(values, strike);
-    outStream << i << " " << fabs(sum / i - expectedPayoff1) / expectedPayoff1 << std::endl;
+    outStream << i << " " << exp(- r * T) * fabs(sum / i - expectedPayoff1) / expectedPayoff1 << std::endl;
   }
 }
 
