@@ -1,3 +1,9 @@
+#include "PathGenerators.h"
+#include "simulationIntegrand.h"
+#include "asian_fair_prices.h"
+#include "SparseGridIntegrator.h"
+#include "ClenshawIntegrator.h"
+
 #include <vector>
 
 #include <cmath>
@@ -12,16 +18,25 @@ namespace {
   const double delta_t = M / T;
 }
 
-double geomBMIntegrand(std::vector<double> x) {
-  double prod = S0;
-  for (int i = 0; i < M; ++i) {
-    const double ti = (i + 1) * delta_t;
-    prod *= exp((r - 0.5 * sigma * sigma) * ti + sigma * sqrt(ti) * x[i]);
-  }
-  prod = pow(prod, 1. / M);
-  return prod > K ? prod - K : 0.;
+double payoffInt_randWalkDiscrGeom(const std::vector<double> & x) {
+  return uniformPayoffIntegrand(x, S0, r, sigma, T, M, K, genRandomWalkPath, evaluate_discr_geometric_payoff);
 }
 
+double payoffInt_brownianBridgeDiscrGeom(const std::vector<double> & x) {
+  return uniformPayoffIntegrand(x, S0, r, sigma, T, M, K, genBrownianBridgePath, evaluate_discr_geometric_payoff);
+}
+
+#include <iostream>
+
 void main_s3_15() {
+  const ClenshawIntegrator integrator1D;
+  const SparseGridIntegrator multivariateIntegrator(integrator1D);
+
+  std::cout << "randWalk: "
+            << multivariateIntegrator.integrate(4, M, payoffInt_randWalkDiscrGeom)
+            << std::endl;
+  std::cout << "brownBridge: "
+            << multivariateIntegrator.integrate(4, M, payoffInt_brownianBridgeDiscrGeom)
+            << std::endl;
 
 }
