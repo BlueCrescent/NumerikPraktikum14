@@ -12,13 +12,8 @@ plot "data_s3_04" using 1:2 with lp title "rel error"
 
 pause mouse
 
-set term gif
-set output "sh3_task4_convergence_plot.gif"
-
-plot "data_s3_04" using 1:2 with lp title "rel error"
-
-set term postscript eps color blacktext "Helvetica" 14
-set output 'sh3_task4_convergence_plot.eps'
+set term pdf
+set output 'sh3_task4_convergence_plot.pdf'
 
 plot "data_s3_04" using 1:2 with lp title "rel error"
 EOT

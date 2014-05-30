@@ -11,13 +11,8 @@ plot "data_s3_05" using 1:2 with l title "integrand"
 
 pause mouse
 
-set term gif
-set output "sh3_task5_arithmetic_payoff.gif"
-
-plot "data_s3_05" using 1:2 with l title "integrand"
-
-set term postscript eps color blacktext "Helvetica" 14
-set output 'sh3_task5_arithmetic_payoff.eps'
+set term pdf
+set output 'sh3_task5_arithmetic_payoff.pdf'
 
 plot "data_s3_05" using 1:2 with l title "integrand"
 EOT
