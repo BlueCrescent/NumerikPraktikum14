@@ -18,7 +18,7 @@ std::vector<double> genRandomWalkPath(const std::vector<double>& uniformValues, 
 
   path.push_back(sqrt_dt * NormalCDFInverse(uniformValues[0]));
   for (unsigned int i = 1; i < uniformValues.size(); ++i) {
-    path.push_back(path[i - 1] + sqrt_dt * NormalCDFInverse(uniformValues[0]));
+    path.push_back(path[i - 1] + sqrt_dt * NormalCDFInverse(uniformValues[i]));
   }
 
   return path;
