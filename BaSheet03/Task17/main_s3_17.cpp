@@ -35,18 +35,20 @@ namespace {
   }
 }
 
-double integrateRandomWalk_discFactor17(const MultiVariateIntegrator& tmp, const int level, const int d){
-  return exp(- r * T) * tmp.integrate(level, d, payoffInt_randWalkDiscrGeom);
+template<typename EfficientIntegrator>
+double integrateRandomWalk_discFactor17(const EfficientIntegrator & tmp, const int level, const int d){
+  return exp(- r * T) * tmp.integrate_efficient(level, d, payoffInt_randWalkDiscrGeom);
 }
 
-double integrateBrownianBridge_discFactor17(const MultiVariateIntegrator& tmp, const int level, const int d){
-  return exp(- r * T) * tmp.integrate(level, d, payoffInt_brownianBridgeDiscrGeom);
+template<typename EfficientIntegrator>
+double integrateBrownianBridge_discFactor17(const EfficientIntegrator & tmp, const int level, const int d){
+  return exp(- r * T) * tmp.integrate_efficient(level, d, payoffInt_brownianBridgeDiscrGeom);
 }
 
 void printAllIntegrationPoints17(std::ofstream& out, int d) {
   Cpp11UniformDice Dice;
   const double exact = calc_discrete_geometric_fairP(S0, r, sigma, K, T, M);
-  for (int l = 1; l < 4; ++l) {
+  for (int l = 1; l < 7; ++l) {
     out << l << " ";
     out << fabs(integrateRandomWalk_discFactor17(MCMultiIntegrator(Dice), l, d)            - exact ) / exact << " ";
     out << fabs(integrateRandomWalk_discFactor17(QMCMultiIntegrator(), l, d)               - exact ) / exact << " ";
