@@ -40,12 +40,12 @@ namespace {
   }
 }
 
-double integrateRandomWalk(const MultiVariateIntegrator& tmp, const int level, const int d){
-  return tmp.integrate(level, d, payoffInt_randWalkDiscrGeom);
+double integrateRandomWalk_discFactor(const MultiVariateIntegrator& tmp, const int level, const int d){
+  return exp(- r * T) * tmp.integrate(level, d, payoffInt_randWalkDiscrGeom);
 }
 
-double integrateBrownianBridge(const MultiVariateIntegrator& tmp, const int level, const int d){
-  return tmp.integrate(level, d, payoffInt_brownianBridgeDiscrGeom);
+double integrateBrownianBridge_discFactor(const MultiVariateIntegrator& tmp, const int level, const int d){
+  return exp(- r * T) * tmp.integrate(level, d, payoffInt_brownianBridgeDiscrGeom);
 }
 
 void printAllIntegrationPoints(std::ofstream& out, int d) {
@@ -55,19 +55,19 @@ void printAllIntegrationPoints(std::ofstream& out, int d) {
   const double exact = calc_discrete_geometric_fairP(S0, r, sigma, K, T, M);
   for (int l = 1; l < 4; ++l) {
     out << l << " ";
-    out << fabs(integrateRandomWalk(MCMultiIntegrator(Dice), l, d)            - exact ) / exact << " ";
-    out << fabs(integrateRandomWalk(QMCMultiIntegrator(), l, d)               - exact ) / exact << " ";
-    out << fabs(integrateRandomWalk(ProductIntegrator(TrapezRule), l, d)      - exact ) / exact << " ";
-    out << fabs(integrateRandomWalk(ProductIntegrator(ClenshawRule), l, d)    - exact ) / exact << " ";
-    out << fabs(integrateRandomWalk(SparseGridIntegrator(TrapezRule), l, d)   - exact ) / exact << " ";
-    out << fabs(integrateRandomWalk(SparseGridIntegrator(ClenshawRule), l, d) - exact ) / exact << " ";
+    out << fabs(integrateRandomWalk_discFactor(MCMultiIntegrator(Dice), l, d)            - exact ) / exact << " ";
+    out << fabs(integrateRandomWalk_discFactor(QMCMultiIntegrator(), l, d)               - exact ) / exact << " ";
+    out << fabs(integrateRandomWalk_discFactor(ProductIntegrator(TrapezRule), l, d)      - exact ) / exact << " ";
+    out << fabs(integrateRandomWalk_discFactor(ProductIntegrator(ClenshawRule), l, d)    - exact ) / exact << " ";
+    out << fabs(integrateRandomWalk_discFactor(SparseGridIntegrator(TrapezRule), l, d)   - exact ) / exact << " ";
+    out << fabs(integrateRandomWalk_discFactor(SparseGridIntegrator(ClenshawRule), l, d) - exact ) / exact << " ";
 
-    out << fabs(integrateBrownianBridge(MCMultiIntegrator(Dice), l, d)            - exact ) / exact << " ";
-    out << fabs(integrateBrownianBridge(QMCMultiIntegrator(), l, d)               - exact ) / exact << " ";
-    out << fabs(integrateBrownianBridge(ProductIntegrator(TrapezRule), l, d)      - exact ) / exact << " ";
-    out << fabs(integrateBrownianBridge(ProductIntegrator(ClenshawRule), l, d)    - exact ) / exact << " ";
-    out << fabs(integrateBrownianBridge(SparseGridIntegrator(TrapezRule), l, d)   - exact ) / exact << " ";
-    out << fabs(integrateBrownianBridge(SparseGridIntegrator(ClenshawRule), l, d) - exact ) / exact << " ";
+    out << fabs(integrateBrownianBridge_discFactor(MCMultiIntegrator(Dice), l, d)            - exact ) / exact << " ";
+    out << fabs(integrateBrownianBridge_discFactor(QMCMultiIntegrator(), l, d)               - exact ) / exact << " ";
+    out << fabs(integrateBrownianBridge_discFactor(ProductIntegrator(TrapezRule), l, d)      - exact ) / exact << " ";
+    out << fabs(integrateBrownianBridge_discFactor(ProductIntegrator(ClenshawRule), l, d)    - exact ) / exact << " ";
+    out << fabs(integrateBrownianBridge_discFactor(SparseGridIntegrator(TrapezRule), l, d)   - exact ) / exact << " ";
+    out << fabs(integrateBrownianBridge_discFactor(SparseGridIntegrator(ClenshawRule), l, d) - exact ) / exact << " ";
     out << std::endl;
   }
 }
