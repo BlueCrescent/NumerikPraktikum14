@@ -18,7 +18,7 @@ public:
   MCMultiIntegrator(IUniformDist & dice);
 
   template<typename T>
-  double integrate_efficient(int level, int d, T function) const;
+  long double integrate_efficient(int level, int d, T function) const;
 
   NodesAndWeights getNodesAndWeights(int l, int d) const;
 
@@ -29,12 +29,17 @@ private:
 };
 
 template<typename T>
-double MCMultiIntegrator::integrate_efficient(int level, int d, T function) const{
-  const int N_l = pow(pow(2, level) - 1,d);
+long double MCMultiIntegrator::integrate_efficient(int level, int d, T function) const{
+  const int N_l = pow(2, level) - 1;
 
-  double result = 0;
-  for(int i = 0; i < N_l; ++i){
-    result += function(generateRandomNode(d)) / N_l;
+  long double result = 0.;
+  for (int run = 0; run < d; ++run) {
+    for(int i = 0; i < N_l; ++i){
+      result += function(generateRandomNode(d));
+    }
+  }
+  for (int run = 0; run < d; ++run) {
+    result /= N_l;
   }
   return result;
 }

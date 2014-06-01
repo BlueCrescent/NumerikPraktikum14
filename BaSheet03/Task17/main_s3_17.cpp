@@ -36,35 +36,33 @@ namespace {
 }
 
 template<typename EfficientIntegrator>
-double integrateRandomWalk_discFactor17(const EfficientIntegrator & tmp, const int level, const int d){
+long double integrateRandomWalk_discFactor17(const EfficientIntegrator & tmp, const int level, const int d){
   return exp(- r * T) * tmp.integrate_efficient(level, d, payoffInt_randWalkDiscrGeom);
 }
 
 template<typename EfficientIntegrator>
-double integrateBrownianBridge_discFactor17(const EfficientIntegrator & tmp, const int level, const int d){
+long double integrateBrownianBridge_discFactor17(const EfficientIntegrator & tmp, const int level, const int d){
   return exp(- r * T) * tmp.integrate_efficient(level, d, payoffInt_brownianBridgeDiscrGeom);
 }
 
-void printAllIntegrationPoints17(std::ofstream& out, int d) {
+void printAllIntegrationPoints17(std::ofstream& out) {
   Cpp11UniformDice Dice;
   const double exact = calc_discrete_geometric_fairP(S0, r, sigma, K, T, M);
-  for (int l = 1; l < 7; ++l) {
+  for (int l = 1; l < 3; ++l) {
     out << l << " ";
-    out << fabs(integrateRandomWalk_discFactor17(MCMultiIntegrator(Dice), l, d)            - exact ) / exact << " ";
-    out << fabs(integrateRandomWalk_discFactor17(QMCMultiIntegrator(), l, d)               - exact ) / exact << " ";
+    out << fabs(integrateRandomWalk_discFactor17(MCMultiIntegrator(Dice), l, M)            - exact ) / exact << " ";
+    out << fabs(integrateRandomWalk_discFactor17(QMCMultiIntegrator(), l, M)               - exact ) / exact << " ";
 
-    out << fabs(integrateBrownianBridge_discFactor17(MCMultiIntegrator(Dice), l, d)            - exact ) / exact << " ";
-    out << fabs(integrateBrownianBridge_discFactor17(QMCMultiIntegrator(), l, d)               - exact ) / exact << " ";
+    out << fabs(integrateBrownianBridge_discFactor17(MCMultiIntegrator(Dice), l, M)            - exact ) / exact << " ";
+    out << fabs(integrateBrownianBridge_discFactor17(QMCMultiIntegrator(), l, M)               - exact ) / exact << " ";
     out << std::endl;
   }
 }
 
 void main_s3_17() {
-  for(int d = 1; d <= 8; d *= 2){
-    std::ofstream out;
-    out.open("data_s3_17_d=" + std::to_string(d));
-    printAllIntegrationPoints17(out, d);
-    out.close();
-  }
+  std::ofstream out;
+  out.open("data_s3_17");
+  printAllIntegrationPoints17(out);
+  out.close();
 }
 
