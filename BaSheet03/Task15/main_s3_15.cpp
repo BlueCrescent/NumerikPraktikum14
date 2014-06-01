@@ -16,15 +16,16 @@ namespace {
   const double K = 0.;
   const int M = 16;
   const double delta_t = M / T;
+
+  double payoffInt_randWalkDiscrGeom(const std::vector<double> & x) {
+    return uniformPayoffIntegrand(x, S0, r, sigma, T, M, K, genRandomWalkPath, evaluate_discr_geometric_payoff);
+  }
+
+  double payoffInt_brownianBridgeDiscrGeom(const std::vector<double> & x) {
+    return uniformPayoffIntegrand(x, S0, r, sigma, T, M, K, genBrownianBridgePath, evaluate_discr_geometric_payoff);
+  }
 }
 
-double payoffInt_randWalkDiscrGeom(const std::vector<double> & x) {
-  return uniformPayoffIntegrand(x, S0, r, sigma, T, M, K, genRandomWalkPath, evaluate_discr_geometric_payoff);
-}
-
-double payoffInt_brownianBridgeDiscrGeom(const std::vector<double> & x) {
-  return uniformPayoffIntegrand(x, S0, r, sigma, T, M, K, genBrownianBridgePath, evaluate_discr_geometric_payoff);
-}
 
 #include <iostream>
 
