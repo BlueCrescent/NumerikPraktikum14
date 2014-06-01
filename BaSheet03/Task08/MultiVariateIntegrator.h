@@ -25,7 +25,7 @@ public:
   };
 
   template<typename T>
-  double integrate(int level, int d, T function) const;
+  virtual double integrate(int level, int d, T function) const;
 
   virtual NodesAndWeights getNodesAndWeights(int l, int d) const = 0;
 
