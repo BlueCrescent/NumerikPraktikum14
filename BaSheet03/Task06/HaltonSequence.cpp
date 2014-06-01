@@ -51,7 +51,7 @@ double compVanDerCorputValue(double prevValue, double prime) {
 std::vector<double> generateNextHaltonValue(const std::vector<double> & prevValue) {
   std::vector<double> val;
   val.reserve(prevValue.size());
-  for (int j = 0; j < prevValue.size(); ++j) {
+  for (unsigned int j = 0; j < prevValue.size(); ++j) {
     val.push_back(compVanDerCorputValue(prevValue[j], primeNumbers[j]));
   }
   return val;
