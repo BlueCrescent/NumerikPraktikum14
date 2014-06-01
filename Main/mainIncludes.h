@@ -30,6 +30,7 @@ void main_s3_12();
 void main_s3_13();
 void main_s3_15();
 void main_s3_16();
+void main_s3_17();
 
 
 #endif /* MAININCLUDES_H_ */
