@@ -31,14 +31,14 @@ void TrapezoidalIntegrator::generateNodes(NodesAndWeights& returnParam, double f
   }
 }
 
-TrapezoidalIntegrator::NodesAndWeights TrapezoidalIntegrator::returnZeroCaseStuff() const {
+TrapezoidalIntegrator::NodesAndWeights TrapezoidalIntegrator::generateLevelOne() const {
   TrapezoidalIntegrator::NodesAndWeights returnParam;
   returnParam.Nodes.push_back(0.5);
   returnParam.Weights.push_back(6 / 4);
   return returnParam;
 }
 
-TrapezoidalIntegrator::NodesAndWeights TrapezoidalIntegrator::returnGeneralCaseStuff(const NodesAndWeights& old) const {
+TrapezoidalIntegrator::NodesAndWeights TrapezoidalIntegrator::generateNextLevel(const NodesAndWeights& old) const {
   TrapezoidalIntegrator::NodesAndWeights returnParam;
   const int amount = old.getSize() * 2 + 1;
   const double factor = 1. / ((double) (amount) + 1.);
@@ -56,12 +56,12 @@ TrapezoidalIntegrator::NodesAndWeights TrapezoidalIntegrator::returnGeneralCaseS
   return returnParam;
 }
 
-bool TrapezoidalIntegrator::isZeroCase(const NodesAndWeights& old) const {
+bool TrapezoidalIntegrator::isLevelZero(const NodesAndWeights& old) const {
   return old.getSize() == 0;
 }
 
 TrapezoidalIntegrator::NodesAndWeights TrapezoidalIntegrator::iterateLevel(const NodesAndWeights& old) const {
-  return isZeroCase(old) ? returnZeroCaseStuff() : returnGeneralCaseStuff(old);
+  return isLevelZero(old) ? generateLevelOne() : generateNextLevel(old);
 }
 
 TrapezoidalIntegrator::NodesAndWeights TrapezoidalIntegrator::getNodesAndWeights(int amount) const {

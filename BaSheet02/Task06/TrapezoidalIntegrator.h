@@ -20,9 +20,9 @@ private:
   void generateWeights(NodesAndWeights& returnParam, double factor, int amount) const;
   void generateNodes(NodesAndWeights& returnParam, double factor, int amount) const;
 
-  TrapezoidalIntegrator::NodesAndWeights returnZeroCaseStuff() const;
-  TrapezoidalIntegrator::NodesAndWeights returnGeneralCaseStuff(const NodesAndWeights& old) const;
-  bool isZeroCase(const NodesAndWeights& old) const;
+  TrapezoidalIntegrator::NodesAndWeights generateLevelOne() const;
+  TrapezoidalIntegrator::NodesAndWeights generateNextLevel(const NodesAndWeights& old) const;
+  bool isLevelZero(const NodesAndWeights& old) const;
 };
 
 #endif /* TRAPEZOIDALINTEGRATOR_H_ */
