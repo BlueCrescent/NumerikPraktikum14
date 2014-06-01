@@ -9,7 +9,7 @@ set xlabel "l"
 set ylabel "relativ Error"
 
 set title "convergence plot of discrete geom. asien options (random walk vs. brownian bridge)"
-plot "data_s3_16_d=1" using 1:2 with l title "RandWalk - Monte Carlo", \
+plot "data_s3_16" using 1:2 with l title "RandWalk - Monte Carlo", \
  "data_s3_16" using 1:3 with l title "RandWalk - Quasi Monte Carlo", \
  "data_s3_16" using 1:4 with l title "RandWalk - Product - Trapez", \
  "data_s3_16" using 1:5 with l title "RandWalk - Product - Clensha Curtis", \
@@ -27,7 +27,7 @@ set term pdf
 
 set output "sh3_task16_convergence_plot.pdf"
 set title "convergence plot of discrete geom. asien options (random walk vs. brownian bridge)"
-plot "data_s3_16_d=1" using 1:2 with l title "RandWalk - Monte Carlo", \
+plot "data_s3_16" using 1:2 with l title "RandWalk - Monte Carlo", \
  "data_s3_16" using 1:3 with l title "RandWalk - Quasi Monte Carlo", \
  "data_s3_16" using 1:4 with l title "RandWalk - Product - Trapez", \
  "data_s3_16" using 1:5 with l title "RandWalk - Product - Clensha Curtis", \
