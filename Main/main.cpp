@@ -45,6 +45,8 @@ int main(){
 //  main_s3_13();
   std::cout << "Starting sheet 3 task 15..." << std::endl;
   main_s3_15();
+  std::cout << "Starting sheet 3 task 16..." << std::endl;
+  main_s3_16();
 #endif
 #ifdef SHEET4
 #endif
