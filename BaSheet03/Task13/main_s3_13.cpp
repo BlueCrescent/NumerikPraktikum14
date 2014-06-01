@@ -11,7 +11,7 @@
 #include <iostream>
 
 double f(double x){
-  return 1 + exp(0.1 * x);
+  return 1. + exp(0.1 * x);
 }
 
 double multiF(const std::vector<double> & x){
@@ -22,11 +22,11 @@ double multiF(const std::vector<double> & x){
 }
 
 double integrateF(int d){
-  return pow(1+0.2*exp(0.5)-0.2,d);
+  return pow(1. + 0.2 * exp(0.5) - 0.2, d);
 }
 
 double integrate(const MultiVariateIntegrator& tmp, const int level, const int d){
-  return tmp.integrate(level,d,multiF);
+  return tmp.integrate(level, d, multiF);
 }
 
 void storeIntegrationPoints(std::ofstream& out, int d) {
@@ -36,12 +36,12 @@ void storeIntegrationPoints(std::ofstream& out, int d) {
   Cpp11UniformDice Dice;
   for (int l = 1; l < 4; ++l) {
     out << l << " ";
-    out << fabs(integrate(MCMultiIntegrator(Dice), l, d) - exact ) / exact  << " ";
-    out << fabs(integrate(QMCMultiIntegrator(), l, d) - exact ) / exact  << " ";
-    out << fabs(integrate(ProductIntegrator(TrapezRule), l, d) - exact ) / exact  << " ";
-    out << fabs(integrate(ProductIntegrator(ClenshawRule), l, d) - exact ) / exact   << " ";
-    out << fabs(integrate(SparseGridIntegrator(TrapezRule), l, d) - exact ) / exact   << " ";
-    out << fabs(integrate(SparseGridIntegrator(ClenshawRule), l, d) - exact ) / exact   << " ";
+    out << fabs(integrate(MCMultiIntegrator(Dice), l, d)            - exact ) / exact << " ";
+    out << fabs(integrate(QMCMultiIntegrator(), l, d)               - exact ) / exact << " ";
+    out << fabs(integrate(ProductIntegrator(TrapezRule), l, d)      - exact ) / exact << " ";
+    out << fabs(integrate(ProductIntegrator(ClenshawRule), l, d)    - exact ) / exact << " ";
+    out << fabs(integrate(SparseGridIntegrator(TrapezRule), l, d)   - exact ) / exact << " ";
+    out << fabs(integrate(SparseGridIntegrator(ClenshawRule), l, d) - exact ) / exact << " ";
     out << std::endl;
   }
 }
