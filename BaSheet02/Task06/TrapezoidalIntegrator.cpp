@@ -34,7 +34,7 @@ void TrapezoidalIntegrator::generateNodes(NodesAndWeights& returnParam, double f
 TrapezoidalIntegrator::NodesAndWeights TrapezoidalIntegrator::generateLevelOne() const {
   TrapezoidalIntegrator::NodesAndWeights returnParam;
   returnParam.Nodes.push_back(0.5);
-  returnParam.Weights.push_back(6 / 4);
+  returnParam.Weights.push_back(1.);
   return returnParam;
 }
 
@@ -46,7 +46,7 @@ TrapezoidalIntegrator::NodesAndWeights TrapezoidalIntegrator::generateNextLevel(
   returnParam.Nodes.push_back(factor);
   for (int i = 2; i <= amount - 1; ++i) {
     if (i % 2 == 0)
-      returnParam.Nodes.push_back(old.Nodes[i / 2]);
+      returnParam.Nodes.push_back(old.Nodes[i / 2 - 1]);
     else
       returnParam.Nodes.push_back(factor * i);
     returnParam.Weights.push_back(factor);
