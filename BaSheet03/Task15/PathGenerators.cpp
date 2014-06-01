@@ -27,7 +27,7 @@ std::vector<double> genRandomWalkPath(const std::vector<double>& uniformValues, 
 inline void generateLevel(int step, double a_sqrt, const std::vector<double>& uniformValues,
                           std::vector<double>& path) {
   assert(path[step - 1] == 0.);
-  path[step - 1] = 0.5 * path[step * 2 - 1] + a_sqrt * uniformValues[step - 1];
+  path[step - 1] = 0.5 * path[step * 2 - 1] + a_sqrt * NormalCDFInverse(uniformValues[step - 1]);
   for (unsigned int i = 3 * step - 1; i < uniformValues.size() - 1; i += 2 * step) {
     assert(path[i] == 0.);
     path[i] = 0.5 * (path[i - step] + path[i + step]) + a_sqrt * NormalCDFInverse(uniformValues[i]);
