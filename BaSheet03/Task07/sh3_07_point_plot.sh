@@ -3,7 +3,7 @@
 gnuplot << EOT
 set grid
 
-set title "Halton vs. Uniform: Ultimate fight!! And battle!! Rock'n'Roll!!"
+set title "Halton vs. UniformS"
 set xlabel "x"
 set ylabel "y"
 
