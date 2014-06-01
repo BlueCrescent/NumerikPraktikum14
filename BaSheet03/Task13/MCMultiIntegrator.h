@@ -34,9 +34,9 @@ double MCMultiIntegrator::integrate_efficient(int level, int d, T function) cons
 
   double result = 0;
   for(int i = 0; i < N_l; ++i){
-    result += function(generateRandomNode(d));
+    result += function(generateRandomNode(d)) / N_l;
   }
-  return result / N_l;
+  return result;
 }
 
 #endif /* MCMULTIINTEGRATOR_H_ */

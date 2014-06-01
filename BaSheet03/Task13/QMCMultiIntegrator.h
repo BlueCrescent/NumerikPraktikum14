@@ -28,10 +28,10 @@ double QMCMultiIntegrator::integrate_efficient(int level, int d, T function) con
 
   double result = 0;
   for(int i = 0; i < N_l; ++i) {
-    result += function(haltonPoint);
+    result += function(haltonPoint) / N_l;
     haltonPoint = std::move(generateNextHaltonValue(haltonPoint));
   }
-  return result / N_l;
+  return result;
 }
 
 #endif /* QMCMULTIINTEGRATOR_H_ */
