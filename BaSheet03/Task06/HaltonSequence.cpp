@@ -7,6 +7,8 @@
 
 #include "HaltonSequence.h"
 
+#include <utility>
+
 namespace Halton {
   double eps = 1e-10;
 }
@@ -28,9 +30,13 @@ const double primeNumbers[200] =
     1097, 1103, 1109, 1117, 1123, 1129, 1151, 1153, 1163, 1171, 1181,
     1187, 1193, 1201, 1213, 1217, 1223};
 
-void initFirstPoint(std::vector<double> & p, int dim) {
-  for (int i = 0; i < dim; ++i)
-    p[i] = 1. / primeNumbers[i];
+std::vector<double> generateFirstPoint(int dim) {
+  std::vector<double> val;
+  val.reserve(dim);
+  for (int j = 0; j < dim; ++j) {
+    val.push_back(1. / primeNumbers[j]);
+  }
+  return val;
 }
 
 double compVanDerCorputValue(double prevValue, double prime) {
@@ -42,14 +48,22 @@ double compVanDerCorputValue(double prevValue, double prime) {
   return ret;
 }
 
+std::vector<double> generateNextHaltonValue(const std::vector<double> & prevValue) {
+  std::vector<double> val;
+  val.reserve(prevValue.size());
+  for (int j = 0; j < prevValue.size(); ++j) {
+    val.push_back(compVanDerCorputValue(prevValue[j], primeNumbers[j]));
+  }
+  return val;
+}
+
 std::vector<std::vector<double> > generateHaltonSequence(int dim, int N) {
-  std::vector<std::vector<double> > points(N, std::vector<double>(dim));
-  initFirstPoint(points[0], dim);
+  std::vector<std::vector<double> > points;
+  points.reserve(N);
+  points.push_back(std::move(generateFirstPoint(dim)));
 
   for (int i = 1; i < N; ++i) {
-    for (int j = 0; j < dim; ++j) {
-      points[i][j] = compVanDerCorputValue(points[i-1][j], primeNumbers[j]);
-    }
+    points.push_back(std::move(generateNextHaltonValue(points[i-1])));
   }
 
   return points;
