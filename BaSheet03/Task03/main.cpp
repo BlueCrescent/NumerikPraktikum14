@@ -29,13 +29,14 @@ void simulateAndPrintRelativeError(double delta_t, int M, std::ostream& outStrea
   Cpp11NormalDice Dice;
 
   const double expectedPayoff1 = calc_discrete_geometric_fairP(start_value, r, sigma, strike, T, M);
+  const double discountFactor = exp(- r * T);
 
   double sum = 0;
   for (int i = 1; i < 10000; i++) {
     geometricBM Path(Parameters, Dice);
     const std::vector<double> values = Path.compute_path_values(M);
     sum += evaluate_discr_geometric_payoff(values, strike);
-    outStream << i << " " << exp(- r * T) * fabs(sum / i - expectedPayoff1) / expectedPayoff1 << std::endl;
+    outStream << i << " " << discountFactor * fabs(sum / i - expectedPayoff1) / expectedPayoff1 << std::endl;
   }
 }
 
