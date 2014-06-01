@@ -32,7 +32,7 @@ ClenshawIntegrator::NodesAndWeights ClenshawIntegrator::iterateLevel(const Nodes
     if(i % 2 == 0){
       params.Nodes.push_back(old.Nodes[i / 2 - 1]);
     } else{
-      const double node = 0.5 * (1. - cos(i * factor));
+      const double node = 0.5 * (1. - cos(i * M_PI * factor));
       params.Nodes.push_back(node);
     }
     const double piFactor = M_PI * i * factor;
