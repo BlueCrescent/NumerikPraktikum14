@@ -32,7 +32,7 @@ plot "data_s3_13_d=4" using 1:2 with l title "Monte Carlo", \
  "data_s3_13_d=4" using 1:4 with l title "Product - Trapez", \
  "data_s3_13_d=4" using 1:5 with l title "Product - Clensah Curtis", \
  "data_s3_13_d=4" using 1:6 with l title "Sparse Grid - Trapez", \
- "data_s3_13_d=4" using 1:7 with l title "Sparse Grid - Clensah Curtis", \
+ "data_s3_13_d=4" using 1:7 with l title "Sparse Grid - Clensah Curtis"
 pause mouse
 
 set title "convergence plot for d = 8"
@@ -72,7 +72,7 @@ plot "data_s3_13_d=4" using 1:2 with l title "Monte Carlo", \
  "data_s3_13_d=4" using 1:4 with l title "Product - Trapez", \
  "data_s3_13_d=4" using 1:5 with l title "Product - Clensah Curtis", \
  "data_s3_13_d=4" using 1:6 with l title "Sparse Grid - Trapez", \
- "data_s3_13_d=4" using 1:7 with l title "Sparse Grid - Clensah Curtis", \
+ "data_s3_13_d=4" using 1:7 with l title "Sparse Grid - Clensah Curtis"
 
 set output "sh3_task13_convergencePlotd8.pdf"
 set title "convergence plot for d = 8"
@@ -81,7 +81,7 @@ plot "data_s3_13_d=8" using 1:2 with l title "Monte Carlo", \
  "data_s3_13_d=8" using 1:4 with l title "Product - Trapez", \
  "data_s3_13_d=8" using 1:5 with l title "Product - Clensah Curtis", \
  "data_s3_13_d=8" using 1:6 with l title "Sparse Grid - Trapez", \
- "data_s3_13_d=8" using 1:7 with l title "Sparse Grid - Clensah Curtis", \
+ "data_s3_13_d=8" using 1:7 with l title "Sparse Grid - Clensah Curtis"
 pause mouse
 
 EOT
