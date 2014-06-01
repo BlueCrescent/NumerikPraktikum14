@@ -11,7 +11,7 @@
 #include <iostream>
 
 double f(double x){
-  return 1. + exp(0.1 * x);
+  return 1. + 0.1 * exp(x / 2.);
 }
 
 double multiF(const std::vector<double> & x){
