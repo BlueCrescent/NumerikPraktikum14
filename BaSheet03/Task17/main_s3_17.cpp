@@ -48,7 +48,7 @@ long double integrateBrownianBridge_discFactor17(const EfficientIntegrator & tmp
 void printAllIntegrationPoints17(std::ofstream& out) {
   Cpp11UniformDice Dice;
   const double exact = calc_discrete_geometric_fairP(S0, r, sigma, K, T, M);
-  for (int l = 1; l < 3; ++l) {
+  for (int l = 1; l < 6; ++l) {
     out << l << " ";
     out << fabs(integrateRandomWalk_discFactor17(MCMultiIntegrator(Dice), l, M)            - exact ) / exact << " ";
     out << fabs(integrateRandomWalk_discFactor17(QMCMultiIntegrator(), l, M)               - exact ) / exact << " ";
