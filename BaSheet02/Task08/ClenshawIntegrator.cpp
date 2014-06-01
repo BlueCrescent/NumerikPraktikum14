@@ -30,7 +30,7 @@ ClenshawIntegrator::NodesAndWeights ClenshawIntegrator::iterateLevel(const Nodes
   NodesAndWeights params;
   for (int i = 1; i <= amount; ++i) {
     if(i % 2 == 0){
-      params.Nodes.push_back(old.Nodes[i / 2]);
+      params.Nodes.push_back(old.Nodes[i / 2 - 1]);
     } else{
       const double node = 0.5 * (1. - cos(i * factor));
       params.Nodes.push_back(node);
