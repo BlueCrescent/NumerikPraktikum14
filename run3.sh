@@ -12,9 +12,6 @@ mv sh3_task3_convergence_plot.pdf ../sh3_task3_convergence_plot.pdf
 sh ../../BaSheet03/Task04/sh3_04_convergence_plot.sh
 mv sh3_task4_convergence_plot.pdf ../sh3_task4_convergence_plot.pdf
 
-sh ../../BaSheet03/Task05/sh3_05_convergence_plot.sh
-mv sh3_task5_arithmetic_payoff.pdf ../sh3_task5_arithmetic_payoff.pdf
-
 sh ../../BaSheet03/Task07/sh3_07_point_plot.sh
 mv sh3_task7_point_plot.pdf ../sh3_task7_point_plot.pdf
 
