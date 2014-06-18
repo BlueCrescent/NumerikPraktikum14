@@ -33,12 +33,15 @@ void simulateAndPrintRelativeError(int M, std::ostream& outStream) {
   const double discountFactor = exp(- r * T);
 
   double sum = 0;
+  int N = 10;
   for (int i = 1; i <= 100000; i++) {
     geometricBM Path(Parameters, Dice);
     const std::vector<double> values = Path.compute_path_values(M);
     sum += evaluate_discr_geometric_payoff(values, strike);
-    if (i % 1000 == 0)
+    if (i == N) {
       outStream << i << " " << fabs(discountFactor * sum / i - expectedPayoff1) / expectedPayoff1 << std::endl;
+      N *= 10;
+    }
   }
 }
 
