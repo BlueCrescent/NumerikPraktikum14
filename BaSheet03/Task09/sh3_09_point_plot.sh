@@ -3,6 +3,8 @@
 gnuplot << EOT
 set grid
 
+set size square
+
 set xlabel "x"
 set ylabel "y"
 
