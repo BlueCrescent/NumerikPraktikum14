@@ -41,7 +41,7 @@ std::vector<double> geometricBM::compute_path_values(int M) {
 }
 
 double geometricBM::compute_current_value() const {
-  return start_value * exp((mu + 0.5 * sigma * sigma) * current_time + sigma * current_wiener_value);
+  return start_value * exp((mu - 0.5 * sigma * sigma) * current_time + sigma * current_wiener_value);
 }
 
 double geometricBM::get_current_wiener_value() const {
