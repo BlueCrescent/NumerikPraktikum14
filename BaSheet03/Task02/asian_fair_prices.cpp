@@ -23,7 +23,7 @@ double calc_discrete_geometric_fairP(double start_value, double r, double sigma,
 double calc_continious_geometric_fairP(double start_value, double r, double sigma, double strike, double T) {
 
   const double d = (log(start_value / strike) + 0.5 * (r - 0.5 * sigma * sigma) * T) / (sigma * sqrt(T / 3.));
-  const double part1 = start_value * exp(0.5 * ( r + 1. / 6. * sigma * sigma) * T);
+  const double part1 = start_value * exp(- 0.5 * ( r + 1. / 6. * sigma * sigma) * T);
   const double part2 = NormalCDF(d + sigma * sqrt(T / 3.));
   return part1 * part2 - strike * exp(- r * T) * NormalCDF(d);
 }
