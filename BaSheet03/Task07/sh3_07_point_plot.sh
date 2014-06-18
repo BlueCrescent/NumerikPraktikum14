@@ -3,7 +3,9 @@
 gnuplot << EOT
 set grid
 
-set title "Halton vs. UniformS"
+set size square
+
+set title "Halton vs. Uniform"
 set xlabel "x"
 set ylabel "y"
 
