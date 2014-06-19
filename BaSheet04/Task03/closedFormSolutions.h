@@ -13,12 +13,12 @@
 #include <cmath>
 
 // This is d2, NOT d1! (cf. sheet 4 page 2 formula 7)
-inline double d(double S0, double r, double sigma, double T, double K) {
+inline double comp_d(double S0, double r, double sigma, double T, double K) {
   return (log(S0 / K) + (r - sigma * sigma / 2.) * T) / (sigma * sqrt(T));
 }
 
 inline double computeEuropeanCallClosedForm(double S0, double r, double sigma, double T, double K) {
-  const double d = d(S0, r, sigma, T, K);
+  const double d = comp_d(S0, r, sigma, T, K);
   return S0 * NormalCDF(d + sigma * sqrt(T)) - K * exp(- r * T) * NormalCDF(d);
 }
 
