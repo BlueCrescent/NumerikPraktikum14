@@ -53,6 +53,8 @@ int main(){
 #ifdef SHEET4
   std::cout << "Starting sheet 4 task 1..." << std::endl;
   main_s4_02();
+  std::cout << "Starting sheet 4 task 7..." << std::endl;
+  main_s4_07();
 #endif
 #ifdef SHEET5
 #endif

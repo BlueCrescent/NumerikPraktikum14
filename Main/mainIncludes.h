@@ -33,5 +33,6 @@ void main_s3_16();
 void main_s3_17();
 
 void main_s4_02();
+void main_s4_07();
 
 #endif /* MAININCLUDES_H_ */
