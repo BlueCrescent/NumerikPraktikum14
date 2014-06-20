@@ -76,10 +76,12 @@ void main_s4_02() {
       << fabs(valBB_QMC - numericalRefBB_QMC) / numericalRefBB_QMC  << " "
       << fabs(valRW_QMC - numericalRefRW_QMC) / numericalRefRW_QMC << std::endl;
      std::cout << pow(2, l) - 1 << " "
-        << fabs(valBB_MC  - numericalRefBB_MC)  << " "
-        << fabs(valRW_MC  - numericalRefRW_MC)  << " "
+//        << fabs(valBB_MC  - numericalRefBB_MC)  << " "
+//        << fabs(valRW_MC  - numericalRefRW_MC)  << " "
         << fabs(valBB_QMC  - numericalRefBB_QMC) << " "
-        << fabs(valRW_QMC  - numericalRefRW_QMC) << std::endl;
+        << fabs(valBB_QMC) << " "
+//        << fabs(valRW_QMC  - numericalRefRW_QMC)
+        << std::endl;
   }
 
   std::cout << pow(2, lMax) - 1 << " "

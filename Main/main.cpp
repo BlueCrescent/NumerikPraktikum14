@@ -55,10 +55,14 @@ int main(){
   main_s4_02();
   std::cout << "Starting sheet 4 task 3..." << std::endl;
   main_s4_03();
+  std::cout << "Starting sheet 4 task 4..." << std::endl;
+  main_s4_04();
   std::cout << "Starting sheet 4 task 6..." << std::endl;
   main_s4_06();
   std::cout << "Starting sheet 4 task 7..." << std::endl;
   main_s4_07();
+  std::cout << "Starting sheet 4 task 9..." << std::endl;
+  main_s4_09();
 #endif
 #ifdef SHEET5
 #endif

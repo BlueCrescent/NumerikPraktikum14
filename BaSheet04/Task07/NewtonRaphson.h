@@ -21,12 +21,15 @@ inline double executeNewtonRaphsonAlgo(const double S0, const double r, const do
 
 template<bool isCall>
 inline double executeNewtonRaphsonAlgo(const double S0, const double r, const double T, const double K,
-                                       const double historicalSigma, const double startSigma,
-                                       const int maxIterations, const double historicalV);
+                                       const double startSigma, const int maxIterations, const double historicalV);
 
 template<bool isCall>
 inline double computeDefaultSigma(const double S0, const double r, const double T, const double K,
                                   const double historicalSigma, const int maxIterations);
+
+template<bool isCall>
+inline double computeDefaultSigma(const double S0, const double r, const double T, const double K,
+                                  const int maxIterations, const double historicalV);
 
 
 
@@ -87,8 +90,7 @@ inline double makeNewtonRaphsonStep(double S0, double r, double T, double K, dou
 
 template<bool isCall>
 inline double executeNewtonRaphsonAlgo(const double S0, const double r, const double T, const double K,
-                                       const double historicalSigma, const double startSigma,
-                                       const int maxIterations, const double historicalV) {
+                                       const double startSigma, const int maxIterations, const double historicalV) {
   double currentSigma = startSigma;
   for (int i = 1; i <= maxIterations; ++i) {
     const double newSigma = makeNewtonRaphsonStep<isCall>(S0, r, T, K, currentSigma, historicalV);
@@ -104,14 +106,19 @@ inline double executeNewtonRaphsonAlgo(const double S0, const double r, const do
                                        const double historicalSigma, const double startSigma, const int maxIterations) {
   const double historicalV = computeEuropeanBS<isCall>(S0, r, T, K, historicalSigma);
 
-  return executeNewtonRaphsonAlgo<isCall>(S0, r, T, K,historicalSigma, startSigma, maxIterations, historicalV);
+  return executeNewtonRaphsonAlgo<isCall>(S0, r, T, K, startSigma, maxIterations, historicalV);
 }
 
 template<bool isCall>
 inline double computeDefaultSigma(const double S0, const double r, const double T, const double K,
                                   const double historicalSigma, const int maxIterations) {
   const double historicalV = computeEuropeanBS<isCall>(S0, r, T, K, historicalSigma);
+  return computeDefaultSigma<isCall>(S0, r, T, K, maxIterations, historicalV);
+}
 
+template<bool isCall>
+inline double computeDefaultSigma(const double S0, const double r, const double T, const double K,
+                                  const int maxIterations, const double historicalV) {
   return 2. * historicalV / (sqrt(T) * S0);
 }
 
