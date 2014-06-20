@@ -5,7 +5,7 @@
 #include <ctime>
 
 #include "BroadieGlasserman.h"
-#include "normalCDF.h"
+#include "NormalCDF.h"
 
 double Tj_high_ij(double prevS, bool isCall, double K, double r,
                   double dt, int B, std::vector<double> Tjj_high_k)
@@ -58,7 +58,7 @@ void compute_estimated_value(double prevS, bool isCall, double K, int B, int M, 
     std::vector<double> Tjj_low_k(B);
 
     for (int k = 1; k <= B; k++) {
-        double normalValue = InverseNormalCDF(rand() / (double) RAND_MAX);
+        double normalValue = NormalCDFInverse(rand() / (double) RAND_MAX);
         double nextS = prevS * exp(sigma * sqrt(dt) * normalValue + (r - 0.5 * sigma * sigma) * dt);
 
         if (j + 1 == M) {
@@ -98,7 +98,7 @@ void generate_next_S(std::ostream & out, double prevS, double K, int B,
 {
     const double t_jj = dt * (j + 1);
     for (int k = 1; k <= B; k++) {
-        const double normalValue = InverseNormalCDF(rand() / (double) RAND_MAX);
+        const double normalValue = NormalCDFInverse(rand() / (double) RAND_MAX);
         const double nextS = prevS * exp(sigma * sqrt(dt) * normalValue + (r - 0.5 * sigma * sigma) * dt);
 
         out << "{" << t_jj << ", " << nextS << "}," << std::endl;

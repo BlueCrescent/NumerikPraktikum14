@@ -36,4 +36,6 @@ void main_s4_02();
 void main_s4_07();
 void main_s4_06();
 
+void main_master();
+
 #endif /* MAININCLUDES_H_ */

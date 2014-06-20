@@ -60,6 +60,10 @@ int main(){
 #endif
 #ifdef SHEET5
 #endif
+#ifdef SHEET_MA
+  std::cout << "Starting master sheet..." << std::endl;
+  main_master();
+#endif
   std::cout << "Over and out." << std::endl << std::endl << std::endl;
   return 0;
 }

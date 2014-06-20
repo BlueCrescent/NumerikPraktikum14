@@ -3,7 +3,7 @@
 
 #include <cmath>
 
-#include "normalCDF.h"
+#include "NormalCDF.h"
 
 inline double d1(double S0, double K, double r, double sigma, double T)
 {
