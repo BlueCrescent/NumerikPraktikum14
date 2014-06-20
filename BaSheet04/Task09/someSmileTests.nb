@@ -1,0 +1,361 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     13244,        352]
+NotebookOptionsPosition[     12198,        313]
+NotebookOutlinePosition[     12582,        329]
+CellTagsIndexPosition[     12539,        326]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EurGbpVontobel", "=", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0.89", ",", " ", "0.1803"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"0.84", ",", " ", "0.0912"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"0.87", ",", " ", "0.1475"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"0.86", ",", " ", "0.1302"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"0.89", ",", " ", "0.1962"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"0.85", ",", " ", "0.1126"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"0.88", ",", " ", "0.1642"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"0.83", ",", "0.0749"}], " ", "}"}]}], "\[IndentingNewLine]", 
+    "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6122503998902845`*^9, 3.612250563719035*^9}, {
+  3.6122506420802574`*^9, 3.6122506834880066`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", "EurGbpVontobel", "]"}]], "Input",
+ CellChangeTimes->{{3.6122505675567193`*^9, 3.612250575925753*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, 
+   {RGBColor[0.24720000000000014`, 0.24, 0.6], 
+    PointBox[{{0.89, 0.1803}, {0.84, 0.0912}, {0.87, 0.1475}, {0.86, 
+     0.1302}, {0.89, 0.1962}, {0.85, 0.1126}, {0.88, 0.1642}, {0.83, 
+     0.0749}}]}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0.83, 0.0749},
+  Method->{},
+  PlotRange->{{0.83, 0.89}, {0.0749, 0.1962}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{0.0012000000000000012`, 0.0012000000000000012`}, {
+   0.0024260000000000006`, 0.0024260000000000006`}}]], "Output",
+ CellChangeTimes->{3.612250576929717*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EurGbpVontobelMittel", "=", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0.89", ",", " ", "0.1650"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"0.84", ",", " ", "0.0821"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"0.87", ",", " ", "0.1345"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"0.86", ",", " ", "0.1183"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"0.89", ",", " ", "0.1800"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"0.85", ",", " ", "0.1019"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"0.88", ",", " ", "0.1500"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"0.83", ",", "0.0671"}], " ", "}"}]}], "\[IndentingNewLine]", 
+    "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.612250773488526*^9, 3.6122508893997946`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", "EurGbpVontobelMittel", "]"}]], "Input",
+ CellChangeTimes->{{3.612250898876893*^9, 3.6122509008768115`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, 
+   {RGBColor[0.24720000000000014`, 0.24, 0.6], 
+    PointBox[{{0.89, 0.165}, {0.84, 0.0821}, {0.87, 0.1345}, {0.86, 0.1183}, {
+     0.89, 0.18}, {0.85, 0.1019}, {0.88, 0.15}, {0.83, 0.0671}}]}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0.83, 0.0671},
+  Method->{},
+  PlotRange->{{0.83, 0.89}, {0.0671, 0.18}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{0.0012000000000000012`, 0.0012000000000000012`}, {
+   0.0022579999999999996`, 0.0022579999999999996`}}]], "Output",
+ CellChangeTimes->{3.61225090299985*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EurGbpVontobelGeld", "=", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0.89", ",", " ", "0.1251"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"0.84", ",", " ", "0.0598"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"0.87", ",", " ", "0.1008"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"0.86", ",", " ", "0.0880"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"0.89", ",", " ", "0.1370"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"0.85", ",", " ", "0.0751"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"0.88", ",", " ", "0.1131"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"0.83", ",", " ", "0.0401"}], " ", "}"}]}], 
+    "\[IndentingNewLine]", "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.612250941223545*^9, 3.6122510874479103`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", "EurGbpVontobelGeld", "]"}]], "Input",
+ CellChangeTimes->{{3.6122510944616427`*^9, 3.612251097081157*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, 
+   {RGBColor[0.24720000000000014`, 0.24, 0.6], 
+    PointBox[{{0.89, 0.1251}, {0.84, 0.0598}, {0.87, 0.1008}, {0.86, 0.088}, {
+     0.89, 0.137}, {0.85, 0.0751}, {0.88, 0.1131}, {0.83, 0.0401}}]}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0.83, 0.0401},
+  Method->{},
+  PlotRange->{{0.83, 0.89}, {0.0401, 0.137}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{0.0012000000000000012`, 0.0012000000000000012`}, {
+   0.0019380000000000003`, 0.0019380000000000003`}}]], "Output",
+ CellChangeTimes->{3.61225109788693*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"EurGbpVontobelGeld", "=", 
+  RowBox[{"{", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"1300", ",", " ", "0.1450"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"1300", ",", " ", "0.1401"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"1280", ",", " ", "0.1462"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"{", 
+     RowBox[{"1260", ",", " ", "0.1453"}], "}"}]}], "\[IndentingNewLine]", 
+   "}"}]}]], "Input",
+ CellChangeTimes->{{3.6122521640478835`*^9, 3.6122521651749687`*^9}, {
+  3.612252196519054*^9, 3.6122522958073645`*^9}, {3.6122523292084284`*^9, 
+  3.612252332320416*^9}, {3.612252533559573*^9, 3.612252534895852*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Gold", "=", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1450", ",", " ", "0.1663"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"1425", ",", " ", "0.1642"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"1350", ",", " ", "0.1607"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"1375", ",", " ", "0.1614"}], "}"}]}], "\[IndentingNewLine]", 
+    "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.612252505136285*^9, 3.612252601072378*^9}, {
+  3.6122526374002514`*^9, 3.6122526813284197`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", "Gold", "]"}]], "Input",
+ CellChangeTimes->{3.6122526884882927`*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, 
+   {RGBColor[0.24720000000000014`, 0.24, 0.6], 
+    PointBox[{{1450., 0.1663}, {1425., 0.1642}, {1350., 0.1607}, {1375., 
+     0.1614}}]}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{1350., 0.1607},
+  Method->{},
+  PlotRange->{{1350., 1450.}, {0.1607, 0.1663}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{2., 2.}, {0.00011199999999999988`, 
+   0.00011199999999999988`}}]], "Output",
+ CellChangeTimes->{3.612252690038781*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"GoldUBS", "=", 
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1400", ",", " ", "0.1905"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"1425", ",", " ", "0.2046"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"1450", ",", " ", "0.2305"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"1475", ",", " ", "0.2499"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"1500", ",", " ", "0.2743"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"1225", ",", " ", "0.3747"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"1150", ",", " ", "0.3362"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"1175", ",", " ", "0.2882"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"1200", ",", " ", "0.2535"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"1225", ",", " ", "0.2122"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"1250", ",", " ", "0.1755"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"1275", ",", " ", "0.1548"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"1300", ",", " ", "0.1457"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"1325", ",", " ", "0.1466"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"1350", ",", " ", "0.1552"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"1375", ",", " ", "0.1701"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"1525", ",", " ", "0.2983"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"1550", ",", " ", "0.3237"}], "}"}]}], "\[IndentingNewLine]", 
+    "}"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.612253421481101*^9, 3.612253616203024*^9}, {
+  3.6122537768682537`*^9, 3.6122538870850563`*^9}, {3.61225423955027*^9, 
+  3.6122542687823315`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"GoldUBS", ",", 
+   RowBox[{"AxesOrigin", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"1100", ",", "0.13"}], "}"}]}], ",", 
+   RowBox[{"AxesLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\"\<strike price\>\"", ",", "\"\<implied volatility\>\""}], 
+     "}"}]}], ",", 
+   RowBox[{
+   "PlotLabel", "\[Rule]", 
+    "\"\<Volatility smile of European call options\\n from UBS on gold \
+(maturity at 18.07.14)\>\""}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6122536256881294`*^9, 3.6122536396205034`*^9}, {
+  3.6122543969535193`*^9, 3.6122544293205905`*^9}, {3.612254470665279*^9, 
+  3.6122544990655413`*^9}, {3.6122545360360312`*^9, 3.6122546095706205`*^9}, {
+  3.612254650418833*^9, 3.6122546794517035`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, 
+   {RGBColor[0.24720000000000014`, 0.24, 0.6], 
+    PointBox[{{1400., 0.1905}, {1425., 0.2046}, {1450., 0.2305}, {1475., 
+     0.2499}, {1500., 0.2743}, {1225., 0.3747}, {1150., 0.3362}, {1175., 
+     0.2882}, {1200., 0.2535}, {1225., 0.2122}, {1250., 0.1755}, {1275., 
+     0.1548}, {1300., 0.1457}, {1325., 0.1466}, {1350., 0.1552}, {1375., 
+     0.1701}, {1525., 0.2983}, {1550., 0.3237}}]}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{
+    FormBox["\"strike price\"", TraditionalForm], 
+    FormBox["\"implied volatility\"", TraditionalForm]},
+  AxesOrigin->{1100, 0.13},
+  Method->{},
+  PlotLabel->FormBox[
+   "\"Volatility smile of European call options\\n from UBS on gold (maturity \
+at 18.07.14)\"", TraditionalForm],
+  PlotRange->{{1100, 1550.}, {0.13, 0.3747}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{9., 9.}, {0.004894, 0.004894}}]], "Output",
+ CellChangeTimes->{{3.6122536330632086`*^9, 3.6122536404112625`*^9}, 
+   3.6122538940577493`*^9, 3.61225427122968*^9, 3.612254429888139*^9, 
+   3.6122544999283695`*^9, {3.6122546581452503`*^9, 3.6122546800492764`*^9}}]
+}, Open  ]]
+},
+WindowSize->{944, 1001},
+WindowMargins->{{-1022, Automatic}, {40, Automatic}},
+Magnification->1.4000000953674316`,
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 1050, 23, 286, "Input"],
+Cell[CellGroupData[{
+Cell[1632, 47, 142, 2, 42, "Input"],
+Cell[1777, 51, 642, 15, 333, "Output"]
+}, Open  ]],
+Cell[2434, 69, 1003, 22, 286, "Input"],
+Cell[CellGroupData[{
+Cell[3462, 95, 148, 2, 42, "Input"],
+Cell[3613, 99, 628, 14, 335, "Output"]
+}, Open  ]],
+Cell[4256, 116, 1006, 22, 286, "Input"],
+Cell[CellGroupData[{
+Cell[5287, 142, 146, 2, 42, "Input"],
+Cell[5436, 146, 632, 14, 333, "Output"]
+}, Open  ]],
+Cell[6083, 163, 726, 15, 178, "Input"],
+Cell[6812, 180, 642, 15, 178, "Input"],
+Cell[CellGroupData[{
+Cell[7479, 199, 108, 2, 42, "Input"],
+Cell[7590, 203, 541, 14, 331, "Output"]
+}, Open  ]],
+Cell[8146, 220, 2081, 44, 556, "Input"],
+Cell[CellGroupData[{
+Cell[10252, 268, 760, 17, 151, "Input"],
+Cell[11015, 287, 1167, 23, 379, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
