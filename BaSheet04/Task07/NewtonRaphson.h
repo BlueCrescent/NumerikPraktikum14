@@ -20,6 +20,11 @@ inline double executeNewtonRaphsonAlgo(const double S0, const double r, const do
                                        const double historicalSigma, const double startSigma, const int maxIterations);
 
 template<bool isCall>
+inline double executeNewtonRaphsonAlgo(const double S0, const double r, const double T, const double K,
+                                       const double historicalSigma, const double startSigma,
+                                       const int maxIterations, const double historicalV);
+
+template<bool isCall>
 inline double computeDefaultSigma(const double S0, const double r, const double T, const double K,
                                   const double historicalSigma, const int maxIterations);
 
@@ -79,22 +84,27 @@ inline double makeNewtonRaphsonStep(double S0, double r, double T, double K, dou
 
   return prevSigma - (newV - historicalV) / relPriceChange;
 }
-#include <iostream>
+
+template<bool isCall>
+inline double executeNewtonRaphsonAlgo(const double S0, const double r, const double T, const double K,
+                                       const double historicalSigma, const double startSigma,
+                                       const int maxIterations, const double historicalV) {
+  double currentSigma = startSigma;
+  for (int i = 1; i <= maxIterations; ++i) {
+    const double newSigma = makeNewtonRaphsonStep<isCall>(S0, r, T, K, currentSigma, historicalV);
+    if (fabs(currentSigma - newSigma) < 1e-10)
+      return newSigma;
+    currentSigma = newSigma;
+  }
+  throw NoConvergenceError(currentSigma);
+}
+
 template<bool isCall>
 inline double executeNewtonRaphsonAlgo(const double S0, const double r, const double T, const double K,
                                        const double historicalSigma, const double startSigma, const int maxIterations) {
   const double historicalV = computeEuropeanBS<isCall>(S0, r, T, K, historicalSigma);
 
-  double currentSigma = startSigma;
-  for (int i = 1; i <= maxIterations; ++i) {
-    const double newSigma = makeNewtonRaphsonStep<isCall>(S0, r, T, K, currentSigma, historicalV);
-    if (fabs(currentSigma - newSigma) < 1e-10) {
-//      std::cout << "Terminated after " << i << " iterations." << std::endl;
-      return newSigma;
-    }
-    currentSigma = newSigma;
-  }
-  throw NoConvergenceError(currentSigma);
+  return executeNewtonRaphsonAlgo<isCall>(S0, r, T, K,historicalSigma, startSigma, maxIterations, historicalV);
 }
 
 template<bool isCall>
