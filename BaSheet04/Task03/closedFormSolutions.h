@@ -22,9 +22,17 @@ inline double computeEuropeanCallClosedForm(double S0, double r, double sigma, d
   return S0 * NormalCDF(d + sigma * sqrt(T)) - K * exp(- r * T) * NormalCDF(d);
 }
 
-//inline double computeDownOutCallClosedForm(double S0, double r, double sigma, double T, double K, double B) {
-//  const double Bbar = std::max(B, K);
-//#error "This is not done yet."
-//}
+inline double computeDownOutCallClosedForm(double S0, double r, double sigma, double T, double K, double B) {
+  const double Bbar = std::max(B, K);
+  const double Z = pow(B / S0, 2. * r / (sigma * sigma) - 1);
+
+  const double part1 = computeEuropeanCallClosedForm(S0, r, sigma, T, Bbar);
+  const double part2 = Z * computeEuropeanCallClosedForm(B * B / S0, r, sigma, T, Bbar);
+  const double part3 = (Bbar - K) * exp(- r * T);
+  const double part4 = NormalCDF(comp_d(S0, r, sigma, T, Bbar));
+  const double part5 = Z * NormalCDF(comp_d(B * B / S0, r, sigma, T, Bbar));
+
+  return part1 - part2 + part3 * (part4 - part5);
+}
 
 #endif /* CLOSEDFORMSOLUTIONS_H_ */
