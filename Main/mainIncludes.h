@@ -35,8 +35,9 @@ void main_s3_17();
 void main_s4_02();
 void main_s4_03();
 void main_s4_04();
-void main_s4_07();
 void main_s4_06();
+void main_s4_07();
+void main_s4_08();
 void main_s4_09();
 
 void main_master();
