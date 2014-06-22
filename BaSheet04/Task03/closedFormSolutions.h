@@ -23,7 +23,7 @@ inline double computeEuropeanCallClosedForm(double S0, double r, double sigma, d
 }
 
 inline double computeDownOutCallClosedForm(double S0, double r, double sigma, double T, double K, double B) {
-  const double Bbar = std::max(B, K);
+  const double Bbar = fmax(B, K);
   const double Z = pow(B / S0, 2. * r / (sigma * sigma) - 1);
 
   const double part1 = computeEuropeanCallClosedForm(S0, r, sigma, T, Bbar);
