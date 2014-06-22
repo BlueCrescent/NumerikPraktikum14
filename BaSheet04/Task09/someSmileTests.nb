@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     13244,        352]
-NotebookOptionsPosition[     12198,        313]
-NotebookOutlinePosition[     12582,        329]
-CellTagsIndexPosition[     12539,        326]
+NotebookDataLength[     13289,        355]
+NotebookOptionsPosition[     12249,        316]
+NotebookOutlinePosition[     12627,        332]
+CellTagsIndexPosition[     12584,        329]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -274,7 +274,7 @@ Cell[BoxData[
      RowBox[{"1100", ",", "0.13"}], "}"}]}], ",", 
    RowBox[{"AxesLabel", "\[Rule]", 
     RowBox[{"{", 
-     RowBox[{"\"\<strike price\>\"", ",", "\"\<implied volatility\>\""}], 
+     RowBox[{"\"\<strike price\>\"", ",", "\"\<implied\\nvolatility\>\""}], 
      "}"}]}], ",", 
    RowBox[{
    "PlotLabel", "\[Rule]", 
@@ -283,11 +283,12 @@ Cell[BoxData[
  CellChangeTimes->{{3.6122536256881294`*^9, 3.6122536396205034`*^9}, {
   3.6122543969535193`*^9, 3.6122544293205905`*^9}, {3.612254470665279*^9, 
   3.6122544990655413`*^9}, {3.6122545360360312`*^9, 3.6122546095706205`*^9}, {
-  3.612254650418833*^9, 3.6122546794517035`*^9}}],
+  3.612254650418833*^9, 3.6122546794517035`*^9}, {3.6124385015659924`*^9, 
+  3.612438502592437*^9}}],
 
 Cell[BoxData[
  GraphicsBox[{{}, 
-   {RGBColor[0.24720000000000014`, 0.24, 0.6], 
+   {Hue[0.67, 0.6, 0.6], 
     PointBox[{{1400., 0.1905}, {1425., 0.2046}, {1450., 0.2305}, {1475., 
      0.2499}, {1500., 0.2743}, {1225., 0.3747}, {1150., 0.3362}, {1175., 
      0.2882}, {1200., 0.2535}, {1225., 0.2122}, {1250., 0.1755}, {1275., 
@@ -299,22 +300,24 @@ Cell[BoxData[
     FormBox["\"strike price\"", TraditionalForm], 
     FormBox["\"implied volatility\"", TraditionalForm]},
   AxesOrigin->{1100, 0.13},
-  Method->{},
   PlotLabel->FormBox[
    "\"Volatility smile of European call options\\n from UBS on gold (maturity \
 at 18.07.14)\"", TraditionalForm],
   PlotRange->{{1100, 1550.}, {0.13, 0.3747}},
   PlotRangeClipping->True,
-  PlotRangePadding->{{9., 9.}, {0.004894, 0.004894}}]], "Output",
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02]}]], "Output",
  CellChangeTimes->{{3.6122536330632086`*^9, 3.6122536404112625`*^9}, 
    3.6122538940577493`*^9, 3.61225427122968*^9, 3.612254429888139*^9, 
-   3.6122544999283695`*^9, {3.6122546581452503`*^9, 3.6122546800492764`*^9}}]
+   3.6122544999283695`*^9, {3.6122546581452503`*^9, 3.6122546800492764`*^9}, 
+   3.6124384836124134`*^9}]
 }, Open  ]]
 },
 WindowSize->{944, 1001},
-WindowMargins->{{-1022, Automatic}, {40, Automatic}},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 Magnification->1.4000000953674316`,
-FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (October 6, 2011)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -328,31 +331,31 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[557, 20, 1050, 23, 286, "Input"],
+Cell[557, 20, 1050, 23, 267, "Input"],
 Cell[CellGroupData[{
-Cell[1632, 47, 142, 2, 42, "Input"],
+Cell[1632, 47, 142, 2, 41, "Input"],
 Cell[1777, 51, 642, 15, 333, "Output"]
 }, Open  ]],
-Cell[2434, 69, 1003, 22, 286, "Input"],
+Cell[2434, 69, 1003, 22, 267, "Input"],
 Cell[CellGroupData[{
-Cell[3462, 95, 148, 2, 42, "Input"],
+Cell[3462, 95, 148, 2, 41, "Input"],
 Cell[3613, 99, 628, 14, 335, "Output"]
 }, Open  ]],
-Cell[4256, 116, 1006, 22, 286, "Input"],
+Cell[4256, 116, 1006, 22, 267, "Input"],
 Cell[CellGroupData[{
-Cell[5287, 142, 146, 2, 42, "Input"],
+Cell[5287, 142, 146, 2, 41, "Input"],
 Cell[5436, 146, 632, 14, 333, "Output"]
 }, Open  ]],
-Cell[6083, 163, 726, 15, 178, "Input"],
-Cell[6812, 180, 642, 15, 178, "Input"],
+Cell[6083, 163, 726, 15, 167, "Input"],
+Cell[6812, 180, 642, 15, 167, "Input"],
 Cell[CellGroupData[{
-Cell[7479, 199, 108, 2, 42, "Input"],
+Cell[7479, 199, 108, 2, 41, "Input"],
 Cell[7590, 203, 541, 14, 331, "Output"]
 }, Open  ]],
-Cell[8146, 220, 2081, 44, 556, "Input"],
+Cell[8146, 220, 2081, 44, 517, "Input"],
 Cell[CellGroupData[{
-Cell[10252, 268, 760, 17, 151, "Input"],
-Cell[11015, 287, 1167, 23, 379, "Output"]
+Cell[10252, 268, 813, 18, 142, "Input"],
+Cell[11068, 288, 1165, 25, 347, "Output"]
 }, Open  ]]
 }
 ]
