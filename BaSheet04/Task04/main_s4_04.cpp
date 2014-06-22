@@ -10,6 +10,7 @@
 #include "simulationIntegrand.h"
 #include "PathGenerators.h"
 #include "barrierOptionPayoffs.h"
+#include "closedFormSolutions.h"
 
 #include <fstream>
 #include <vector>
@@ -23,8 +24,8 @@ namespace {
   const double T = 1.;
   const double K = 10.;
   const double B = 9.;
-  int M = 128;
-  const double delta_t = M / T;
+
+  int M = -1;
 }
 
 double evaluateDownOutCallPayoff_fixedB_04(const std::vector<double> & x, double strike) {
@@ -49,39 +50,38 @@ long double integrateRandWalk_downOutCall_04(const EfficientIntegrator & tmp, co
   return exp(- r * T) * tmp.integrate_efficient(level, d, payoffInt_randWalk_downOutCall_04);
 }
 
-void main_s4_04() {
-  const int lMax = 4;
-  int d = 1024;
+void generateConvergencePlotDataMC_DownOutCall(int M_timeDiscr, const int lMax_MC, const double refValue) {
   Cpp11UniformDice dice;
-
   MCMultiIntegrator mcIntegrator(dice);
-  const double numericalRefBB_MC = integrateBrownianBridge_downOutCall_04(mcIntegrator, lMax, 1024);
-  const double numericalRefRW_MC = integrateRandWalk_downOutCall_04(mcIntegrator, lMax, 1024);
-
-
   std::ofstream f;
-  int M_values[4] = {4,64,256,1024};
-  for(int M_k : M_values){
-    M = M_k;
-    d = M;
-    f.open("data_s4_04_M=" + std::to_string(M));
-    for (int l = 1; l < lMax; ++l) {
-      const double valBB_MC = integrateBrownianBridge_downOutCall_04(mcIntegrator, l, d);
-      const double valRW_MC = integrateRandWalk_downOutCall_04(mcIntegrator, l, d);
 
-      f << pow(2, l) - 1 << " "
-        << fabs(valBB_MC  - numericalRefBB_MC)  / numericalRefBB_MC << " "
-        << fabs(valRW_MC  - numericalRefRW_MC)  / numericalRefRW_MC << std::endl;
-       std::cout << pow(2, l) - 1 << " "
-          << fabs(valBB_MC  - numericalRefBB_MC)  << " "
-          << fabs(valRW_MC  - numericalRefRW_MC)  << std::endl;
-    }
-    f.close();
+  M = M_timeDiscr;
+  f.open("data_s4_04_M=" + std::to_string(M_timeDiscr));
+
+  for (int l = 1; l < lMax_MC; ++l) {
+    const double valBB_MC = integrateBrownianBridge_downOutCall_04(mcIntegrator, l, M_timeDiscr);
+    const double valRW_MC = integrateRandWalk_downOutCall_04(mcIntegrator, l, M_timeDiscr);
+    f << pow(2, l) - 1
+      << " " << fabs(valBB_MC - refValue) / refValue
+      << " " << fabs(valRW_MC - refValue) / refValue << std::endl;
+    std::cout << pow(2, l) - 1
+      << " " << fabs(valBB_MC - refValue)
+      << " " << fabs(valRW_MC - refValue) << std::endl;
   }
 
-  std::cout << pow(2, lMax) - 1 << " "
-      << fabs(numericalRefBB_MC)  << " "
-      << fabs(numericalRefRW_MC)  << std::endl;
+  f.close();
+}
 
+void main_s4_04() {
+  const int lMax_MC = 4;
 
+  const double refValue = computeDownOutCallClosedForm(S0, r, sigma, T, K, B);
+
+  const int M_DownOutCall_values[4] = {4, 64, 256, 1024};
+
+  for(int M_k : M_DownOutCall_values){
+    generateConvergencePlotDataMC_DownOutCall(M_k, lMax_MC, refValue);
+  }
+
+  std::cout << pow(2, lMax_MC) - 1 << " " << fabs(refValue) << std::endl;
 }
