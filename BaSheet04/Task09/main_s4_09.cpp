@@ -43,10 +43,10 @@ void printResults();
 void main_s4_09() {
   double historicalV = 3.710;
   try {
-    std::cout << executeNewtonRaphsonAlgo<CALL>(S0, r, T, K, computeDefaultSigma<CALL>(S0, r, T, K,
+    std::cout << "  " << executeNewtonRaphsonAlgo<CALL>(S0, r, T, K, computeDefaultSigma<CALL>(S0, r, T, K,
       maxIterations, historicalV) , maxIterations, historicalV);
   }
   catch(NoConvergenceError& error){
-    std::cout << "No convergence! Last sigma was " << error.getLastSigma() << "." << std::endl;
+    std::cout << "  No convergence! Last sigma was " << error.getLastSigma() << "." << std::endl;
   }
 }

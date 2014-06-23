@@ -68,7 +68,7 @@ void generateConvergencePlotDataMC_DownOutCall(int M_timeDiscr, const int lMax_M
   M = M_timeDiscr;
   f.open("data_s4_04_M=" + std::to_string(M_timeDiscr));
 
-  std::cout << "lMax = " << lMax_MC << ", d = " << M_timeDiscr << ":" << std::endl;
+//  std::cout << "lMax = " << lMax_MC << ", d = " << M_timeDiscr << ":" << std::endl;
   for (int l = 1; l < lMax_MC; ++l) {
     const double valBB_MC = integrateBrownianBridge_downOutCall_04(mcIntegrator, l, M_timeDiscr);
     const double valRW_MC = integrateRandWalk_downOutCall_04(mcIntegrator, l, M_timeDiscr);
