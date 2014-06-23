@@ -33,6 +33,8 @@ Plot for the integrand of a two-dimensional Down-Out Call option with barrier B.
 \section*{Task: 2}
 We get wrong values for our Monte Carlo and Quasi Monte Carlo method. We implemented this task (you can check the Code) but, we get false results.
 
+\newpage
+
 \section*{Task: 3}
 Plot of the Black Scholes formula for a Down-Out call option.
 \begin{figure}[htbp]
@@ -41,11 +43,9 @@ Plot of the Black Scholes formula for a Down-Out call option.
 %    \caption{}
 \end{figure}
 
-
-\newpage
-
 \section*{Task: 4}
-Monte Carlo convergence plots for different M.
+Same as in Task 2. We implemented the Code and get a wrong convergence. 
+% Monte Carlo convergence plots for different M.
 % \begin{figure}[htbp]
 %   \centering
 %      \includegraphics[width=1.0\textwidth]{../Task04/sh3_task4_convergence_plot.pdf}
@@ -62,10 +62,10 @@ Plot of the discrete time integrand for M = 2 with the usual parameters.
 
 % \newpage
 \section*{Task: 6}
-Same as in Task 2. We implemented the Code and get a wrong convergence. You can look up the results in the Folder Task06 in the Sheet4 directory.
+Same as in Task 2. We implemented the Code and get a wrong convergence. %You can look up the results in the Folder Task06 in the Sheet4 directory.
 
 \section*{Task: 7}
-Newton-Raphson algorithm with different start values $\sigma_0$ and for different actual $\sigma$ ($2 V / (\sqrt{T} S(0)) = 0.0975412$) for computing the implied volatility:
+Call option implied volatilities computed with Newton-Raphson algorithm with different start values $\sigma_0$ and for different actual $\sigma$ ($2 V / (\sqrt{T} S(0)) = 0.0975412$):% for computing the implied volatility:
 \begin{table}[htbp]%[tphp]
   \centering
   \renewcommand{\arraystretch}{1}
@@ -89,7 +89,7 @@ actual $\sigma$ \textbackslash $\sigma_0$  & 0.0975412 & 0.0100000 & 1.0000000 &
 
 \end{table}
 
-Put option prices computed with Newton-Raphson algorithm with different start values $\sigma_0$ and for different actual $\sigma$ ($2 V / (\sqrt{T} S(0)) = 0$): 
+Put option implied volatilities computed with Newton-Raphson algorithm with different start values $\sigma_0$ and for different actual $\sigma$ ($2 V / (\sqrt{T} S(0)) = 0$): 
 \begin{table}[htbp]%[tphp]
   \centering
   \renewcommand{\arraystretch}{1}
@@ -114,10 +114,13 @@ actual $\sigma$ \textbackslash $\sigma_0$ & 0.0000000 & 0.0100000 & 1.0000000 &1
 
 One observed cause for the divergence of the algorithm is that the quotient $\sigma_0 / \sigma$ diverges too far from one (either is too large or too near to zero).
 
-\section*{Task: 8}
+% \section*{Task: 8}
+\newpage
 
 \section*{Task: 9}
-We looked up some values from "{}www.onvista.de"{} and made screenshots of the entries we used. We used values of a Gold stock from UBS with same time of maturity and for European options.
+We looked up some values from "{}www.onvista.de"{}. % and made screenshots of the entries we used. 
+We used values of a Gold stock and European call options of UBS with same time of maturity.% and for European options.
+One can observe the smile and one runaway value.
 \begin{figure}[htbp]
   \centering
      \includegraphics[width=1.0\textwidth]{../Task09/smileFromExternalData.pdf}
