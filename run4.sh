@@ -9,7 +9,7 @@ cd Output/Data4
 
 
 
-../../BaSheet04/Task03/sh4_03_price_plot.sh
+sh ../../BaSheet04/Task03/sh4_03_price_plot.sh
 mv sh4_task3_price_plot.pdf ../sh4_task3_price_plot.pdf
 
 

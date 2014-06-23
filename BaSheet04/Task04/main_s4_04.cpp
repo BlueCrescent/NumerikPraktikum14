@@ -75,9 +75,9 @@ void generateConvergencePlotDataMC_DownOutCall(int M_timeDiscr, const int lMax_M
     f << pow(2, l) - 1
       << " " << fabs(valBB_MC - refValue) / refValue
       << " " << fabs(valRW_MC - refValue) / refValue << std::endl;
-    std::cout << pow(2, l) - 1
-      << " " << fabs(valBB_MC - refValue)
-      << " " << fabs(valRW_MC - refValue) << std::endl;
+//    std::cout << pow(2, l) - 1
+//      << " " << fabs(valBB_MC - refValue)
+//      << " " << fabs(valRW_MC - refValue) << std::endl;
 //    const double valBB_MC_2 = integrateBrownianBridge_downOutCall_04_2(mcIntegrator, l, M_timeDiscr);
 //    const double valRW_MC_2 = integrateRandWalk_downOutCall_04_2(mcIntegrator, l, M_timeDiscr);
 //    std::cout << pow(2, l) - 1
@@ -89,7 +89,7 @@ void generateConvergencePlotDataMC_DownOutCall(int M_timeDiscr, const int lMax_M
 }
 
 void main_s4_04() {
-  const int lMax_MC = 20;
+  const int lMax_MC = 7;
 
   const double refValue = computeDownOutCallClosedForm(S0, r, sigma, T, K, B);
 
@@ -100,6 +100,4 @@ void main_s4_04() {
   for(int M_k : M_DownOutCall_values){
     generateConvergencePlotDataMC_DownOutCall(M_k, lMax_MC, refValue);
   }
-
-  std::cout << computeEuropeanCallClosedForm(S0, r, sigma, T, K) << " " << fabs(refValue) << std::endl;
 }
