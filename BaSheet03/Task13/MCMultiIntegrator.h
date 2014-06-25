@@ -32,6 +32,22 @@ private:
 
 template<typename T>
 long double MCMultiIntegrator::integrate_efficient(int level, int d, T function) const{
+	const int N_l = pow(2, level) - 1;
+	const double factor = 1. / N_l;
+	
+	long double result = 0.;
+	for(int i = 0; i < N_l; ++i){
+		std::vector<double> node = generateRandomNode(d);
+		result += function(node) * factor;
+	}
+	
+	return result;
+}
+
+
+#if 0
+template<typename T>
+long double MCMultiIntegrator::integrate_efficient(int level, int d, T function) const{
   const int N_l = pow(2, level) - 1;
 
   const double factor = 1. / pow((double) N_l, (double) d);
@@ -56,5 +72,7 @@ long double MCMultiIntegrator::integrate_efficient(int level, int d, T function)
 //  }
   return result;
 }
+
+#endif
 
 #endif /* MCMULTIINTEGRATOR_H_ */
