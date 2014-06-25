@@ -23,6 +23,7 @@ namespace {
   const double sigma = 0.25;
   const double T = 1.;
   const double K = 10.;
+//  const int M = 32;
   const int M = 64;
   const double delta_t = M / T;
 
@@ -48,8 +49,8 @@ long double integrateBrownianBridge_discFactor17(const EfficientIntegrator & tmp
 void printAllIntegrationPoints17(std::ofstream& out) {
   Cpp11UniformDice Dice;
   const double exact = calc_discrete_geometric_fairP(S0, r, sigma, K, T, M);
-  for (int l = 1; l < 6; ++l) {
-    out << l << " ";
+  for (int l = 1; l < 18; ++l) {
+    out << pow(2, l) - 1 << " ";
     out << fabs(integrateRandomWalk_discFactor17(MCMultiIntegrator(Dice), l, M)     - exact ) / exact << " ";
     out << fabs(integrateRandomWalk_discFactor17(QMCMultiIntegrator(), l, M)        - exact ) / exact << " ";
 

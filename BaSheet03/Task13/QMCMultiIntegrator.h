@@ -10,6 +10,8 @@
 
 #include "MultiVariateIntegrator.h"
 #include "HaltonSequence.h"
+#include "Cpp11UniformDice.h"
+#include <iostream>
 
 #include <utility>
 
@@ -27,11 +29,34 @@ long double QMCMultiIntegrator::integrate_efficient(int level, int d, T function
   const double factor = 1. / N_l;
   std::vector<double> haltonPoint = generateFirstPoint(d);
 
+// --------------------
+//  std::vector<double> haltonTest = generateFirstPoint(2);
+//  for (int k = 0; k < 4; ++k) {
+//    for (int var = 0; var < 2; ++var) {
+//      std::cout<< haltonTest[var] << " ";
+//    }
+//    std::cout<< std::endl;
+//    haltonTest = std::move(generateNextHaltonValue(haltonTest));
+//  }
+// --------------------
+
   long double result = 0;
+
+//  Cpp11UniformDice dice;
   for(int i = 0; i < N_l; ++i) {
+//    if (i < 4) {
+//      for (int var = 0; var < d; ++var) {
+//        std::cout<< haltonPoint[var] << " ";
+//      }
+//      std::cout<< std::endl;
+//    }
     result += function(haltonPoint) * factor;
+//    haltonPoint.clear();
+//    haltonPoint.reserve(d);
+//    for (int i = 0; i < d; ++i) {
+//      haltonPoint.push_back(dice.roll());
+//    }
     haltonPoint = std::move(generateNextHaltonValue(haltonPoint));
-//    haltonPoint = std::move(generateRandomNode(d));
   }
   return result;
 }
