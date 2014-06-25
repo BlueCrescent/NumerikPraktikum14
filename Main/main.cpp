@@ -28,8 +28,8 @@ int main(){
 #endif
 #ifdef SHEET3
   std::cout << "Starting sheet 3 task 3..." << std::endl;
-  main_s3_03();
-  std::cout << "Starting sheet 3 task 4..." << std::endl;
+//  main_s3_03();
+//  std::cout << "Starting sheet 3 task 4..." << std::endl;
   main_s3_04();
   std::cout << "Starting sheet 3 task 5..." << std::endl;
   main_s3_05();
@@ -41,12 +41,12 @@ int main(){
   main_s3_11();
   std::cout << "Starting sheet 3 task 12..." << std::endl;
   main_s3_12();
-  std::cout << "Starting sheet 3 task 13..." << std::endl;
-  main_s3_13();
+//  std::cout << "Starting sheet 3 task 13..." << std::endl;
+//  main_s3_13();
   std::cout << "Starting sheet 3 task 15..." << std::endl;
   main_s3_15();
-  std::cout << "Starting sheet 3 task 16..." << std::endl;
-  main_s3_16();
+ // std::cout << "Starting sheet 3 task 16..." << std::endl;
+ // main_s3_16();
   std::cout << "Starting sheet 3 task 17..." << std::endl;
   main_s3_17();
 #endif

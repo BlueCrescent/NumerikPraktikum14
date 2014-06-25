@@ -50,11 +50,11 @@ void printAllIntegrationPoints17(std::ofstream& out) {
   const double exact = calc_discrete_geometric_fairP(S0, r, sigma, K, T, M);
   for (int l = 1; l < 6; ++l) {
     out << l << " ";
-    out << fabs(integrateRandomWalk_discFactor17(MCMultiIntegrator(Dice), l, M)            - exact ) / exact << " ";
-    out << fabs(integrateRandomWalk_discFactor17(QMCMultiIntegrator(), l, M)               - exact ) / exact << " ";
+    out << fabs(integrateRandomWalk_discFactor17(MCMultiIntegrator(Dice), l, M)     - exact ) / exact << " ";
+    out << fabs(integrateRandomWalk_discFactor17(QMCMultiIntegrator(), l, M)        - exact ) / exact << " ";
 
-    out << fabs(integrateBrownianBridge_discFactor17(MCMultiIntegrator(Dice), l, M)            - exact ) / exact << " ";
-    out << fabs(integrateBrownianBridge_discFactor17(QMCMultiIntegrator(), l, M)               - exact ) / exact << " ";
+    out << fabs(integrateBrownianBridge_discFactor17(MCMultiIntegrator(Dice), l, M) - exact ) / exact << " ";
+    out << fabs(integrateBrownianBridge_discFactor17(QMCMultiIntegrator(), l, M)    - exact ) / exact << " ";
     out << std::endl;
   }
 }

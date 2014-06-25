@@ -40,7 +40,6 @@ long double MCMultiIntegrator::integrate_efficient(int level, int d, T function)
 		std::vector<double> node = generateRandomNode(d);
 		result += function(node) * factor;
 	}
-	
 	return result;
 }
 
