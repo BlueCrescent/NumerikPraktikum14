@@ -39,5 +39,9 @@ void main_s3_15() {
   std::cout << "brownBridge: "
             << multivariateIntegrator.integrate(4, M, payoffInt_brownianBridgeDiscrGeom)
             << std::endl;
+  std::cout << "error: " <<
+      multivariateIntegrator.integrate(4, M, payoffInt_randWalkDiscrGeom)
+      - multivariateIntegrator.integrate(4, M, payoffInt_brownianBridgeDiscrGeom)
+      << std::endl;
 
 }
