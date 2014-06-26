@@ -42,12 +42,12 @@ double payoffInt_brownBridge_downOutCall_04(const std::vector<double> & x) {
 
 template<typename EfficientIntegrator>
 long double integrateBrownianBridge_downOutCall_04(const EfficientIntegrator & tmp, const int level, const int d){
-  return exp(- r * T) * tmp.integrate_efficient(level, d, payoffInt_brownBridge_downOutCall_04);
+  return exp(- r * T) * tmp.integrateEfficient(level, d, payoffInt_brownBridge_downOutCall_04);
 }
 
 template<typename EfficientIntegrator>
 long double integrateRandWalk_downOutCall_04(const EfficientIntegrator & tmp, const int level, const int d){
-  return exp(- r * T) * tmp.integrate_efficient(level, d, payoffInt_randWalk_downOutCall_04);
+  return exp(- r * T) * tmp.integrateEfficient(level, d, payoffInt_randWalk_downOutCall_04);
 }
 
 template<typename EfficientIntegrator>

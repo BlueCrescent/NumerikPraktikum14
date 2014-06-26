@@ -38,18 +38,18 @@ namespace {
 
 template<typename EfficientIntegrator>
 long double integrateRandomWalk_discFactor17(const EfficientIntegrator & tmp, const int level, const int d){
-  return exp(- r * T) * tmp.integrate_efficient(level, d, payoffInt_randWalkDiscrGeom);
+  return exp(- r * T) * tmp.integrateEfficient(level, d, payoffInt_randWalkDiscrGeom);
 }
 
 template<typename EfficientIntegrator>
 long double integrateBrownianBridge_discFactor17(const EfficientIntegrator & tmp, const int level, const int d){
-  return exp(- r * T) * tmp.integrate_efficient(level, d, payoffInt_brownianBridgeDiscrGeom);
+  return exp(- r * T) * tmp.integrateEfficient(level, d, payoffInt_brownianBridgeDiscrGeom);
 }
 
 void printAllIntegrationPoints17(std::ofstream& out) {
   Cpp11UniformDice Dice;
   const double exact = calc_discrete_geometric_fairP(S0, r, sigma, K, T, M);
-  for (int l = 1; l < 18; ++l) {
+  for (int l = 1; l < 17; ++l) {
     out << pow(2, l) - 1 << " ";
     out << fabs(integrateRandomWalk_discFactor17(MCMultiIntegrator(Dice), l, M)     - exact ) / exact << " ";
     out << fabs(integrateRandomWalk_discFactor17(QMCMultiIntegrator(), l, M)        - exact ) / exact << " ";

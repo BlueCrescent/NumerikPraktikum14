@@ -6,6 +6,7 @@
  */
 
 #include "ProductIntegrator.h"
+#include <utility>
 
 #include <cassert>
 
@@ -14,7 +15,7 @@ ProductIntegrator::ProductIntegrator(const NumericalIntegrator& _UniVariateInteg
 {
 }
 
-inline bool incrementIndex(std::vector<int>& k, int N_l, int d) {
+bool ProductIntegrator::incrementIndex(std::vector<int>& k, int N_l, int d) const {
   for (int j = 0; j < d; ++j) {
     k[j]++;
     if (k[j] > N_l) {
@@ -28,9 +29,8 @@ inline bool incrementIndex(std::vector<int>& k, int N_l, int d) {
   return true;
 }
 
-inline void genMultiWeightAndNode(const NumericalIntegrator::NodesAndWeights & OneDimVal,
-                                  MultiVariateIntegrator::NodesAndWeights & MultiDimVal,
-                                  int d, const std::vector<int> & k) {
+std::pair<std::vector<double>,double> ProductIntegrator::genMultiWeightAndNode(const NumericalIntegrator::NodesAndWeights & OneDimVal,
+                                  int d, const std::vector<int> & k) const {
   std::vector<double> node;
   node.reserve(d);
   double weight = 1;
@@ -40,9 +40,7 @@ inline void genMultiWeightAndNode(const NumericalIntegrator::NodesAndWeights & O
     weight *= OneDimVal.Weights[k[j] - 1];
     node.push_back(OneDimVal.Nodes[k[j] - 1]);
   }
-
-  MultiDimVal.Weights.push_back(weight);
-  MultiDimVal.Nodes.push_back(node);
+  return std::pair<std::vector<double>,double> (std::move(node), weight);
 }
 
 MultiVariateIntegrator::NodesAndWeights ProductIntegrator::getNodesAndWeights(int l, int d) const {
@@ -52,7 +50,9 @@ MultiVariateIntegrator::NodesAndWeights ProductIntegrator::getNodesAndWeights(in
   std::vector<int> k(d, 1);
 
   do {
-    genMultiWeightAndNode(OneDimVal, MultiDimVal, d, k);
+    std::pair<std::vector<double>,double> nodeAndWeight = std::move(genMultiWeightAndNode(OneDimVal, d, k));
+    MultiDimVal.Nodes.push_back(nodeAndWeight.first);
+    MultiDimVal.Weights.push_back(nodeAndWeight.second);
   } while (incrementIndex(k, N_l, d));
 
   return MultiDimVal;

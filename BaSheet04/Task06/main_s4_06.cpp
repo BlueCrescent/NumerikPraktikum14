@@ -28,7 +28,7 @@ namespace {
 
   template<typename EfficientIntegrator>
   long double integrateDiscrLookBack_brownianBridg(const EfficientIntegrator & tmp, const int level, const int d){
-    return exp(- r * T) * tmp.integrate_efficient(level, d, payoffInt_brownianBridgeDiscrLookback);
+    return exp(- r * T) * tmp.integrateEfficient(level, d, payoffInt_brownianBridgeDiscrLookback);
   }
 }
 
