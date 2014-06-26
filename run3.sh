@@ -36,7 +36,8 @@ mv sh3_task13_convergencePlotd4.pdf ../sh3_task13_convergencePlotd4.pdf
 mv sh3_task13_convergencePlotd8.pdf ../sh3_task13_convergencePlotd8.pdf
 
 sh ../../BaSheet03/Task16/sh3_16_convergencePlot.sh
-mv sh3_task16_convergence_plot.pdf ../sh3_task16_convergence_plot.pdf
+mv sh3_task16_convergence_plot_rw.pdf ../sh3_task16_convergence_plot_rw.pdf
+mv sh3_task16_convergence_plot_bb.pdf ../sh3_task16_convergence_plot_bb.pdf
 
 sh ../../BaSheet03/Task17/sh3_17_convergencePlot.sh
 mv sh3_task17_convergencePlot.pdf ../sh3_task17_convergencePlot.pdf
