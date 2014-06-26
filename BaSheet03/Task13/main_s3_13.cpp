@@ -29,19 +29,27 @@ double integrate(const MultiVariateIntegrator& tmp, const int level, const int d
   return tmp.integrate(level, d, multiF);
 }
 
+template <typename EfficientIntegrator>
+double integrateEfficient(const EfficientIntegrator& tmp, const int level, const int d){
+  return tmp.integrateEfficient(level, d, multiF);
+}
+
 void storeIntegrationPoints(std::ofstream& out, int d) {
   const TrapezoidalIntegrator TrapezRule;
   const ClenshawIntegrator ClenshawRule;
   const double exact = integrateF(d);
   Cpp11UniformDice Dice;
+  SparseGridIntegrator NodeSizer(TrapezRule);
   for (int l = 1; l < 4; ++l) {
-    out << l << " ";
-    out << fabs(integrate(MCMultiIntegrator(Dice), l, d)            - exact ) / exact << " ";
-    out << fabs(integrate(QMCMultiIntegrator(), l, d)               - exact ) / exact << " ";
-    out << fabs(integrate(ProductIntegrator(TrapezRule), l, d)      - exact ) / exact << " ";
-    out << fabs(integrate(ProductIntegrator(ClenshawRule), l, d)    - exact ) / exact << " ";
-    out << fabs(integrate(SparseGridIntegrator(TrapezRule), l, d)   - exact ) / exact << " ";
-    out << fabs(integrate(SparseGridIntegrator(ClenshawRule), l, d) - exact ) / exact << " ";
+    out << pow(pow(2., l) - 1., d) << " ";
+    out << fabs(integrateEfficient(MCMultiIntegrator(Dice), l * d, d)            - exact ) / exact << " ";
+    out << fabs(integrateEfficient(QMCMultiIntegrator(), l * d, d)               - exact ) / exact << " ";
+    out << fabs(integrateEfficient(ProductIntegrator(TrapezRule), l, d)      - exact ) / exact << " ";
+    out << fabs(integrateEfficient(ProductIntegrator(ClenshawRule), l, d)    - exact ) / exact << " ";
+    out << NodeSizer.getNodesAndWeights(l*2,d).getSize() << " "
+        << fabs(integrate(SparseGridIntegrator(TrapezRule), l*2, d)   - exact ) / exact << " ";
+    out << fabs(integrate(SparseGridIntegrator(ClenshawRule), l*2, d) - exact ) / exact << " ";
+    out << pow(2., l * d) - 1.;
     out << std::endl;
   }
 }
