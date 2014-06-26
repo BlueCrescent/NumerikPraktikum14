@@ -10,7 +10,6 @@
 
 #include <cassert>
 #include <vector>
-#include <cmath>
 
 class MultiVariateIntegrator {
 public:
