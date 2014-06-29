@@ -5,10 +5,10 @@ set grid
 
 set logscale 
 
-set xlabel "Number of Nodes (M = 128)"
+set xlabel "Number of Nodes"
 set ylabel "relativ Error"
 
-set title "convergence Plot: Barrier Down-Out Call options"
+set title "convergence Plot: Barrier Down-Out Call options (M = 128)"
 plot "data_s4_02" using 1:2 with lp title "BB - Monte Carlo", \
  "data_s4_02" using 1:3 with lp title "RW - Monte Carlo", \
  "data_s4_02" using 1:4 with lp title "BB - Quasi Monte Carlo", \
@@ -19,7 +19,7 @@ pause mouse
 set term pdf
 
 set output "sh4_task02_convergencePlot.pdf"
-set title "convergence Plot: Barrier Down-Out Call options"
+set title "convergence Plot: Barrier Down-Out Call options (M = 128)"
 plot "data_s4_02" using 1:2 with lp title "BB - Monte Carlo", \
  "data_s4_02" using 1:3 with lp title "RW - Monte Carlo", \
  "data_s4_02" using 1:4 with lp title "BB - Quasi Monte Carlo", \
