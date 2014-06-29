@@ -14,7 +14,6 @@
 
 #include <fstream>
 #include <vector>
-#include <iostream>
 #include <string>
 
 namespace {
@@ -68,36 +67,24 @@ void generateConvergencePlotDataMC_DownOutCall(int M_timeDiscr, const int lMax_M
   M = M_timeDiscr;
   f.open("data_s4_04_M=" + std::to_string(M_timeDiscr));
 
-//  std::cout << "lMax = " << lMax_MC << ", d = " << M_timeDiscr << ":" << std::endl;
   for (int l = 1; l < lMax_MC; ++l) {
     const double valBB_MC = integrateBrownianBridge_downOutCall_04(mcIntegrator, l, M_timeDiscr);
     const double valRW_MC = integrateRandWalk_downOutCall_04(mcIntegrator, l, M_timeDiscr);
     f << pow(2, l) - 1
       << " " << fabs(valBB_MC - refValue) / refValue
       << " " << fabs(valRW_MC - refValue) / refValue << std::endl;
-//    std::cout << pow(2, l) - 1
-//      << " " << fabs(valBB_MC - refValue)
-//      << " " << fabs(valRW_MC - refValue) << std::endl;
-//    const double valBB_MC_2 = integrateBrownianBridge_downOutCall_04_2(mcIntegrator, l, M_timeDiscr);
-//    const double valRW_MC_2 = integrateRandWalk_downOutCall_04_2(mcIntegrator, l, M_timeDiscr);
-//    std::cout << pow(2, l) - 1
-//      << " " << (valBB_MC - valBB_MC_2) << " " << valBB_MC << " " << valBB_MC_2 << std::endl
-//      << "       " << (valRW_MC - valRW_MC_2) << " " << valRW_MC << " " << valBB_MC_2 << std::endl;
   }
 
   f.close();
 }
 
 void main_s4_04() {
-  const int lMax_MC = 7;
+  const int lMax_MC = 19;
 
   const double refValue = computeDownOutCallClosedForm(S0, r, sigma, T, K, B);
 
   const int M_DownOutCall_values[4] = {4, 64, 256, 1024};
 
-//  const int M_DownOutCall_values[1] = {1};
-
-  for(int M_k : M_DownOutCall_values){
+  for(int M_k : M_DownOutCall_values)
     generateConvergencePlotDataMC_DownOutCall(M_k, lMax_MC, refValue);
-  }
 }
