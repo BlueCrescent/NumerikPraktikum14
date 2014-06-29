@@ -21,7 +21,7 @@ with
 \begin{align*}
   A &=e^{-r\left(T-T_2\right)-\sigma^2\left(T_2-T_1\right)/2}\\
   d &=\frac{\log\left(S(0)/K\right)+\left(r-\frac{1}{2}\sigma^2\right)T_2}{\sigma \sqrt{T_1}}\\
-  T_1&=T-\frac{M\left(M-1\right)\left(4M+1\right)}{6M^2}\Delta t\\
+  T_1&=T-\frac{M\left(M-1\right)\left(4M+1\right)}{6M^2}\Delta t = \frac{M (1+M) (1+2 M)}{6 M^2}\Delta t\\
   T_2&=T-\frac{\left(M-1\right)}{2}\Delta t=\frac{M+1}{2}\Delta t\\
 \end{align*}
 {\textit{Proof:}}\\
@@ -36,24 +36,46 @@ First transform the payoff function so that it only depends on one variable:
 \end{align*}
 Since $W(t_i)$ are normal distributed and the increments of the Winer process are independent, it holds:
 \begin{align*}
- \sum_{i=1}^{M}W\left(t_i\right)=&\sum_{i=1}^{M}\left(M-i+1\right)\left(W\left(t_i\right)-W\left(t_{i-1}\right)\right)&&\text{ $ $ $ $ $ $ $ $ with $t_0=0$}\\
- \sim  & \mathcal{N}\left(0, \sum_{i=1}^{M} \left(M-i+1\right) \left(t_i - t_{i-1}\right)\right)&&= \mathcal{N}\left(0, \sum_{i=1}^{M} \left(M-i+1\right) \Delta t\right)\\
- =& \mathcal{N}\left(0, \Delta t\left( M^2+M-\frac{M^2+M}{2}\right) \right)&&=\mathcal{N}\left(0, \Delta t\cdot\frac{M^2+M}{2} \right)\\
+ \sum_{i=1}^{M}W\left(t_i\right)=&\sum_{i=1}^{M}\left(M-i+1\right)\left(W\left(t_i\right)-W\left(t_{i-1}\right)\right)\text{ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ $ with $t_0=0$}\\
+ \sim  & \mathcal{N}\left(0, \sum_{i=1}^{M} \left(M-i+1\right)^2 \left(t_i - t_{i-1}\right)\right)\\
+ =     & \mathcal{N}\left(0, \Delta t \left(\sum_{i=1}^{M} M^2-2 i M + 2 M + i^2 - 2 i +1\right) \right)\\
+ =     & \mathcal{N}\left(0, \Delta t \left( M^3 + 2 M^2 + M - 2 \left(M + 1\right)\sum_{i=1}^{M}i + \sum_{i=1}^{M}i^2 \right) \right)\\
+ =     & \mathcal{N}\left(0, \Delta t \left( M^3 + 2 M^2 + M - 2 \left(M + 1\right) \frac{M^2+M}{2} + \frac{(2 M+1) (M + 1) M}{6} \right) \right)\\
+ =     & \mathcal{N}\left(0, \Delta t \cdot \frac{1}{6} M(1+M)(1+2M)\right)\\
+%  =& \mathcal{N}\left(0, \Delta t\left( M^2+M-\frac{M^2+M}{2}\right) \right)&&=\mathcal{N}\left(0, \Delta t\cdot\frac{M^2+M}{2} \right)\\
 \end{align*}
 With this we get the following univariate integrand for $\mathbb{E}\left[ V\left(S,T\right)\right]$:
 \begin{align*}
- f_{geom}^{disc}\left(s\right):=&\left(S(0) exp\left(\left(r-\frac{1}{2}\sigma^2\right) \Delta t \cdot\frac{M+1}{2}+\frac{\sigma}{M}\sqrt{\Delta t\cdot\frac{M^2+M}{2}}s\right)-K\right)^+
+ f_{geom}^{disc}\left(s\right):=&\left(S(0) \exp\left(\left(r-\frac{1}{2}\sigma^2\right) \Delta t \cdot\frac{M+1}{2}+\frac{\sigma}{M}\sqrt{\Delta t \cdot \frac{1}{6} M(1+M)(1+2M)}\cdot s\right)-K\right)^+\\
+ =&\left(S(0) \exp\left(\left(r-\frac{1}{2}\sigma^2\right) T_2+\sigma\sqrt{T_1}\cdot s\right)-K\right)^+\\
 \end{align*}
 Now compute:
 \begin{align*}
  &f\left(\chi\right)=0\\
- \Leftrightarrow& \left(r-\frac{1}{2}\sigma^2\right) \Delta t \cdot\frac{M+1}{2}+\frac{\sigma}{M}\sqrt{\Delta t\cdot\frac{M^2+M}{2}} \chi = \log \left(\frac{K}{S(0)}\right)\\
- \Leftrightarrow&  \sigma\sqrt{\Delta t\cdot\frac{M^2+M}{2M^2}} \chi = \log \left(\frac{K}{S(0)}\right)-\left(r-\frac{1}{2}\sigma^2\right)T_1
+ \Leftrightarrow& \left(r-\frac{1}{2}\sigma^2\right) T_2+\sigma\sqrt{T_1} \chi = \log \left(\frac{K}{S(0)}\right)\\
+%  \Leftrightarrow& \sigma\sqrt{\Delta t\cdot\frac{M (1+M) (1+2 M)}{6 M^2}} \chi = \log \left(\frac{K}{S(0)}\right)-\left(r-\frac{1}{2}\sigma^2\right)T_1\\
+%  \Leftrightarrow& \sigma\sqrt{T_1} \chi = \log \left(\frac{K}{S(0)}\right)-\left(r-\frac{1}{2}\sigma^2\right)T_2\\
+ \Leftrightarrow& \chi = \frac{- \log \left(\frac{S(0)}{K}\right)-\left(r-\frac{1}{2}\sigma^2\right)T_2}{\sigma\sqrt{T_1}} = - d\\
+\end{align*}
+For the expectation we get:
+\begin{align*}
+ \mathbb{E}\left[ V\left(S,T\right)\right] = & \frac{1}{\sqrt{2\pi}}\int_\infty^\infty f_{geom}^{disc}\left(s\right) \cdot e^{-\frac{1}{2}s^2} ds\\
+  = & \frac{1}{\sqrt{2\pi}} \int_\infty^d \left(S(0) \exp\left(\left(r-\frac{1}{2}\sigma^2\right)T_2+\sigma\sqrt{T_1}\cdot s\right)-K\right) \cdot \exp\left(-\frac{1}{2}s^2\right) ds\\
+  =& \frac{S(0)}{\sqrt{2\pi}} \exp\left(\left(r-\frac{1}{2}\sigma^2\right)T_2\right) \int_\infty^d \exp\left(-\frac{1}{2}s^2 + \sigma\sqrt{T_1}\cdot s\right) ds\\
+   & -\frac{K}{\sqrt{2\pi}} \int_\infty^d e^{-\frac{1}{2}s^2} ds\\
+  =& \frac{S(0)}{\sqrt{2\pi}} \exp\left(\left(r-\frac{1}{2}\sigma^2\right)T_2 \right) \int_\infty^d \exp\left( -\frac{1}{2}(s+\sigma\sqrt{T_1})^2+\frac{1}{2}\sigma^2 T_1\right) ds\\
+   & -K \cdot \Phi(d)\\
+  =& S(0) \exp\left(\left(r-\frac{1}{2}\sigma^2\right)T_2 +\frac{1}{2}\sigma^2 T_1 \right) \Phi\left(\sigma \sqrt{T_1} + d\right) -K \cdot \Phi(d)\\
+  =& S(0) \exp\left(r \cdot T_2 -\frac{1}{2}\sigma^2 \left(T_2 - T_1\right) \right) \Phi\left(\sigma \sqrt{T_1} + d\right) -K \cdot \Phi(d)\\
 \end{align*}
 
-
-...
-
+So the final result is:
+\begin{align*}
+ V(S,0) = & e^{-r T}\mathbb{E}\left[ V\left(S,T\right)\right]\\
+        = & e^{-r T} \left( S(0) e^{r \cdot T_2 -\frac{1}{2}\sigma^2 \left(T_2 - T_1\right) } \Phi\left(\sigma \sqrt{T_1} + d\right) -K \cdot \Phi(d) \right)\\
+        = & S(0) e^{-r \cdot (T - T_2) -\frac{1}{2}\sigma^2 \left(T_2 - T_1\right) } \Phi\left(\sigma \sqrt{T_1} + d\right) -K \cdot e^{-r T} \cdot \Phi(d)\\
+        = & S(0) \cdot A \cdot \Phi \left(\sigma \sqrt{T_1} + d\right) -K \cdot e^{-r T} \cdot \Phi(d)\\
+\end{align*}
 \flushright{$\qed$}
 
 
