@@ -19,7 +19,7 @@ inline double evalDiscrLookbackPayoff(const std::vector<double> & PathValues, co
   for(unsigned int i = 0; i < PathValues.size(); i++){
     currentMax = PathValues[i] > currentMax ? PathValues[i] : currentMax;
   }
-  return currentMax;
+  return currentMax > strike ? currentMax - strike : 0.;
 }
 
 inline double compDiscrLookbackFairPrice(double S0, double r, double sigma, double T, double K, int M) {

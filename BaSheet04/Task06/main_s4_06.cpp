@@ -28,14 +28,14 @@ namespace {
 
   template<typename EfficientIntegrator>
   long double integrateDiscrLookBack_brownianBridg(const EfficientIntegrator & tmp, const int level, const int d){
-    return exp(- r * T) * tmp.integrateEfficient(level, d, payoffInt_brownianBridgeDiscrLookback);
+    return /*exp(- r * T) * */tmp.integrateEfficient(level, d, payoffInt_brownianBridgeDiscrLookback);
   }
 }
 
 void printConvergenceDataLookback(std::ofstream& out) {
   Cpp11UniformDice Dice;
   const double exact = compDiscrLookbackFairPrice(S0, r, sigma, T, K, M);
-  for (int l = 1; l < 6; ++l) {
+  for (int l = 1; l < 20; ++l) {
     out << pow(2, l) - 1 << " ";
     out << fabs(integrateDiscrLookBack_brownianBridg(MCMultiIntegrator(Dice), l, M) - exact ) / exact << " ";
     out << fabs(integrateDiscrLookBack_brownianBridg(QMCMultiIntegrator(), l, M)    - exact ) / exact << " ";
