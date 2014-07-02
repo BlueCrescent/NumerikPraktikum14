@@ -3,7 +3,8 @@
 gnuplot << EOT
 set grid
 
-set logscale y
+set logscale
+set key left bottom
 
 set xlabel "Number of Nodes"
 set ylabel "relativ Error"
