@@ -67,20 +67,20 @@ void printAllIntegrationPoints(std::ofstream& out) {
   for (int l = 1; l < 4; ++l) {
     out << pow(2, l * M) - 1 << " ";
     out << pow(pow(2, l) - 1, M) << " ";
-    out << NodeSizer.getNodesAndWeights(l, M).getSize() << " ";
+    out << NodeSizer.getNodesAndWeights(2 * l, M).getSize() << " ";
     out << fabs(integrateRandomWalk_discFactorEfficient(MCMultiIntegrator(Dice), l * M, M)            - exact ) / exact << " ";
     out << fabs(integrateRandomWalk_discFactorEfficient(QMCMultiIntegrator(), l * M, M)               - exact ) / exact << " ";
     out << fabs(integrateRandomWalk_discFactorEfficient(ProductIntegrator(TrapezRule), l, M)      - exact ) / exact << " ";
     out << fabs(integrateRandomWalk_discFactorEfficient(ProductIntegrator(ClenshawRule), l, M)    - exact ) / exact << " ";
-    out << fabs(integrateRandomWalk_discFactor(SparseGridIntegrator(TrapezRule), l, M)   - exact ) / exact << " ";
-    out << fabs(integrateRandomWalk_discFactor(SparseGridIntegrator(ClenshawRule), l, M) - exact ) / exact << " ";
+    out << fabs(integrateRandomWalk_discFactor(SparseGridIntegrator(TrapezRule), 2 * l, M)   - exact ) / exact << " ";
+    out << fabs(integrateRandomWalk_discFactor(SparseGridIntegrator(ClenshawRule), 2 * l, M) - exact ) / exact << " ";
 
     out << fabs(integrateBrownianBridge_discFactorEfficient(MCMultiIntegrator(Dice), l * M, M)            - exact ) / exact << " ";
     out << fabs(integrateBrownianBridge_discFactorEfficient(QMCMultiIntegrator(), l * M, M)               - exact ) / exact << " ";
     out << fabs(integrateBrownianBridge_discFactorEfficient(ProductIntegrator(TrapezRule), l, M)      - exact ) / exact << " ";
     out << fabs(integrateBrownianBridge_discFactorEfficient(ProductIntegrator(ClenshawRule), l, M)    - exact ) / exact << " ";
-    out << fabs(integrateBrownianBridge_discFactor(SparseGridIntegrator(TrapezRule), l, M)   - exact ) / exact << " ";
-    out << fabs(integrateBrownianBridge_discFactor(SparseGridIntegrator(ClenshawRule), l, M) - exact ) / exact << " ";
+    out << fabs(integrateBrownianBridge_discFactor(SparseGridIntegrator(TrapezRule), 2 * l, M)   - exact ) / exact << " ";
+    out << fabs(integrateBrownianBridge_discFactor(SparseGridIntegrator(ClenshawRule), 2 * l, M) - exact ) / exact << " ";
     out << std::endl;
   }
 }
